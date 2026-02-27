@@ -1,3 +1,7 @@
 [gd_scene format=3 uid="uid://dlapqp3v6jy3a"]
 
+[ext_resource type="PackedScene" uid="uid://dabjl2g7fc2da" path="res://Objetos/Tocha.tscn" id="1_2bxtm"]
+
 [node name="Hugo" type="Node2D" unique_id=1085151836]
+
+[node name="Tocha" parent="." unique_id=1342345491 instance=ExtResource("1_2bxtm")]

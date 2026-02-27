@@ -11,8 +11,19 @@ config_version=5
 [application]
 
 config/name="Jogo_Escuro"
+run/main_scene="uid://gjj642bjsgnk"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*uid://kofi2njhv1od"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="viewport"
 
 [physics]
 

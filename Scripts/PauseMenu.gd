@@ -6,9 +6,9 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("pause"):
-		if GameManager.estadoAtual == GameManager.EstadoJogo.jogando:
+		if GameManager.estadoAtual == GameManager.EstadoJogo.Jogando:
 			MostrarPause()
-		elif GameManager.estadoAtual == GameManager.EstadoJogo.pausado:
+		elif GameManager.estadoAtual == GameManager.EstadoJogo.Pausado:
 			EsconderPause()
 
 func MostrarPause():

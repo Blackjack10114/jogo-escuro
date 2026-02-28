@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dabjl2g7fc2da"]
 
-[ext_resource type="Script" uid="uid://bcduc2tt6m5h7" path="res://Scripts/Pegar_tocha.gd" id="1_hlgnc"]
+[ext_resource type="Script" uid="uid://bcduc2tt6m5h7" path="res://Scripts/Tocha.gd" id="1_hlgnc"]
 [ext_resource type="Texture2D" uid="uid://dfrpruvrr6o0e" path="res://Sprites/Placeholders/Tocha_Teste.png" id="1_m4aki"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6a0gk"]
@@ -19,6 +19,7 @@ fill_to = Vector2(0.90869564, 0.104347825)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1427522342]
 script = ExtResource("1_hlgnc")
+cor = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=381019188]
 position = Vector2(0.5, 2)

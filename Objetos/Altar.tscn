@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://df74w1jkbclv2"]
+
+[ext_resource type="Script" uid="uid://ds2247ft633cg" path="res://Scripts/Altar.gd" id="1_jni5i"]
+[ext_resource type="Texture2D" uid="uid://8lk5jleqbpq4" path="res://Sprites/Placeholders/normal_altar.png" id="2_avt50"]
+[ext_resource type="Texture2D" uid="uid://dknehmrk3x7e" path="res://Sprites/Placeholders/normal_ativado_altar.png" id="3_avt50"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thxmx"]
+size = Vector2(33.76164, 71.2626)
+
+[node name="Altar" type="Node2D" unique_id=849689154]
+
+[node name="Altar" type="Area2D" parent="." unique_id=1959147657]
+script = ExtResource("1_jni5i")
+cor_aceita = 3
+textura_desativado = ExtResource("2_avt50")
+textura_ativado = ExtResource("3_avt50")
+
+[node name="Sprite2D" type="Sprite2D" parent="Altar" unique_id=1027689297]
+texture = ExtResource("2_avt50")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Altar" unique_id=891616044]
+position = Vector2(43.49997, -34)
+scale = Vector2(67.38417, 36.484776)
+shape = SubResource("RectangleShape2D_thxmx")

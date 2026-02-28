@@ -1,7 +1,32 @@
 [gd_scene format=3 uid="uid://dlapqp3v6jy3a"]
 
 [ext_resource type="PackedScene" uid="uid://dabjl2g7fc2da" path="res://Objetos/Tocha.tscn" id="1_2bxtm"]
+[ext_resource type="PackedScene" uid="uid://d1cyupflnp5b7" path="res://Objetos/Altar_Vermelho.tscn" id="1_dnb6n"]
+[ext_resource type="PackedScene" uid="uid://df74w1jkbclv2" path="res://Objetos/Altar.tscn" id="2_7j15l"]
+[ext_resource type="PackedScene" uid="uid://bwrnn1c1hv5cm" path="res://Objetos/Player.tscn" id="4_be7ju"]
+[ext_resource type="Texture2D" uid="uid://34eb8j034ct8" path="res://icon.svg" id="5_0pdvv"]
 
 [node name="Hugo" type="Node2D" unique_id=1085151836]
 
+[node name="Altar_Vermelho" parent="." unique_id=44935604 instance=ExtResource("1_dnb6n")]
+position = Vector2(-337, -149)
+scale = Vector2(0.12000054, 0.12000054)
+
+[node name="Altar" parent="." unique_id=849689154 instance=ExtResource("2_7j15l")]
+position = Vector2(9.999999, -221.99998)
+rotation = -3.1392171
+scale = Vector2(-0.059326828, -0.059326828)
+
 [node name="Tocha" parent="." unique_id=1342345491 instance=ExtResource("1_2bxtm")]
+
+[node name="Player" parent="." unique_id=1558179493 instance=ExtResource("4_be7ju")]
+position = Vector2(4, 123)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2052623995]
+
+[node name="Fundo" type="Sprite2D" parent="." unique_id=1515978619]
+modulate = Color(0.07683582, 0.07683582, 0.07683582, 1)
+z_index = -10
+position = Vector2(3, -16)
+scale = Vector2(10.1328125, 5.6796875)
+texture = ExtResource("5_0pdvv")

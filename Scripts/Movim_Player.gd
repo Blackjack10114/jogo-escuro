@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var speed = 500
 var color
 
+var tocha_atual = null
 
 func _physics_process(_delta):
 	var direction = Vector2.ZERO

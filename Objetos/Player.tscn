@@ -6,6 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_asluq"]
 size = Vector2(72, 69)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_sqf2x"]
+polygon = PackedVector2Array(-23, 71, 52, 70, 49, -1, -23, 0)
+
 [node name="Player" type="Node2D" unique_id=1558179493]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=402908485]
@@ -17,3 +20,10 @@ shape = SubResource("RectangleShape2D_asluq")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=2124380342]
 texture = ExtResource("1_vhpeo")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="CharacterBody2D/Sprite2D" unique_id=457543913]
+show_behind_parent = true
+light_mask = 2
+position = Vector2(-15, -21)
+occluder = SubResource("OccluderPolygon2D_sqf2x")
+occluder_light_mask = 2

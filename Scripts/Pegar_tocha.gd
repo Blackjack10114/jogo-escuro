@@ -5,6 +5,7 @@ var player = null
 
 func _ready():
 	connect("body_entered", _on_body_entered)
+	#connect("body_exited", _on_body_exited)
 
 func _on_body_entered(body):
 	if body is CharacterBody2D:
@@ -26,4 +27,4 @@ func pegar_tocha():
 		get_parent().remove_child(self)
 		player.add_child(self)
 		position = Vector2(20, 0)
-		z_index = player.z_index - 1
+		player.tocha = self

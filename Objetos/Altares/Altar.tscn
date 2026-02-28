@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://df74w1jkbclv2"]
 
-[ext_resource type="Script" uid="uid://ds2247ft633cg" path="res://Scripts/Altar.gd" id="1_jni5i"]
+[ext_resource type="Script" uid="uid://ds2247ft633cg" path="res://Scripts/Objetos/Altar.gd" id="1_jni5i"]
 [ext_resource type="Texture2D" uid="uid://8lk5jleqbpq4" path="res://Sprites/Placeholders/normal_altar.png" id="2_avt50"]
 [ext_resource type="Texture2D" uid="uid://dknehmrk3x7e" path="res://Sprites/Placeholders/normal_ativado_altar.png" id="3_avt50"]
 
@@ -8,6 +8,7 @@
 size = Vector2(33.76164, 71.2626)
 
 [node name="Altar" type="Node2D" unique_id=849689154]
+scale = Vector2(0.026648756, 0.026648756)
 
 [node name="Altar" type="Area2D" parent="." unique_id=1959147657]
 script = ExtResource("1_jni5i")

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://gjj642bjsgnk"]
 
-[ext_resource type="Script" uid="uid://cmlxqo14iyrpa" path="res://Scripts/MenuPrincipal.gd" id="1_3k1ur"]
-[ext_resource type="Script" uid="uid://drkxlr6ofrp0e" path="res://Scripts/EfeitoBotao.gd" id="2_bt1tr"]
+[ext_resource type="Script" uid="uid://cmlxqo14iyrpa" path="res://Scripts/Manager/MenuPrincipal.gd" id="1_3k1ur"]
+[ext_resource type="Script" uid="uid://drkxlr6ofrp0e" path="res://Scripts/UI/EfeitoBotao.gd" id="2_bt1tr"]
 [ext_resource type="StyleBox" uid="uid://djwfdsxa43lai" path="res://Efeitos/brilhobotao.tres" id="2_wvohi"]
 
 [sub_resource type="FontFile" id="FontFile_wvohi"]

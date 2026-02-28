@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://0dr448m64kv3"]
+
+[ext_resource type="Script" uid="uid://ds2247ft633cg" path="res://Scripts/Objetos/Altar.gd" id="1_r7h6v"]
+[ext_resource type="Texture2D" uid="uid://sc6k65xrof7d" path="res://Sprites/Placeholders/blue_altar.webp" id="2_r7h6v"]
+[ext_resource type="Texture2D" uid="uid://bfklajntuo53d" path="res://Sprites/Placeholders/blue_ativado_altar.webp" id="3_h2kf5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fx006"]
+size = Vector2(33.76164, 71.2626)
+
+[node name="Altar_Azul" type="Node2D" unique_id=44935604]
+
+[node name="Altar_Azul" type="Area2D" parent="." unique_id=1260660105]
+scale = Vector2(0.039999485, 0.039999485)
+script = ExtResource("1_r7h6v")
+textura_desativado = ExtResource("2_r7h6v")
+textura_ativado = ExtResource("3_h2kf5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Altar_Azul" unique_id=262374476]
+scale = Vector2(8.959999, 8.959999)
+texture = ExtResource("2_r7h6v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Altar_Azul" unique_id=71089921]
+position = Vector2(43.49997, -34)
+scale = Vector2(67.38417, 36.484776)
+shape = SubResource("RectangleShape2D_fx006")

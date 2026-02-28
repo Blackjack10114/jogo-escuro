@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dkkml5yvomqgs"]
+
+[ext_resource type="Script" uid="uid://bcduc2tt6m5h7" path="res://Scripts/Objetos/Tocha.gd" id="1_ivfa8"]
+[ext_resource type="Texture2D" uid="uid://d1vd20180if3g" path="res://Sprites/Placeholders/Tocha_Verde.png" id="2_ivfa8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6a0gk"]
+size = Vector2(67, 66)
+
+[sub_resource type="Gradient" id="Gradient_hlgnc"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6a0gk"]
+gradient = SubResource("Gradient_hlgnc")
+fill = 1
+fill_from = Vector2(0.5043478, 0.4869565)
+fill_to = Vector2(0.90869564, 0.104347825)
+
+[node name="Tocha_Verde" type="Node2D" unique_id=1342345491]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1427522342]
+script = ExtResource("1_ivfa8")
+cor = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=381019188]
+position = Vector2(0.5, 2)
+shape = SubResource("RectangleShape2D_6a0gk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=280868615]
+texture = ExtResource("2_ivfa8")
+
+[node name="PointLight2D" type="PointLight2D" parent="Area2D" unique_id=235973874]
+position = Vector2(0.50000095, 3.8146973e-06)
+scale = Vector2(1.953125, 1.9687501)
+texture = SubResource("GradientTexture2D_6a0gk")
+texture_scale = 3.34

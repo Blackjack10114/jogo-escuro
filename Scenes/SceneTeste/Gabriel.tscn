@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://clnk3xqkcwjes"]
 
-[ext_resource type="PackedScene" uid="uid://dabjl2g7fc2da" path="res://Objetos/Tocha.tscn" id="1_1jv7q"]
+[ext_resource type="PackedScene" uid="uid://dabjl2g7fc2da" path="res://Objetos/Tochas/Tocha.tscn" id="1_1jv7q"]
 [ext_resource type="PackedScene" uid="uid://bwrnn1c1hv5cm" path="res://Objetos/Player.tscn" id="2_pkdgx"]
 [ext_resource type="Texture2D" uid="uid://34eb8j034ct8" path="res://icon.svg" id="3_bvunt"]
 

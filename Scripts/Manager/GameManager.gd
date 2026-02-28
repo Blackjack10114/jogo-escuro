@@ -8,6 +8,10 @@ signal jogoIniciado
 signal jogoPausado
 signal jogoRetomado
 
+# ===== PUZZLES =====
+signal puzzleResolvido(idPuzzle: String)
+var puzzlesResolvidos: Dictionary = {}
+
 func IniciarJogo():
 	estadoAtual = EstadoJogo.Jogando
 	get_tree().paused = false
@@ -31,3 +35,14 @@ func VoltarMenuPrincipal():
 	get_tree().paused = false
 	estadoAtual = EstadoJogo.Menu
 	get_tree().change_scene_to_file("res://Scenes/MenuPrincipal.tscn")
+
+func RegistrarPuzzleResolvido(idPuzzle: String):
+	if puzzlesResolvidos.has(idPuzzle):
+		return
+	
+	puzzlesResolvidos[idPuzzle] = true
+	puzzleResolvido.emit(idPuzzle)
+	print("Puzzle resolvido:", idPuzzle)
+
+func PuzzleJaResolvido(idPuzzle: String) -> bool:
+	return puzzlesResolvidos.has(idPuzzle)

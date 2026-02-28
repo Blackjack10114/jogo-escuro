@@ -95,3 +95,5 @@ func remover_tocha():
 	
 	ativado = false
 	sprite.texture = textura_desativado
+	
+	emit_signal("altar_ativado")

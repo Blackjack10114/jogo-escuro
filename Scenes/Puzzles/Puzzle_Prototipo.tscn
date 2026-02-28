@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://ds4ll71gf0lh7"]
+
+[ext_resource type="Script" uid="uid://c0lv0o5t10nvm" path="res://Scripts/Manager/PuzzleController.gd" id="1_swtkx"]
+[ext_resource type="PackedScene" uid="uid://df74w1jkbclv2" path="res://Objetos/Altares/Altar.tscn" id="2_86sgx"]
+[ext_resource type="PackedScene" uid="uid://0dr448m64kv3" path="res://Objetos/Altares/Altar_Azul.tscn" id="3_x0l3w"]
+[ext_resource type="PackedScene" uid="uid://7agvmjcou4ox" path="res://Objetos/Altares/Altar_Verde.tscn" id="4_ysftc"]
+[ext_resource type="PackedScene" uid="uid://d1cyupflnp5b7" path="res://Objetos/Altares/Altar_Vermelho.tscn" id="5_3ur8i"]
+[ext_resource type="Texture2D" uid="uid://34eb8j034ct8" path="res://icon.svg" id="6_wqhif"]
+[ext_resource type="PackedScene" uid="uid://dabjl2g7fc2da" path="res://Objetos/Tochas/Tocha.tscn" id="7_3rwy8"]
+[ext_resource type="PackedScene" uid="uid://b6y5u8ix42tq6" path="res://Objetos/Tochas/Tocha_Azul.tscn" id="8_paejp"]
+[ext_resource type="PackedScene" uid="uid://dkkml5yvomqgs" path="res://Objetos/Tochas/Tocha_Verde.tscn" id="9_ukhph"]
+[ext_resource type="PackedScene" uid="uid://d4erg6m27bdly" path="res://Objetos/Tochas/Tocha_Vermelho.tscn" id="10_g2i0s"]
+[ext_resource type="PackedScene" uid="uid://be22tfc7s5y2g" path="res://Objetos/Porta/Porta.tscn" id="12_gtkgh"]
+
+[node name="PuzzlePrototipo" type="Node2D" unique_id=211625197]
+
+[node name="PuzzleController" type="Node" parent="." unique_id=25800619 node_paths=PackedStringArray("porta", "altares")]
+script = ExtResource("1_swtkx")
+porta = NodePath("../Porta")
+altares = [NodePath("../Altar"), NodePath("../Altar_Azul"), NodePath("../Altar_Verde"), NodePath("../Altar_Vermelho")]
+
+[node name="Altar" parent="." unique_id=849689154 instance=ExtResource("2_86sgx")]
+position = Vector2(603, 149)
+
+[node name="Altar_Azul" parent="." unique_id=44935604 instance=ExtResource("3_x0l3w")]
+position = Vector2(342, 153)
+
+[node name="Altar_Verde" parent="." unique_id=1209890812 instance=ExtResource("4_ysftc")]
+position = Vector2(738, 149)
+
+[node name="Fundo" type="Sprite2D" parent="." unique_id=984258722]
+visible = false
+modulate = Color(0.07683582, 0.07683582, 0.07683582, 1)
+z_index = -10
+position = Vector2(628, 340)
+scale = Vector2(10.1328125, 5.6796875)
+texture = ExtResource("6_wqhif")
+
+[node name="Tocha" parent="." unique_id=1342345491 instance=ExtResource("7_3rwy8")]
+position = Vector2(601, 380)
+
+[node name="Tocha_Azul" parent="." unique_id=1271573328 instance=ExtResource("8_paejp")]
+position = Vector2(474, 384)
+
+[node name="Tocha_Verde" parent="." unique_id=260807189 instance=ExtResource("9_ukhph")]
+position = Vector2(311, 380)
+
+[node name="Tocha_Vermelho" parent="." unique_id=1220672857 instance=ExtResource("10_g2i0s")]
+position = Vector2(130, 382)
+
+[node name="Altar_Vermelho" parent="." unique_id=1228228206 instance=ExtResource("5_3ur8i")]
+position = Vector2(827, 319)
+
+[node name="Porta" parent="." unique_id=1098581790 instance=ExtResource("12_gtkgh")]
+position = Vector2(1102, 324)

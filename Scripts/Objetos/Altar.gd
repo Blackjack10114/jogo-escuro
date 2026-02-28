@@ -1,3 +1,4 @@
+class_name Altar
 extends Area2D
 
 @export var cor_aceita: Cor.Tipo
@@ -9,6 +10,7 @@ extends Area2D
 var player_perto = null
 var tocha_no_altar = null
 var ativado = false
+var bloqueado := false
 
 signal altar_ativado
 
@@ -30,6 +32,9 @@ func _on_body_exited(body):
 
 
 func _process(_delta):
+	if bloqueado:
+		return
+		
 	if player_perto and Input.is_action_just_pressed("ui_accept"):
 		if ativado:
 			remover_tocha()

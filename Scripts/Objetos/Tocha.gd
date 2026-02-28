@@ -8,8 +8,11 @@ var carregada = false
 var posicao_original: Vector2
 var altar_atual = null
 
+var pai_original = null
+
 func _ready():
 	posicao_original = global_position
+	pai_original = get_parent()
 	connect("body_entered", _on_body_entered)
 	connect("body_exited", _on_body_exited)
 
@@ -46,8 +49,10 @@ func voltar_para_chao():
 	if carregada:
 		var p = get_parent()
 		p.remove_child(self)
-		get_tree().current_scene.add_child(self)
+		
+		pai_original.add_child(self)   # volta para onde estava
 		global_position = posicao_original
+		
 		carregada = false
 		p.tocha_atual = null
 		altar_atual = null

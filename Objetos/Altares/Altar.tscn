@@ -11,6 +11,7 @@ size = Vector2(33.76164, 71.2626)
 scale = Vector2(0.026648756, 0.026648756)
 
 [node name="Altar" type="Area2D" parent="." unique_id=1959147657]
+scale = Vector2(0.99999964, 0.99999964)
 script = ExtResource("1_jni5i")
 cor_aceita = 3
 textura_desativado = ExtResource("2_avt50")

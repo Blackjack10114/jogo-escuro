@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://be22tfc7s5y2g"]
+
+[ext_resource type="Script" uid="uid://do2484wy3h0po" path="res://Scripts/Objetos/Porta.gd" id="1_7p4ve"]
+[ext_resource type="Texture2D" uid="uid://bk3h4ko3505hb" path="res://Sprites/Placeholders/platformPack_tile052.png" id="2_e0ypx"]
+[ext_resource type="Texture2D" uid="uid://cesnuuloyxspn" path="res://Sprites/Placeholders/platformPack_tile048.png" id="3_f40o3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhfvw"]
+
+[node name="Porta" type="StaticBody2D" unique_id=1098581790]
+script = ExtResource("1_7p4ve")
+sprite_fechada = ExtResource("2_e0ypx")
+sprite_aberta = ExtResource("3_f40o3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1365084053]
+scale = Vector2(8.06724, 8.06724)
+shape = SubResource("RectangleShape2D_rhfvw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1813673539]
+scale = Vector2(2.078396, 2.078396)
+texture = ExtResource("2_e0ypx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=669711041]

@@ -1,18 +1,10 @@
 [gd_scene format=3 uid="uid://dlapqp3v6jy3a"]
 
-[ext_resource type="PackedScene" uid="uid://dabjl2g7fc2da" path="res://Objetos/Tochas/Tocha.tscn" id="1_2bxtm"]
-[ext_resource type="PackedScene" uid="uid://d1cyupflnp5b7" path="res://Objetos/Altares/Altar_Vermelho.tscn" id="1_dnb6n"]
-[ext_resource type="PackedScene" uid="uid://df74w1jkbclv2" path="res://Objetos/Altares/Altar.tscn" id="2_7j15l"]
 [ext_resource type="PackedScene" uid="uid://bwrnn1c1hv5cm" path="res://Objetos/Player.tscn" id="4_be7ju"]
 [ext_resource type="Texture2D" uid="uid://34eb8j034ct8" path="res://icon.svg" id="5_0pdvv"]
+[ext_resource type="PackedScene" uid="uid://ds4ll71gf0lh7" path="res://Scenes/Puzzles/Puzzle_Prototipo.tscn" id="6_7j15l"]
 
 [node name="Hugo" type="Node2D" unique_id=1085151836]
-
-[node name="Altar_Vermelho" parent="." unique_id=44935604 instance=ExtResource("1_dnb6n")]
-position = Vector2(-337, -149)
-scale = Vector2(0.12000054, 0.12000054)
-
-[node name="Tocha" parent="." unique_id=1342345491 instance=ExtResource("1_2bxtm")]
 
 [node name="Player" parent="." unique_id=1558179493 instance=ExtResource("4_be7ju")]
 position = Vector2(4, 123)
@@ -26,8 +18,5 @@ position = Vector2(3, -16)
 scale = Vector2(10.1328125, 5.6796875)
 texture = ExtResource("5_0pdvv")
 
-[node name="Altar" parent="." unique_id=849689154 instance=ExtResource("2_7j15l")]
-position = Vector2(-285, 161)
-
-[node name="Altar_Vermelho2" parent="." unique_id=1581285499 instance=ExtResource("1_dnb6n")]
-position = Vector2(-165, -33)
+[node name="PuzzlePrototipo" parent="." unique_id=211625197 instance=ExtResource("6_7j15l")]
+position = Vector2(-613, -405)

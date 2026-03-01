@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cic7f0lhd4lbe"
-path="res://.godot/imported/Totem Verde s fogo.png-23365b1f21be16f7e5679fa8dd422065.ctex"
+path="res://.godot/imported/Totem Verde s fogo.png-8afa006e511c09e87fc5289043ec8123.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Objetos/Altares/Totem Verde s fogo.png"
-dest_files=["res://.godot/imported/Totem Verde s fogo.png-23365b1f21be16f7e5679fa8dd422065.ctex"]
+source_file="res://Sprites/Objetos/Altares/Verde/Totem Verde s fogo.png"
+dest_files=["res://.godot/imported/Totem Verde s fogo.png-8afa006e511c09e87fc5289043ec8123.ctex"]
 
 [params]
 

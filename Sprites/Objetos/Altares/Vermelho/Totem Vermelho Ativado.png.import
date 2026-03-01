@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bd54mdw8pipgp"
-path="res://.godot/imported/Totem Vermelho.png-31ebe7c9fa89e9dfd1cfbbff630f1481.ctex"
+path="res://.godot/imported/Totem Vermelho Ativado.png-77e3278a5d43ca6a057ca0fcebdedcda.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objetos/Altares/Totem Vermelho.png"
-dest_files=["res://.godot/imported/Totem Vermelho.png-31ebe7c9fa89e9dfd1cfbbff630f1481.ctex"]
+source_file="res://Sprites/Objetos/Altares/Vermelho/Totem Vermelho Ativado.png"
+dest_files=["res://.godot/imported/Totem Vermelho Ativado.png-77e3278a5d43ca6a057ca0fcebdedcda.ctex"]
 
 [params]
 

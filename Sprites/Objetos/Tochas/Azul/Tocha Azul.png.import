@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://7pd860ir0fct"
-path="res://.godot/imported/Tocha Azulç.png-62db0c4f8d393149f8d3a87341316de1.ctex"
+path="res://.godot/imported/Tocha Azul.png-4c224dfd81cc548b39951d29d3a60f88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Objetos/Tochas/Tocha Azulç.png"
-dest_files=["res://.godot/imported/Tocha Azulç.png-62db0c4f8d393149f8d3a87341316de1.ctex"]
+source_file="res://Sprites/Objetos/Tochas/Azul/Tocha Azul.png"
+dest_files=["res://.godot/imported/Tocha Azul.png-4c224dfd81cc548b39951d29d3a60f88.ctex"]
 
 [params]
 

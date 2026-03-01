@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b847d3nr5iqry"
-path="res://.godot/imported/Tocha Vemelha.png-7d36089f671af3d170d3042a59ccc490.ctex"
+path="res://.godot/imported/Tocha Vemelha.png-f7e24b3d7326489abda0a43aa31aaf88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Objetos/Tochas/Tocha Vemelha.png"
-dest_files=["res://.godot/imported/Tocha Vemelha.png-7d36089f671af3d170d3042a59ccc490.ctex"]
+source_file="res://Sprites/Objetos/Tochas/Vermelho/Tocha Vemelha.png"
+dest_files=["res://.godot/imported/Tocha Vemelha.png-f7e24b3d7326489abda0a43aa31aaf88.ctex"]
 
 [params]
 

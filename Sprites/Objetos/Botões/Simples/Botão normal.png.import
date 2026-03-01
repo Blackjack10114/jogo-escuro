@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chq8iawhckkoy"
-path="res://.godot/imported/Botão normal.png-73c615a8278e1ed6c6286f0ef1a9af73.ctex"
+path="res://.godot/imported/Botão normal.png-431913be531582d5197556884e43e605.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Objetos/Botões/Botão normal.png"
-dest_files=["res://.godot/imported/Botão normal.png-73c615a8278e1ed6c6286f0ef1a9af73.ctex"]
+source_file="res://Sprites/Objetos/Botões/Simples/Botão normal.png"
+dest_files=["res://.godot/imported/Botão normal.png-431913be531582d5197556884e43e605.ctex"]
 
 [params]
 

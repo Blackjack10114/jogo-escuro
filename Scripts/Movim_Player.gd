@@ -18,5 +18,10 @@ func _empurrar_caixas(direction: Vector2) -> void:
 	for i in range(get_slide_collision_count()):
 		var col := get_slide_collision(i)
 		var obj := col.get_collider()
+
 		if obj is CaixaSimples:
-			(obj as CaixaSimples).empurrar(direction)
+			var normal := col.get_normal()
+			
+			# Só empurra se estiver pressionando contra a face da caixa
+			if direction.dot(-normal) > 0.7:
+				(obj as CaixaSimples).empurrar(direction)

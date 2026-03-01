@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bgdm7ro8v7buh"]
+
+[ext_resource type="Script" uid="uid://x1djvk2s0byj" path="res://Scripts/Objetos/AutoCaixa.gd" id="1_s26jw"]
+[ext_resource type="Texture2D" uid="uid://bxxx34fio6dju" path="res://Sprites/Placeholders/AutoCaixa.png" id="2_gotxj"]
+
+[sub_resource type="Curve2D" id="Curve2D_s26jw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 101, 375, -522.2563, 33.1282, 522.2563, -33.1282, 1000, 197)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_paejp"]
+
+[node name="AutoCaixa" type="Node2D" unique_id=1685750387]
+script = ExtResource("1_s26jw")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1233121987]
+curve = SubResource("Curve2D_s26jw")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1577084403]
+
+[node name="Caixa" type="Node2D" parent="Path2D/PathFollow2D" unique_id=154624311]
+position = Vector2(1, 1)
+scale = Vector2(0.79999757, 0.79999757)
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D/Caixa" unique_id=1392466722]
+texture = ExtResource("2_gotxj")
+
+[node name="Impacto" type="Area2D" parent="Path2D/PathFollow2D/Caixa" unique_id=2112958896]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Caixa/Impacto" unique_id=50372484]
+scale = Vector2(2.8500118, 2.8500118)
+shape = SubResource("RectangleShape2D_paejp")
+
+[node name="ColisaoSolida" type="StaticBody2D" parent="Path2D/PathFollow2D/Caixa" unique_id=1693194192]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Caixa/ColisaoSolida" unique_id=808842251]
+scale = Vector2(4.200016, 4.200016)
+shape = SubResource("RectangleShape2D_paejp")

@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://dabjl2g7fc2da" path="res://Objetos/Tochas/Tocha.tscn" id="1_1jv7q"]
 [ext_resource type="PackedScene" uid="uid://bwrnn1c1hv5cm" path="res://Objetos/Player.tscn" id="2_pkdgx"]
 [ext_resource type="Texture2D" uid="uid://34eb8j034ct8" path="res://icon.svg" id="3_bvunt"]
-[ext_resource type="PackedScene" uid="uid://d1cyupflnp5b7" path="res://Objetos/Altar_Vermelho.tscn" id="4_d08m2"]
 
 [node name="Gabriel" type="Node2D" unique_id=1855230435]
 
@@ -12,21 +11,11 @@
 [node name="Camera2D" type="Camera2D" parent="." unique_id=478850467]
 
 [node name="Player" parent="." unique_id=1558179493 instance=ExtResource("2_pkdgx")]
-z_index = 1
-position = Vector2(-24, 70)
+position = Vector2(3, 61)
 
 [node name="Fundo" type="Sprite2D" parent="." unique_id=1073828355]
-modulate = Color(0.19793737, 0.19793719, 0.19793728, 1)
-light_mask = 3
+modulate = Color(0.07683582, 0.07683582, 0.07683582, 1)
 z_index = -10
 position = Vector2(3, -16)
 scale = Vector2(10.1328125, 5.6796875)
-texture = ExtResource("3_bvunt")
-
-[node name="Altar" parent="." unique_id=1228197223 instance=ExtResource("4_d08m2")]
-position = Vector2(2186, -808)
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=39029602]
-light_mask = 3
-position = Vector2(169, -72)
 texture = ExtResource("3_bvunt")

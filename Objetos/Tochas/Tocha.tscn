@@ -25,15 +25,11 @@ cor = 3
 position = Vector2(0.5, 2)
 shape = SubResource("RectangleShape2D_6a0gk")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=280868615]
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=280868615]
 texture = ExtResource("1_m4aki")
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=235973874]
+[node name="PointLight2D" type="PointLight2D" parent="Area2D" unique_id=235973874]
 position = Vector2(0.50000095, 3.8146973e-06)
 scale = Vector2(1.953125, 1.9687501)
-energy = 3.39
-range_item_cull_mask = 3
-shadow_enabled = true
-shadow_item_cull_mask = 2
 texture = SubResource("GradientTexture2D_6a0gk")
-texture_scale = 6.61
+texture_scale = 3.34

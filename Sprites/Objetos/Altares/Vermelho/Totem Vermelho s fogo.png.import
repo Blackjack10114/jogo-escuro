@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4c4346egtqnd"
-path="res://.godot/imported/green_altar.png-302f12cc5838facf7da3b4df8d5b3367.ctex"
+uid="uid://be8a0l3xp71yj"
+path="res://.godot/imported/Totem Vermelho s fogo.png-997bcb8dd800d836196861480102b3ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Objetos/Botões/green_altar.png"
-dest_files=["res://.godot/imported/green_altar.png-302f12cc5838facf7da3b4df8d5b3367.ctex"]
+source_file="res://Sprites/Objetos/Altares/Totem Vermelho s fogo.png"
+dest_files=["res://.godot/imported/Totem Vermelho s fogo.png-997bcb8dd800d836196861480102b3ec.ctex"]
 
 [params]
 

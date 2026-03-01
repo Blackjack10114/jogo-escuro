@@ -14,13 +14,22 @@
 [ext_resource type="PackedScene" uid="uid://dbln6n6ppojol" path="res://Objetos/Caixa/Caixa_Simples.tscn" id="12_swtkx"]
 [ext_resource type="PackedScene" uid="uid://yf82ve22t1dd" path="res://Objetos/Botoes/Botao_Long_Trigger.tscn" id="13_x0l3w"]
 [ext_resource type="PackedScene" uid="uid://dc22towx7i5m6" path="res://Objetos/Botoes/Botao_Simples.tscn" id="14_ysftc"]
+[ext_resource type="Script" uid="uid://x1djvk2s0byj" path="res://Scripts/Objetos/AutoCaixa.gd" id="15_3ur8i"]
+[ext_resource type="Texture2D" uid="uid://bxxx34fio6dju" path="res://Sprites/Placeholders/AutoCaixa.png" id="16_wqhif"]
+
+[sub_resource type="Curve2D" id="Curve2D_3ur8i"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -148.75043, 6.250061, 0, 0, 0, 0, 356.25116, -66.25018, 0, 0, 0, 0, 1.25, 6.250061)
+}
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_paejp"]
 
 [node name="PuzzlePrototipo" type="Node2D" unique_id=211625197]
 
-[node name="PuzzleController" type="Node" parent="." unique_id=25800619 node_paths=PackedStringArray("porta", "altares")]
+[node name="PuzzleController" type="Node" parent="." unique_id=25800619 node_paths=PackedStringArray("porta")]
 script = ExtResource("1_swtkx")
 porta = NodePath("../Porta")
-altares = [NodePath("../Altar"), NodePath("../Altar_Azul"), NodePath("../Altar_Verde"), NodePath("../Altar_Vermelho")]
 
 [node name="Altar" parent="." unique_id=849689154 instance=ExtResource("2_86sgx")]
 position = Vector2(603, 149)
@@ -67,3 +76,31 @@ position = Vector2(1059, 520.00006)
 
 [node name="BotaoSimples" parent="." unique_id=342565989 instance=ExtResource("14_ysftc")]
 position = Vector2(897, 627)
+
+[node name="AutoCaixa" type="Path2D" parent="." unique_id=1460134546]
+position = Vector2(790, 563)
+scale = Vector2(0.79999757, 0.79999757)
+curve = SubResource("Curve2D_3ur8i")
+script = ExtResource("15_3ur8i")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="AutoCaixa" unique_id=403191726]
+position = Vector2(-148.75043, 6.250061)
+rotates = false
+loop = false
+
+[node name="Caixa" type="Node2D" parent="AutoCaixa/PathFollow2D" unique_id=1973068911]
+
+[node name="Sprite2D" type="Sprite2D" parent="AutoCaixa/PathFollow2D/Caixa" unique_id=240283193]
+texture = ExtResource("16_wqhif")
+
+[node name="Impacto" type="Area2D" parent="AutoCaixa/PathFollow2D/Caixa" unique_id=354078756]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AutoCaixa/PathFollow2D/Caixa/Impacto" unique_id=38328198]
+scale = Vector2(2.8500118, 2.8500118)
+shape = SubResource("RectangleShape2D_paejp")
+
+[node name="ColisaoSolida" type="StaticBody2D" parent="AutoCaixa/PathFollow2D/Caixa" unique_id=1180034145]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AutoCaixa/PathFollow2D/Caixa/ColisaoSolida" unique_id=1917840407]
+scale = Vector2(4.200016, 4.200016)
+shape = SubResource("RectangleShape2D_paejp")

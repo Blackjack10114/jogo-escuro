@@ -13,8 +13,8 @@ var pai_original = null
 func _ready():
 	posicao_original = global_position
 	pai_original = get_parent()
-	connect("body_entered", _on_body_entered)
-	connect("body_exited", _on_body_exited)
+	body_entered.connect(_on_body_entered)
+	body_exited.connect(_on_body_exited)
 
 func _on_body_entered(body):
 	if body is CharacterBody2D and not carregada:
@@ -29,6 +29,10 @@ func _on_body_exited(body):
 func _process(_delta):
 	if pode_pegar and Input.is_action_just_pressed("ui_accept"):
 		pegar_tocha()
+
+	# SOLTAR TOCHA
+	if carregada and Input.is_action_just_pressed("ui_cancel"):
+		voltar_para_chao()
 
 func pegar_tocha():
 	if not player:
@@ -49,10 +53,11 @@ func voltar_para_chao():
 	if carregada:
 		var p = get_parent()
 		p.remove_child(self)
-		
-		pai_original.add_child(self)   # volta para onde estava
-		global_position = posicao_original
-		
+
+		pai_original.add_child(self)
+
+		global_position = p.global_position + Vector2(20, 0)
+
 		carregada = false
 		p.tocha_atual = null
 		altar_atual = null

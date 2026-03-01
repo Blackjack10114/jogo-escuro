@@ -1,15 +1,10 @@
 [gd_scene format=3 uid="uid://dlapqp3v6jy3a"]
 
-[ext_resource type="PackedScene" uid="uid://bwrnn1c1hv5cm" path="res://Objetos/Player.tscn" id="4_be7ju"]
+[ext_resource type="PackedScene" uid="uid://bnochl5h3vfiq" path="res://Objetos/Player.tscn" id="4_be7ju"]
 [ext_resource type="Texture2D" uid="uid://34eb8j034ct8" path="res://icon.svg" id="5_0pdvv"]
 [ext_resource type="PackedScene" uid="uid://ds4ll71gf0lh7" path="res://Scenes/Puzzles/Puzzle_Prototipo.tscn" id="6_7j15l"]
 
 [node name="Hugo" type="Node2D" unique_id=1085151836]
-
-[node name="Player" parent="." unique_id=1558179493 instance=ExtResource("4_be7ju")]
-position = Vector2(4, 123)
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2052623995]
 
 [node name="Fundo" type="Sprite2D" parent="." unique_id=1515978619]
 modulate = Color(0.07683582, 0.07683582, 0.07683582, 1)
@@ -20,3 +15,11 @@ texture = ExtResource("5_0pdvv")
 
 [node name="PuzzlePrototipo" parent="." unique_id=211625197 instance=ExtResource("6_7j15l")]
 position = Vector2(-613, -405)
+
+[node name="Player" parent="." unique_id=2102932396 instance=ExtResource("4_be7ju")]
+position = Vector2(-109, 103)
+speed = 350.0
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=2052623995]
+position = Vector2(109, -103)
+position_smoothing_enabled = true

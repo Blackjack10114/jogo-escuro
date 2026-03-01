@@ -1,19 +1,18 @@
-[gd_scene format=3 uid="uid://bwrnn1c1hv5cm"]
+[gd_scene format=3 uid="uid://bnochl5h3vfiq"]
 
-[ext_resource type="Texture2D" uid="uid://bhr62lfx5ciqv" path="res://Sprites/Placeholders/Player_temp.png" id="1_vhpeo"]
-[ext_resource type="Script" uid="uid://qaat3l4u1de0" path="res://Scripts/Movim_Player.gd" id="2_sqf2x"]
+[ext_resource type="Script" uid="uid://qaat3l4u1de0" path="res://Scripts/Movim_Player.gd" id="1_38l55"]
+[ext_resource type="Texture2D" uid="uid://bhr62lfx5ciqv" path="res://Sprites/Placeholders/Player_temp.png" id="2_1boxf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_asluq"]
 size = Vector2(72, 69)
 
-[node name="Player" type="Node2D" unique_id=1558179493]
+[node name="Player" type="CharacterBody2D" unique_id=2102932396]
+script = ExtResource("1_38l55")
+speed = 350.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=402908485]
-script = ExtResource("2_sqf2x")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1323632431]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1240138414]
 position = Vector2(-1, 15.5)
 shape = SubResource("RectangleShape2D_asluq")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=2124380342]
-texture = ExtResource("1_vhpeo")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=635550908]
+texture = ExtResource("2_1boxf")

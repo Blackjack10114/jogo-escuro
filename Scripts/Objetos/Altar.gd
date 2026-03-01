@@ -1,23 +1,20 @@
 class_name Altar
-extends Area2D
+extends Ativavel
 
 @export var cor_aceita: Cor.Tipo
 @export var textura_desativado: Texture2D
 @export var textura_ativado: Texture2D
 
-@onready var sprite = $Sprite2D
+@onready var sprite: Sprite2D = $Sprite2D
 
-var player_perto = null
+var player_perto: CharacterBody2D = null
 var tocha_no_altar = null
-var ativado = false
 var bloqueado := false
-
-signal altar_ativado
 
 
 func _ready():
-	connect("body_entered", _on_body_entered)
-	connect("body_exited", _on_body_exited)
+	body_entered.connect(_on_body_entered)
+	body_exited.connect(_on_body_exited)
 	sprite.texture = textura_desativado
 
 
@@ -36,7 +33,7 @@ func _process(_delta):
 		return
 		
 	if player_perto and Input.is_action_just_pressed("ui_accept"):
-		if ativado:
+		if ativo:
 			remover_tocha()
 		else:
 			colocar_tocha()
@@ -55,28 +52,25 @@ func colocar_tocha():
 		
 	var tocha = player_perto.tocha_atual
 	
-	if aceita_cor(tocha.cor):
-		
-		player_perto.remove_child(tocha)
-		add_child(tocha)
-		tocha.position = Vector2.ZERO
-		
-		tocha.carregada = false
-		player_perto.tocha_atual = null
-		
-		tocha_no_altar = tocha
-		tocha.altar_atual = self   # salva referência
-		
-		ativado = true
-		sprite.texture = textura_ativado
-		
-		emit_signal("altar_ativado")
-	else:
+	if not aceita_cor(tocha.cor):
 		tocha.voltar_para_chao()
+		return
+	
+	player_perto.remove_child(tocha)
+	add_child(tocha)
+	tocha.position = Vector2.ZERO
+	
+	tocha.carregada = false
+	player_perto.tocha_atual = null
+	
+	tocha_no_altar = tocha
+	tocha.altar_atual = self
+	
+	ativar()  
 
 
 func remover_tocha():
-	if not ativado:
+	if not ativo:
 		return
 		
 	if not player_perto:
@@ -98,7 +92,11 @@ func remover_tocha():
 	tocha_no_altar.altar_atual = null
 	tocha_no_altar = null
 	
-	ativado = false
-	sprite.texture = textura_desativado
-	
-	emit_signal("altar_ativado")
+	desativar() 
+
+func _ao_ativar():
+	sprite.texture = textura_ativado
+
+
+func _ao_desativar():
+	sprite.texture = textura_desativado 

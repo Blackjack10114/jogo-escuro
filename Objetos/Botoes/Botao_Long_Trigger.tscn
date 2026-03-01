@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://yf82ve22t1dd"]
+
+[ext_resource type="Script" uid="uid://cmwi4x2yi36pm" path="res://Scripts/Objetos/BotaoLongTrigger.gd" id="1_o83wo"]
+[ext_resource type="Texture2D" uid="uid://2c83m5k80uan" path="res://Sprites/Placeholders/button_round_depth_gradient.svg" id="2_ywbhv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6b6ug"]
+
+[node name="BotaoLongTrigger" type="Area2D" unique_id=673730092]
+scale = Vector2(0.6042571, 0.6042571)
+script = ExtResource("1_o83wo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=278411313]
+texture = ExtResource("2_ywbhv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1889205878]
+scale = Vector2(4.1774597, 4.1774597)
+shape = SubResource("CircleShape2D_6b6ug")

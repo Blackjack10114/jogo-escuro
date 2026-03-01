@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://dkkml5yvomqgs" path="res://Objetos/Tochas/Tocha_Verde.tscn" id="9_ukhph"]
 [ext_resource type="PackedScene" uid="uid://d4erg6m27bdly" path="res://Objetos/Tochas/Tocha_Vermelho.tscn" id="10_g2i0s"]
 [ext_resource type="PackedScene" uid="uid://be22tfc7s5y2g" path="res://Objetos/Porta/Porta.tscn" id="12_gtkgh"]
+[ext_resource type="PackedScene" uid="uid://dbln6n6ppojol" path="res://Objetos/Caixa/Caixa_Simples.tscn" id="12_swtkx"]
+[ext_resource type="PackedScene" uid="uid://yf82ve22t1dd" path="res://Objetos/Botoes/Botao_Long_Trigger.tscn" id="13_x0l3w"]
+[ext_resource type="PackedScene" uid="uid://dc22towx7i5m6" path="res://Objetos/Botoes/Botao_Simples.tscn" id="14_ysftc"]
 
 [node name="PuzzlePrototipo" type="Node2D" unique_id=211625197]
 
@@ -53,3 +56,14 @@ position = Vector2(827, 319)
 
 [node name="Porta" parent="." unique_id=1098581790 instance=ExtResource("12_gtkgh")]
 position = Vector2(1102, 324)
+sprite_fechada = null
+sprite_aberta = null
+
+[node name="Caixa_Simples" parent="." unique_id=575956319 instance=ExtResource("12_swtkx")]
+position = Vector2(692, 562)
+
+[node name="BotaoLongTrigger" parent="." unique_id=673730092 instance=ExtResource("13_x0l3w")]
+position = Vector2(1059, 520.00006)
+
+[node name="BotaoSimples" parent="." unique_id=342565989 instance=ExtResource("14_ysftc")]
+position = Vector2(897, 627)

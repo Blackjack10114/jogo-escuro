@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dc22towx7i5m6"]
+
+[ext_resource type="Script" uid="uid://bxgj242nqdt7j" path="res://Scripts/Objetos/BotaoSimples.gd" id="1_02220"]
+[ext_resource type="Texture2D" uid="uid://dhk5u75dqjjqp" path="res://Sprites/Placeholders/button_round_depth_line.svg" id="2_32eym"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6b6ug"]
+
+[node name="BotaoSimples" type="Area2D" unique_id=342565989]
+scale = Vector2(0.6042571, 0.6042571)
+script = ExtResource("1_02220")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1131199379]
+texture = ExtResource("2_32eym")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=152618650]
+scale = Vector2(4.1774597, 4.1774597)
+shape = SubResource("CircleShape2D_6b6ug")

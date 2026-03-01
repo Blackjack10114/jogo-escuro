@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dbln6n6ppojol"]
+
+[ext_resource type="Script" uid="uid://b5uf1yfrbw0rb" path="res://Scripts/Objetos/CaixaSimples.gd" id="1_qpymq"]
+[ext_resource type="Texture2D" uid="uid://b3a5bc62g15rp" path="res://Sprites/Placeholders/caixa.png" id="2_vlaiu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rq0nm"]
+
+[node name="Caixa_Simples" type="CharacterBody2D" unique_id=575956319]
+scale = Vector2(0.7600006, 0.7600006)
+script = ExtResource("1_qpymq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1200792070]
+texture = ExtResource("2_vlaiu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1983489801]
+scale = Vector2(4.210524, 4.210524)
+shape = SubResource("RectangleShape2D_rq0nm")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=868978226]

@@ -53,7 +53,6 @@ func colocar_tocha():
 	var tocha = player_perto.tocha_atual
 	
 	if not aceita_cor(tocha.cor):
-		tocha.voltar_para_chao()
 		return
 	
 	player_perto.remove_child(tocha)

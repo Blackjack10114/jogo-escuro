@@ -15,8 +15,7 @@ func _ready():
 	add_theme_constant_override("shadow_outline_size", 0)
 	add_theme_color_override("font_shadow_color", Color(0.6, 0.85, 1.0, 0.25))
 
-	mouse_entered.connect(_on_hover_on)
-	mouse_exited.connect(_on_hover_off)
+
 	focus_entered.connect(_on_hover_on)
 	focus_exited.connect(_on_hover_off)
 

@@ -26,6 +26,7 @@ position = Vector2(0.5, 2)
 shape = SubResource("RectangleShape2D_6a0gk")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=280868615]
+self_modulate = Color(0.40784314, 1, 0, 1)
 texture = ExtResource("2_ivfa8")
 
 [node name="PointLight2D" type="PointLight2D" parent="Area2D" unique_id=235973874]

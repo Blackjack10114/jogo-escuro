@@ -4,6 +4,8 @@ extends CharacterBody2D
 
 var forca_externa: Vector2 = Vector2.ZERO
 var esta_na_sombra: bool = false
+var color = null
+var tocha_atual = null
 
 func empurrar(direcao: Vector2, forca: float):
 	forca_externa += direcao.normalized() * forca

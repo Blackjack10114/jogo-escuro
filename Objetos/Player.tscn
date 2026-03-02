@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bnochl5h3vfiq"]
+[gd_scene format=3 uid="uid://bwrnn1c1hv5cm"]
 
 [ext_resource type="Script" uid="uid://qaat3l4u1de0" path="res://Scripts/Movim_Player.gd" id="1_38l55"]
 [ext_resource type="Texture2D" uid="uid://bhr62lfx5ciqv" path="res://Sprites/Placeholders/Player_temp.png" id="2_1boxf"]

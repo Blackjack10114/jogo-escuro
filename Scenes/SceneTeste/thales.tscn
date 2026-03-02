@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dabjl2g7fc2da" path="res://Objetos/Tochas/Tocha.tscn" id="5_tiub2"]
 [ext_resource type="PackedScene" uid="uid://bwrnn1c1hv5cm" path="res://Objetos/Player.tscn" id="6_hex5y"]
 [ext_resource type="Texture2D" uid="uid://fojr1hg4upgd" path="res://misc/spriteframes/light.tres" id="7_t1thb"]
+[ext_resource type="PackedScene" uid="uid://m0p30furg5vu" path="res://Objetos/Area_Sombra.tscn" id="8_tiub2"]
 
 [node name="Thales" type="Node2D" unique_id=1453056908]
 
@@ -68,3 +69,7 @@ texture_scale = 9.88
 position = Vector2(635, 114)
 texture = ExtResource("7_t1thb")
 texture_scale = 9.88
+
+[node name="Area2D" parent="." unique_id=1726886834 instance=ExtResource("8_tiub2")]
+position = Vector2(605, 641)
+forca_empurrao = 10.0

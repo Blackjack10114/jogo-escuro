@@ -1,10 +1,11 @@
 extends Node
+class_name PuzzleController
 
 @export var porta: Porta
 @export var ativadores: Array[Node] = []
 @export var idPuzzle := "puzzle_"
 
-var ativaveis: Array[Ativavel] = []
+var ativaveis: Array[Ativador] = []
 var resolvido := false
 
 func _ready():
@@ -27,8 +28,8 @@ func _ready():
 	else:
 		_verificar_puzzle(false)
 
-func _encontrar_ativavel(node: Node) -> Ativavel:
-	if node is Ativavel:
+func _encontrar_ativavel(node: Node) -> Ativador:
+	if node is Ativador:
 		return node
 
 	for filho in node.get_children():

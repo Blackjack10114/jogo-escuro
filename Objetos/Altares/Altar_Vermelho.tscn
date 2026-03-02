@@ -1,26 +1,89 @@
 [gd_scene format=3 uid="uid://d1cyupflnp5b7"]
 
-[ext_resource type="Script" uid="uid://ds2247ft633cg" path="res://Scripts/Objetos/Altar.gd" id="1_h4ptg"]
-[ext_resource type="Texture2D" uid="uid://csk62i6jysllk" path="res://Sprites/Placeholders/red__altar.webp" id="2_0agl1"]
-[ext_resource type="Texture2D" uid="uid://dfmphwjoxah12" path="res://Sprites/Placeholders/red_ativado_altar.webp" id="3_0mhgd"]
+[ext_resource type="Script" uid="uid://23jeicr8wbta" path="res://Scripts/Objetos/altar_vermelho.gd" id="1_iakti"]
+[ext_resource type="Texture2D" uid="uid://bd54mdw8pipgp" path="res://Sprites/Objetos/Altares/Vermelho/Totem Vermelho Ativado.png" id="2_1u5nf"]
+[ext_resource type="Texture2D" uid="uid://be8a0l3xp71yj" path="res://Sprites/Objetos/Altares/Vermelho/Totem Vermelho s fogo.png" id="2_iakti"]
+[ext_resource type="Texture2D" uid="uid://fojr1hg4upgd" path="res://misc/spriteframes/light.tres" id="4_buc4d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aiapc"]
+atlas = ExtResource("2_1u5nf")
+region = Rect2(256, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8osqo"]
+atlas = ExtResource("2_1u5nf")
+region = Rect2(192, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psoyd"]
+atlas = ExtResource("2_1u5nf")
+region = Rect2(128, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8uhj"]
+atlas = ExtResource("2_1u5nf")
+region = Rect2(64, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14rsr"]
+atlas = ExtResource("2_1u5nf")
+region = Rect2(0, 0, 64, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_buc4d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aiapc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8osqo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_psoyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8uhj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14rsr")
+}],
+"loop": true,
+"name": &"active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_iakti")
+}],
+"loop": true,
+"name": &"inactive",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fx006"]
 size = Vector2(33.76164, 71.2626)
 
 [node name="Altar_Vermelho" type="Node2D" unique_id=44935604]
 
-[node name="Altar_Vermelho" type="Area2D" parent="." unique_id=1260660105]
+[node name="Altar_Vermelho" type="Area2D" parent="." unique_id=1260660105 node_paths=PackedStringArray("luz")]
 scale = Vector2(0.039999485, 0.039999485)
-script = ExtResource("1_h4ptg")
+script = ExtResource("1_iakti")
 cor_aceita = 1
-textura_desativado = ExtResource("2_0agl1")
-textura_ativado = ExtResource("3_0mhgd")
+luz = NodePath("PointLight2D")
 
-[node name="Sprite2D" type="Sprite2D" parent="Altar_Vermelho" unique_id=262374476]
-scale = Vector2(8.959999, 8.959999)
-texture = ExtResource("2_0agl1")
+[node name="looks" type="AnimatedSprite2D" parent="Altar_Vermelho" unique_id=763352664]
+unique_name_in_owner = true
+position = Vector2(0, 9.1552734e-05)
+scale = Vector2(40, 40)
+sprite_frames = SubResource("SpriteFrames_buc4d")
+animation = &"inactive"
+speed_scale = 1.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Altar_Vermelho" unique_id=71089921]
-position = Vector2(43.49997, -34)
+position = Vector2(-7.6293945e-06, 0)
 scale = Vector2(67.38417, 36.484776)
 shape = SubResource("RectangleShape2D_fx006")
+
+[node name="PointLight2D" type="PointLight2D" parent="Altar_Vermelho" unique_id=21405124]
+scale = Vector2(60, 60)
+enabled = false
+color = Color(1, 0, 0.26666668, 1)
+energy = 1.5
+texture = ExtResource("4_buc4d")
+texture_scale = 3.34

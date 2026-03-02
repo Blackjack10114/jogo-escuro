@@ -31,5 +31,6 @@ texture = ExtResource("2_ivfa8")
 [node name="PointLight2D" type="PointLight2D" parent="Area2D" unique_id=235973874]
 position = Vector2(0.50000095, 3.8146973e-06)
 scale = Vector2(1.953125, 1.9687501)
+color = Color(0.6784314, 1, 0, 1)
 texture = SubResource("GradientTexture2D_6a0gk")
 texture_scale = 3.34

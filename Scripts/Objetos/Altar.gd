@@ -1,11 +1,9 @@
 class_name Altar
-extends Ativavel
+extends Ativador
 
 @export var cor_aceita: Cor.Tipo
-@export var textura_desativado: Texture2D
-@export var textura_ativado: Texture2D
+@export var luz: PointLight2D
 
-@onready var sprite: Sprite2D = $Sprite2D
 
 var player_perto: CharacterBody2D = null
 var tocha_no_altar = null
@@ -13,9 +11,9 @@ var bloqueado := false
 
 
 func _ready():
+	%looks.play("inactive")
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
-	sprite.texture = textura_desativado
 
 
 func _on_body_entered(body):
@@ -64,7 +62,7 @@ func colocar_tocha():
 	
 	tocha_no_altar = tocha
 	tocha.altar_atual = self
-	
+	luz.enabled = true
 	ativar()  
 
 
@@ -91,11 +89,13 @@ func remover_tocha():
 	tocha_no_altar.altar_atual = null
 	tocha_no_altar = null
 	
+	luz.enabled = false
 	desativar() 
 
 func _ao_ativar():
-	sprite.texture = textura_ativado
+	%looks.play("active")
+
 
 
 func _ao_desativar():
-	sprite.texture = textura_desativado 
+	%looks.play("inactive")

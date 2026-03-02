@@ -1,26 +1,87 @@
 [gd_scene format=3 uid="uid://7agvmjcou4ox"]
 
-[ext_resource type="Script" uid="uid://ds2247ft633cg" path="res://Scripts/Objetos/Altar.gd" id="1_pkm50"]
-[ext_resource type="Texture2D" uid="uid://cvf5jtby1x4yq" path="res://Sprites/Placeholders/green_altar.png" id="2_pkm50"]
-[ext_resource type="Texture2D" uid="uid://bhe5gjgjuko0m" path="res://Sprites/Placeholders/green_ativado_altar.png" id="3_0pfhs"]
+[ext_resource type="Script" uid="uid://5gqqtx6xx1ra" path="res://Scripts/Objetos/altar_verde.gd" id="1_6anp2"]
+[ext_resource type="Texture2D" uid="uid://b7wwvyy7w7uv1" path="res://Sprites/Objetos/Altares/Verde/Totem Verde Ativado.png" id="4_4iw0v"]
+[ext_resource type="Texture2D" uid="uid://fojr1hg4upgd" path="res://misc/spriteframes/light.tres" id="4_p8vw7"]
+[ext_resource type="Texture2D" uid="uid://cic7f0lhd4lbe" path="res://Sprites/Objetos/Altares/Verde/Totem Verde s fogo.png" id="5_2frjo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u35jf"]
+atlas = ExtResource("4_4iw0v")
+region = Rect2(0, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aca0q"]
+atlas = ExtResource("4_4iw0v")
+region = Rect2(64, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmpk0"]
+atlas = ExtResource("4_4iw0v")
+region = Rect2(128, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_221ng"]
+atlas = ExtResource("4_4iw0v")
+region = Rect2(192, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dbhy"]
+atlas = ExtResource("4_4iw0v")
+region = Rect2(256, 0, 64, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_arbqc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u35jf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aca0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmpk0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_221ng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dbhy")
+}],
+"loop": true,
+"name": &"active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2frjo")
+}],
+"loop": true,
+"name": &"inactive",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fx006"]
 size = Vector2(33.76164, 71.2626)
 
 [node name="Altar_Verde" type="Node2D" unique_id=44935604]
 
-[node name="Altar_Verde" type="Area2D" parent="." unique_id=1260660105]
+[node name="Altar_Verde" type="Area2D" parent="." unique_id=1260660105 node_paths=PackedStringArray("luz")]
 scale = Vector2(0.039999485, 0.039999485)
-script = ExtResource("1_pkm50")
+script = ExtResource("1_6anp2")
 cor_aceita = 2
-textura_desativado = ExtResource("2_pkm50")
-textura_ativado = ExtResource("3_0pfhs")
+luz = NodePath("PointLight2D")
 
-[node name="Sprite2D" type="Sprite2D" parent="Altar_Verde" unique_id=262374476]
-scale = Vector2(8.959999, 8.959999)
-texture = ExtResource("2_pkm50")
+[node name="looks" type="AnimatedSprite2D" parent="Altar_Verde" unique_id=1904281960]
+unique_name_in_owner = true
+scale = Vector2(40, 40)
+sprite_frames = SubResource("SpriteFrames_arbqc")
+animation = &"inactive"
+frame_progress = 0.30175868
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Altar_Verde" unique_id=71089921]
-position = Vector2(43.49997, -34)
 scale = Vector2(67.38417, 36.484776)
 shape = SubResource("RectangleShape2D_fx006")
+
+[node name="PointLight2D" type="PointLight2D" parent="Altar_Verde" unique_id=977701204]
+scale = Vector2(60, 60)
+enabled = false
+color = Color(0.6784314, 1, 0, 1)
+energy = 1.5
+texture = ExtResource("4_p8vw7")
+texture_scale = 3.34

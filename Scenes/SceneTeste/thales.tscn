@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://gdy5dgxlyvdl"]
+
+[ext_resource type="Texture2D" uid="uid://34eb8j034ct8" path="res://icon.svg" id="1_fnymv"]
+[ext_resource type="Script" uid="uid://c0lv0o5t10nvm" path="res://Scripts/Manager/PuzzleController.gd" id="2_qjy8y"]
+[ext_resource type="PackedScene" uid="uid://df74w1jkbclv2" path="res://Objetos/Altares/Altar.tscn" id="3_v164l"]
+[ext_resource type="PackedScene" uid="uid://be22tfc7s5y2g" path="res://Objetos/Porta/Porta.tscn" id="4_t1thb"]
+[ext_resource type="PackedScene" uid="uid://dabjl2g7fc2da" path="res://Objetos/Tochas/Tocha.tscn" id="5_tiub2"]
+[ext_resource type="PackedScene" uid="uid://bwrnn1c1hv5cm" path="res://Objetos/Player.tscn" id="6_hex5y"]
+[ext_resource type="Texture2D" uid="uid://fojr1hg4upgd" path="res://misc/spriteframes/light.tres" id="7_t1thb"]
+
+[node name="Thales" type="Node2D" unique_id=1453056908]
+
+[node name="Fundo" type="Sprite2D" parent="." unique_id=1706271452]
+self_modulate = Color(0.21568628, 0.2, 0.21960784, 1)
+z_index = -10
+position = Vector2(649, 370)
+scale = Vector2(10.1328125, 5.6796875)
+texture = ExtResource("1_fnymv")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1169211038]
+color = Color(0, 0, 0, 1)
+
+[node name="PuzzleController" type="Node" parent="." unique_id=1657439151 node_paths=PackedStringArray("porta", "ativadores")]
+script = ExtResource("2_qjy8y")
+porta = NodePath("../Porta")
+ativadores = [NodePath("../Altar")]
+idPuzzle = "pissybaby"
+metadata/_custom_type_script = "uid://c0lv0o5t10nvm"
+
+[node name="Altar" parent="." unique_id=849689154 instance=ExtResource("3_v164l")]
+position = Vector2(620, 354)
+
+[node name="Porta" parent="." unique_id=1098581790 instance=ExtResource("4_t1thb")]
+position = Vector2(1128, 369)
+
+[node name="Tocha" parent="." unique_id=1342345491 instance=ExtResource("5_tiub2")]
+position = Vector2(205, 343)
+
+[node name="Player" parent="." unique_id=2102932396 instance=ExtResource("6_hex5y")]
+position = Vector2(207, 430)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=219318033]
+position = Vector2(300, 167)
+texture = ExtResource("7_t1thb")
+texture_scale = 9.88
+
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=1555194146]
+position = Vector2(969, 167)
+texture = ExtResource("7_t1thb")
+texture_scale = 9.88
+
+[node name="PointLight2D3" type="PointLight2D" parent="." unique_id=1145315641]
+position = Vector2(1001, 565)
+texture = ExtResource("7_t1thb")
+texture_scale = 9.88
+
+[node name="PointLight2D4" type="PointLight2D" parent="." unique_id=318383034]
+position = Vector2(225, 575)
+texture = ExtResource("7_t1thb")
+texture_scale = 9.88
+
+[node name="PointLight2D5" type="PointLight2D" parent="." unique_id=941135200]
+position = Vector2(645, 574)
+texture = ExtResource("7_t1thb")
+texture_scale = 9.88
+
+[node name="PointLight2D6" type="PointLight2D" parent="." unique_id=1403123399]
+position = Vector2(635, 114)
+texture = ExtResource("7_t1thb")
+texture_scale = 9.88

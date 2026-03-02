@@ -1,0 +1,59 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dsdon0hjb3gfv"]
+
+[ext_resource type="Texture2D" uid="uid://cugtyfc2y4620" path="res://Sprites/Objetos/Altares/Padrao/Totem Padrão Ativado.png" id="1_vhyio"]
+[ext_resource type="Texture2D" uid="uid://c1qk1p3xuf63e" path="res://Sprites/Objetos/Altares/Padrao/Totem Padrao s fogo.png" id="2_o81jc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhyio"]
+atlas = ExtResource("1_vhyio")
+region = Rect2(0, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o81jc"]
+atlas = ExtResource("1_vhyio")
+region = Rect2(64, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aiapc"]
+atlas = ExtResource("1_vhyio")
+region = Rect2(128, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8osqo"]
+atlas = ExtResource("1_vhyio")
+region = Rect2(192, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psoyd"]
+atlas = ExtResource("1_vhyio")
+region = Rect2(256, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8uhj"]
+atlas = ExtResource("2_o81jc")
+region = Rect2(0, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhyio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o81jc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aiapc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8osqo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_psoyd")
+}],
+"loop": true,
+"name": &"active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8uhj")
+}],
+"loop": true,
+"name": &"inactive",
+"speed": 5.0
+}]

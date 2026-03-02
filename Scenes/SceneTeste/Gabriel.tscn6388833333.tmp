@@ -9,10 +9,10 @@
 
 [node name="Tocha" parent="." unique_id=1342345491 instance=ExtResource("1_1jv7q")]
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=478850467]
+
 [node name="Player" parent="." unique_id=1558179493 instance=ExtResource("2_pkdgx")]
 position = Vector2(3, 61)
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=478850467]
 
 [node name="Fundo" type="Sprite2D" parent="." unique_id=1073828355]
 modulate = Color(0.07683582, 0.07683582, 0.07683582, 1)
@@ -23,3 +23,5 @@ texture = ExtResource("3_bvunt")
 
 [node name="Area2D" parent="." unique_id=1726886834 instance=ExtResource("4_d08m2")]
 position = Vector2(-259, -24.999992)
+
+[node name="Camera2D2" type="Camera2D" parent="." unique_id=1213337962]

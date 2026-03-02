@@ -6,14 +6,17 @@ extends Node2D
 
 @onready var follow: PathFollow2D = $Path2D/PathFollow2D
 @onready var caixa: Node2D = $Path2D/PathFollow2D/Caixa
-@onready var sprite: Sprite2D = get_node_or_null("Path2D/PathFollow2D/Caixa/Sprite2D")
-@onready var impacto: Area2D = get_node_or_null("Path2D/PathFollow2D/Caixa/Impacto")
+@onready var impacto: Area2D = $Path2D/PathFollow2D/Caixa/Impacto
+
+@onready var colisao_solida_node: Node = $Path2D/PathFollow2D/Caixa/ColisaoSolida
+@onready var impacto_shape: CollisionShape2D = $Path2D/PathFollow2D/Caixa/Impacto/CollisionShape2D
+@onready var solida_shape: CollisionShape2D = $Path2D/PathFollow2D/Caixa/ColisaoSolida/CollisionShape2D
 
 var rodando := false
 var quebrada := false
 var terminou := false
 
-func _ready():
+func _ready() -> void:
 	if not follow:
 		push_error("AutoCaixa: nao achei Path2D/PathFollow2D")
 		return
@@ -36,8 +39,11 @@ func _ready():
 	_set_visivel(true)
 
 func ativar() -> void:
-	if rodando or terminou or quebrada:
+	if rodando or quebrada:
 		return
+
+	# opcional: reativa mesmo se já tinha terminado
+	#terminou = false
 
 	rodando = true
 	impacto.monitoring = true
@@ -50,7 +56,7 @@ func desativar() -> void:
 func get_ativo() -> bool:
 	return rodando
 
-func _physics_process(delta):
+func _physics_process(delta: float) -> void:
 	if not rodando or quebrada or terminou:
 		return
 
@@ -61,10 +67,16 @@ func _physics_process(delta):
 		rodando = false
 		impacto.monitoring = false
 
-func _on_impacto(_body: Node) -> void:
+func _on_impacto(body: Node) -> void:
+	# Evita quebrar por auto-colisão (Impacto pegando o próprio corpo/colisão)
+	if body == colisao_solida_node:
+		return
 	_tentar_quebrar()
 
-func _on_impacto_area(_area: Area2D) -> void:
+func _on_impacto_area(area: Area2D) -> void:
+	# Evita quebrar se detectar alguma Area2D que esteja dentro da própria caixa
+	if caixa.is_ancestor_of(area):
+		return
 	_tentar_quebrar()
 
 func _tentar_quebrar() -> void:
@@ -89,3 +101,9 @@ func _quebrar_e_respawn() -> void:
 func _set_visivel(v: bool) -> void:
 	if caixa:
 		caixa.visible = v
+
+	# quando invisível, desliga shapes pra não colidir/detectar nada
+	if impacto_shape:
+		impacto_shape.disabled = not v
+	if solida_shape:
+		solida_shape.disabled = not v

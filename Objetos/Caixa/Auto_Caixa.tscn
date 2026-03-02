@@ -18,6 +18,8 @@ script = ExtResource("1_s26jw")
 curve = SubResource("Curve2D_s26jw")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1577084403]
+position = Vector2(101, 375)
+rotation = -0.3671053
 
 [node name="Caixa" type="Node2D" parent="Path2D/PathFollow2D" unique_id=154624311]
 position = Vector2(1, 1)
@@ -32,8 +34,8 @@ texture = ExtResource("2_gotxj")
 scale = Vector2(2.8500118, 2.8500118)
 shape = SubResource("RectangleShape2D_paejp")
 
-[node name="ColisaoSolida" type="StaticBody2D" parent="Path2D/PathFollow2D/Caixa" unique_id=1693194192]
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="Path2D/PathFollow2D/Caixa" unique_id=747427585]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Caixa/ColisaoSolida" unique_id=808842251]
-scale = Vector2(4.200016, 4.200016)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Caixa/AnimatableBody2D" unique_id=808842251]
+scale = Vector2(4.2000155, 4.2000155)
 shape = SubResource("RectangleShape2D_paejp")

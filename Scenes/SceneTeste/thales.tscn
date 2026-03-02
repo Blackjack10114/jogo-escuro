@@ -6,8 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://be22tfc7s5y2g" path="res://Objetos/Porta/Porta.tscn" id="4_t1thb"]
 [ext_resource type="PackedScene" uid="uid://dabjl2g7fc2da" path="res://Objetos/Tochas/Tocha.tscn" id="5_tiub2"]
 [ext_resource type="PackedScene" uid="uid://bwrnn1c1hv5cm" path="res://Objetos/Player.tscn" id="6_hex5y"]
-[ext_resource type="Texture2D" uid="uid://fojr1hg4upgd" path="res://misc/spriteframes/light.tres" id="7_t1thb"]
-[ext_resource type="PackedScene" uid="uid://m0p30furg5vu" path="res://Objetos/Area_Sombra.tscn" id="8_tiub2"]
+[ext_resource type="PackedScene" uid="uid://dc22towx7i5m6" path="res://Objetos/Botoes/Botao_Simples.tscn" id="7_t1thb"]
+[ext_resource type="PackedScene" uid="uid://7agvmjcou4ox" path="res://Objetos/Altares/Altar_Verde.tscn" id="7_vktj7"]
+[ext_resource type="PackedScene" uid="uid://0dr448m64kv3" path="res://Objetos/Altares/Altar_Azul.tscn" id="8_mdvo6"]
+[ext_resource type="PackedScene" uid="uid://b6y5u8ix42tq6" path="res://Objetos/Tochas/Tocha_Azul.tscn" id="9_aybq2"]
+[ext_resource type="PackedScene" uid="uid://dkkml5yvomqgs" path="res://Objetos/Tochas/Tocha_Verde.tscn" id="10_ssryg"]
+[ext_resource type="PackedScene" uid="uid://dbln6n6ppojol" path="res://Objetos/Caixa/Caixa_Simples.tscn" id="11_4kxob"]
+[ext_resource type="PackedScene" uid="uid://yf82ve22t1dd" path="res://Objetos/Botoes/Botao_Long_Trigger.tscn" id="12_vabg7"]
 
 [node name="Thales" type="Node2D" unique_id=1453056908]
 
@@ -18,58 +23,106 @@ position = Vector2(649, 370)
 scale = Vector2(10.1328125, 5.6796875)
 texture = ExtResource("1_fnymv")
 
+[node name="Fundo4" type="Sprite2D" parent="." unique_id=1550990839]
+self_modulate = Color(0.21568628, 0.2, 0.21960784, 1)
+z_index = -10
+position = Vector2(662, -350)
+scale = Vector2(10.1328125, 5.6796875)
+texture = ExtResource("1_fnymv")
+
+[node name="Fundo2" type="Sprite2D" parent="." unique_id=1975948536]
+self_modulate = Color(0.21568628, 0.2, 0.21960784, 1)
+z_index = -10
+position = Vector2(1943.0001, 375)
+scale = Vector2(10.1328125, 5.6796875)
+texture = ExtResource("1_fnymv")
+
+[node name="Fundo3" type="Sprite2D" parent="." unique_id=1378797497]
+self_modulate = Color(0.21568628, 0.2, 0.21960784, 1)
+z_index = -10
+position = Vector2(3230, 379)
+scale = Vector2(10.1328125, 5.6796875)
+texture = ExtResource("1_fnymv")
+
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1169211038]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="PuzzleController" type="Node" parent="." unique_id=1657439151 node_paths=PackedStringArray("porta", "ativadores")]
 script = ExtResource("2_qjy8y")
-porta = NodePath("../Porta")
-ativadores = [NodePath("../Altar")]
+porta = NodePath("Porta")
+ativadores = [NodePath("BotaoSimples")]
 idPuzzle = "pissybaby"
 metadata/_custom_type_script = "uid://c0lv0o5t10nvm"
 
-[node name="Altar" parent="." unique_id=849689154 instance=ExtResource("3_v164l")]
-position = Vector2(620, 354)
+[node name="Porta" parent="PuzzleController" unique_id=1098581790 instance=ExtResource("4_t1thb")]
+position = Vector2(1278, 374)
 
-[node name="Porta" parent="." unique_id=1098581790 instance=ExtResource("4_t1thb")]
-position = Vector2(1128, 369)
-
-[node name="Tocha" parent="." unique_id=1342345491 instance=ExtResource("5_tiub2")]
+[node name="Tocha" parent="PuzzleController" unique_id=1342345491 instance=ExtResource("5_tiub2")]
 position = Vector2(205, 343)
+
+[node name="BotaoSimples" parent="PuzzleController" unique_id=342565989 instance=ExtResource("7_t1thb")]
+position = Vector2(598, 418)
+
+[node name="PuzzleController2" type="Node" parent="." unique_id=1648651662 node_paths=PackedStringArray("porta", "ativadores")]
+script = ExtResource("2_qjy8y")
+porta = NodePath("Porta")
+ativadores = [NodePath("BotaoSimples"), NodePath("Altar")]
+idPuzzle = "puzzle2"
+metadata/_custom_type_script = "uid://c0lv0o5t10nvm"
+
+[node name="Porta" parent="PuzzleController2" unique_id=1011209428 instance=ExtResource("4_t1thb")]
+position = Vector2(2570, 401)
+
+[node name="BotaoSimples" parent="PuzzleController2" unique_id=1193424924 instance=ExtResource("7_t1thb")]
+position = Vector2(1924, 171)
+
+[node name="Altar" parent="PuzzleController2" unique_id=1294907280 instance=ExtResource("3_v164l")]
+position = Vector2(1936, 602)
+
+[node name="Tocha" parent="PuzzleController2" unique_id=612749055 instance=ExtResource("5_tiub2")]
+position = Vector2(1562, 374)
+
+[node name="PuzzleController3" type="Node" parent="." unique_id=1378813006 node_paths=PackedStringArray("porta", "ativadores")]
+script = ExtResource("2_qjy8y")
+porta = NodePath("Porta_final")
+ativadores = [NodePath("Altar_Verde"), NodePath("Altar_Azul")]
+idPuzzle = "puzzle6"
+metadata/_custom_type_script = "uid://c0lv0o5t10nvm"
+
+[node name="Porta_verde" parent="PuzzleController3" unique_id=1488044021 instance=ExtResource("4_t1thb")]
+position = Vector2(2915, 191)
+
+[node name="Altar_Verde" parent="PuzzleController3" unique_id=44935604 instance=ExtResource("7_vktj7")]
+position = Vector2(3446, 588)
+
+[node name="Altar_Azul" parent="PuzzleController3" unique_id=1776281065 instance=ExtResource("8_mdvo6")]
+position = Vector2(3432, 187)
+
+[node name="Porta_Azul" parent="PuzzleController3" unique_id=1513286316 instance=ExtResource("4_t1thb")]
+position = Vector2(629, -463)
+
+[node name="Tocha_Azul" parent="PuzzleController3" unique_id=1295595303 instance=ExtResource("9_aybq2")]
+position = Vector2(642, -631)
+
+[node name="Tocha_Verde" parent="PuzzleController3" unique_id=272295953 instance=ExtResource("10_ssryg")]
+position = Vector2(2918, 49)
+
+[node name="Caixa_Simples" parent="PuzzleController3" unique_id=575956319 instance=ExtResource("11_4kxob")]
+position = Vector2(2897, 617)
+
+[node name="BotaoLongTrigger" parent="PuzzleController3" unique_id=673730092 node_paths=PackedStringArray("alvos") instance=ExtResource("12_vabg7")]
+position = Vector2(3129, 637)
+alvos = [NodePath("../Porta_verde")]
+
+[node name="BotaoSimples" parent="PuzzleController3" unique_id=2042243358 node_paths=PackedStringArray("alvos") instance=ExtResource("7_t1thb")]
+position = Vector2(3442, 395)
+alvos = [NodePath("../Porta_Azul")]
+
+[node name="Porta_final" parent="PuzzleController3" unique_id=118872510 instance=ExtResource("4_t1thb")]
+position = Vector2(3855, 387)
 
 [node name="Player" parent="." unique_id=2102932396 instance=ExtResource("6_hex5y")]
 position = Vector2(207, 430)
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=219318033]
-position = Vector2(300, 167)
-texture = ExtResource("7_t1thb")
-texture_scale = 9.88
-
-[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=1555194146]
-position = Vector2(969, 167)
-texture = ExtResource("7_t1thb")
-texture_scale = 9.88
-
-[node name="PointLight2D3" type="PointLight2D" parent="." unique_id=1145315641]
-position = Vector2(1001, 565)
-texture = ExtResource("7_t1thb")
-texture_scale = 9.88
-
-[node name="PointLight2D4" type="PointLight2D" parent="." unique_id=318383034]
-position = Vector2(225, 575)
-texture = ExtResource("7_t1thb")
-texture_scale = 9.88
-
-[node name="PointLight2D5" type="PointLight2D" parent="." unique_id=941135200]
-position = Vector2(645, 574)
-texture = ExtResource("7_t1thb")
-texture_scale = 9.88
-
-[node name="PointLight2D6" type="PointLight2D" parent="." unique_id=1403123399]
-position = Vector2(635, 114)
-texture = ExtResource("7_t1thb")
-texture_scale = 9.88
-
-[node name="Area2D" parent="." unique_id=1726886834 instance=ExtResource("8_tiub2")]
-position = Vector2(605, 641)
-forca_empurrao = 10.0
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1367899755]

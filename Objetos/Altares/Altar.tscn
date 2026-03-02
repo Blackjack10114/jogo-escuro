@@ -20,7 +20,7 @@ unique_name_in_owner = true
 scale = Vector2(40, 40)
 sprite_frames = ExtResource("4_opxb7")
 animation = &"inactive"
-frame_progress = 0.29388675
+frame_progress = 0.25022364
 speed_scale = 1.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Altar" unique_id=891616044]

@@ -45,7 +45,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"active",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -71,8 +71,7 @@ luz = NodePath("PointLight2D")
 unique_name_in_owner = true
 scale = Vector2(40, 40)
 sprite_frames = SubResource("SpriteFrames_arbqc")
-animation = &"inactive"
-frame_progress = 0.30175868
+animation = &"active"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Altar_Verde" unique_id=71089921]
 scale = Vector2(67.38417, 36.484776)

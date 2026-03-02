@@ -61,8 +61,11 @@ func _travar_interacoes():
 			(a as Altar).bloqueado = true
 
 func _abrir_porta():
+	print("abrir_porta chamado. porta =", porta)
 	if porta:
 		porta.ativar()
+	else:
+		push_warning("PuzzleController: porta não está no Inspector!")
 
 func _fechar_porta():
 	if porta:

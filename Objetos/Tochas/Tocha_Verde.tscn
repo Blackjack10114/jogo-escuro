@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dkkml5yvomqgs"]
 
 [ext_resource type="Script" uid="uid://bcduc2tt6m5h7" path="res://Scripts/Objetos/Tocha.gd" id="1_ivfa8"]
-[ext_resource type="Texture2D" uid="uid://d1vd20180if3g" path="res://Sprites/Placeholders/Tocha_Verde.png" id="2_ivfa8"]
+[ext_resource type="Texture2D" uid="uid://dtoced0g4juy1" path="res://Sprites/Objetos/Tochas/Verde/Tocha Verde.png" id="3_ektbj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6a0gk"]
 size = Vector2(67, 66)
@@ -15,6 +15,49 @@ fill = 1
 fill_from = Vector2(0.5043478, 0.4869565)
 fill_to = Vector2(0.90869564, 0.104347825)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_b52w7"]
+atlas = ExtResource("3_ektbj")
+region = Rect2(0, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aoifn"]
+atlas = ExtResource("3_ektbj")
+region = Rect2(64, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0etr"]
+atlas = ExtResource("3_ektbj")
+region = Rect2(128, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jgm1"]
+atlas = ExtResource("3_ektbj")
+region = Rect2(192, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23oak"]
+atlas = ExtResource("3_ektbj")
+region = Rect2(256, 0, 64, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w4m6g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b52w7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aoifn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0etr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jgm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23oak")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
 [node name="Tocha_Verde" type="Node2D" unique_id=1342345491]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1427522342]
@@ -25,12 +68,14 @@ cor = 2
 position = Vector2(0.5, 2)
 shape = SubResource("RectangleShape2D_6a0gk")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=280868615]
-texture = ExtResource("2_ivfa8")
-
 [node name="PointLight2D" type="PointLight2D" parent="Area2D" unique_id=235973874]
 position = Vector2(0.50000095, 3.8146973e-06)
 scale = Vector2(1.953125, 1.9687501)
 color = Color(0.6784314, 1, 0, 1)
 texture = SubResource("GradientTexture2D_6a0gk")
 texture_scale = 3.34
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=454493983]
+sprite_frames = SubResource("SpriteFrames_w4m6g")
+autoplay = "default"
+frame_progress = 0.37155998

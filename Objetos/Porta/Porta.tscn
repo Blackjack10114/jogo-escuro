@@ -6,17 +6,33 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rhfvw"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_j7ny1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_f40o3")
+}],
+"loop": true,
+"name": &"aberta",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_e0ypx")
+}],
+"loop": true,
+"name": &"fechada",
+"speed": 5.0
+}]
+
 [node name="Porta" type="StaticBody2D" unique_id=1098581790]
 script = ExtResource("1_7p4ve")
-sprite_fechada = ExtResource("2_e0ypx")
-sprite_aberta = ExtResource("3_f40o3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1365084053]
 scale = Vector2(8.06724, 8.06724)
 shape = SubResource("RectangleShape2D_rhfvw")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1813673539]
-scale = Vector2(2.078396, 2.078396)
-texture = ExtResource("2_e0ypx")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=669711041]
+[node name="looks" type="AnimatedSprite2D" parent="." unique_id=558028219]
+scale = Vector2(2.1015625, 2.1015625)
+sprite_frames = SubResource("SpriteFrames_j7ny1")
+animation = &"fechada"

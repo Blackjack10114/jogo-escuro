@@ -1,10 +1,34 @@
 [gd_scene format=3 uid="uid://bwrnn1c1hv5cm"]
 
 [ext_resource type="Script" uid="uid://qaat3l4u1de0" path="res://Scripts/Movim_Player.gd" id="1_38l55"]
-[ext_resource type="Texture2D" uid="uid://bhr62lfx5ciqv" path="res://Sprites/Placeholders/Player_temp.png" id="2_1boxf"]
+[ext_resource type="Texture2D" uid="uid://cebbiyjrf0rmd" path="res://Sprites/Player/spr_player_jam.png" id="2_sqf2x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_asluq"]
 size = Vector2(72, 69)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_asluq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_sqf2x")
+}],
+"loop": true,
+"name": &"andando",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"empurrando",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_sqf2x")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
 
 [node name="Player" type="CharacterBody2D" unique_id=2102932396]
 script = ExtResource("1_38l55")
@@ -14,5 +38,8 @@ speed = 350.0
 position = Vector2(-1, 15.5)
 shape = SubResource("RectangleShape2D_asluq")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=635550908]
-texture = ExtResource("2_1boxf")
+[node name="looks" type="AnimatedSprite2D" parent="." unique_id=1760153530]
+position = Vector2(0, 13)
+scale = Vector2(4.5, 4.5)
+sprite_frames = SubResource("SpriteFrames_asluq")
+animation = &"idle"

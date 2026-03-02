@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dbln6n6ppojol" path="res://Objetos/Caixa/Caixa_Simples.tscn" id="12_swtkx"]
 [ext_resource type="PackedScene" uid="uid://yf82ve22t1dd" path="res://Objetos/Botoes/Botao_Long_Trigger.tscn" id="13_x0l3w"]
 [ext_resource type="PackedScene" uid="uid://dc22towx7i5m6" path="res://Objetos/Botoes/Botao_Simples.tscn" id="14_ysftc"]
-[ext_resource type="PackedScene" path="res://Objetos/Caixa/Auto_Caixa.tscn" id="16_3ur8i"]
+[ext_resource type="PackedScene" uid="uid://bgdm7ro8v7buh" path="res://Objetos/Caixa/Auto_Caixa.tscn" id="16_3ur8i"]
 
 [node name="PuzzlePrototipo" type="Node2D" unique_id=211625197]
 
@@ -57,8 +57,6 @@ position = Vector2(827, 319)
 
 [node name="Porta" parent="." unique_id=1098581790 instance=ExtResource("12_gtkgh")]
 position = Vector2(1102, 324)
-sprite_fechada = null
-sprite_aberta = null
 
 [node name="Caixa_Simples" parent="." unique_id=575956319 instance=ExtResource("12_swtkx")]
 position = Vector2(692, 562)
@@ -78,4 +76,10 @@ alvos = [NodePath("../AutoCaixa")]
 [node name="Path2D" parent="AutoCaixa" index="0" unique_id=1233121987]
 position = Vector2(-78, 281)
 
+[node name="PathFollow2D" parent="AutoCaixa/Path2D" index="0" unique_id=1577084403]
+position = Vector2(117.317215, 369.02744)
+rotation = -0.34236613
+progress = 17.421143
+
+[editable path="Porta"]
 [editable path="AutoCaixa"]

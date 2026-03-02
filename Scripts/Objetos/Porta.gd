@@ -1,67 +1,40 @@
 class_name Porta
 extends StaticBody2D
 
-@export var começa_aberta := false
+@export var comeca_aberta := false
 
-# sprites
-@export var sprite_fechada: Texture2D
-@export var sprite_aberta: Texture2D
-
-# animação (opcional)
-@export var usar_animacao := false
-@export var nome_anim_abrir := "abrir"
-@export var nome_anim_fechar := "fechar"
-
-@onready var colisao: CollisionShape2D = $CollisionShape2D
-@onready var sprite: Sprite2D = $Sprite2D
-@onready var animacao: AnimationPlayer = get_node_or_null("AnimationPlayer")
+@onready var colisao: CollisionShape2D = get_node_or_null("CollisionShape2D")
+@onready var looks: AnimatedSprite2D = get_node_or_null("looks") 
 
 var aberta := false
 
-func _ready():
-	if começa_aberta:
-		ativar()
-	else:
-		desativar()
+func _ready() -> void:
+	set_aberta(comeca_aberta)
 
 func ativar() -> void:
-	# abrir
-	if aberta:
-		return
-	aberta = true
-
-	if colisao:
-		colisao.disabled = true
-
-	if usar_animacao and animacao and animacao.has_animation(nome_anim_abrir):
-		animacao.play(nome_anim_abrir)
-	elif sprite and sprite_aberta:
-		sprite.texture = sprite_aberta
-
-	if sprite:
-		sprite.modulate.a = 0.35
+	set_aberta(true)
 
 func desativar() -> void:
-	# fechar
-	if not aberta:
-		return
-	aberta = false
-
-	if colisao:
-		colisao.disabled = false
-
-	if usar_animacao and animacao and animacao.has_animation(nome_anim_fechar):
-		animacao.play(nome_anim_fechar)
-	elif sprite and sprite_fechada:
-		sprite.texture = sprite_fechada
-
-	if sprite:
-		sprite.modulate.a = 1.0
+	set_aberta(false)
 
 func alternar() -> void:
-	if aberta:
-		desativar()
-	else:
-		ativar()
+	set_aberta(not aberta)
+
 func get_ativo() -> bool:
 	return aberta
+
+func set_aberta(v: bool) -> void:
+	print("[Porta] set_aberta(", v, ")  node=", self)
+	print("  colisao=", colisao, " looks=", looks)
+
+	aberta = v
+
+	if colisao:
+		colisao.disabled = aberta
+	else:
+		push_warning("[Porta] NÃO achei CollisionShape2D. O nó tem esse nome e é filho direto da Porta?")
+
+	if looks:
+		looks.play("aberta" if aberta else "fechada")
+	else:
+		push_warning("[Porta] NÃO achei %looks. O AnimatedSprite2D está com Unique Name e chamado looks?")

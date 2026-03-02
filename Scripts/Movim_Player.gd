@@ -1,13 +1,23 @@
 extends CharacterBody2D
 
 @export var speed := 500.0
-var color
-var tocha_atual = null
+
+var forca_externa: Vector2 = Vector2.ZERO
+var esta_na_sombra: bool = false
+
+func empurrar(direcao: Vector2, forca: float):
+	forca_externa += direcao.normalized() * forca
 
 func _physics_process(_delta):
 	var direction := Input.get_vector("ui_left","ui_right","ui_up","ui_down")
-	velocity = direction * speed
+	var movimento_input = direction * speed
+	
+	velocity = movimento_input + forca_externa
 	move_and_slide()
+	
+	# 🔥 Zera só se NÃO estiver na sombra
+	if not esta_na_sombra:
+		forca_externa = Vector2.ZERO
 
 	_empurrar_caixas(direction)
 

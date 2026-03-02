@@ -1,5 +1,5 @@
 class_name BotaoSimples
-extends Ativador
+extends Ativavel
 
 @export var alvos: Array[Node] = []  # agora aceita Porta, qualquer Node
 

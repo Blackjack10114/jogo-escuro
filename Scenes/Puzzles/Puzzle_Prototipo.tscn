@@ -63,14 +63,8 @@ sprite_aberta = null
 [node name="Caixa_Simples" parent="." unique_id=575956319 instance=ExtResource("12_swtkx")]
 position = Vector2(692, 562)
 
-<<<<<<< Updated upstream
 [node name="BotaoLongTrigger" parent="." unique_id=673730092 instance=ExtResource("13_x0l3w")]
 position = Vector2(399, 513)
-=======
-[node name="BotaoLongTrigger" parent="." unique_id=673730092 node_paths=PackedStringArray("alvos") instance=ExtResource("13_x0l3w")]
-position = Vector2(1059, 520.00006)
-alvos = [NodePath("../Porta")]
->>>>>>> Stashed changes
 
 [node name="BotaoSimples" parent="." unique_id=342565989 instance=ExtResource("14_ysftc")]
 position = Vector2(897, 627)

@@ -1,5 +1,5 @@
 class_name BotaoLongTrigger
-extends Ativador
+extends Ativavel
 
 @export var alvos: Array[Node] = []
 @export var trava_se_alvo_ativo := true

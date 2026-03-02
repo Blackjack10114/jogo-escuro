@@ -1,4 +1,4 @@
-class_name Ativador
+class_name Ativavel
 extends Area2D
 
 signal ativado

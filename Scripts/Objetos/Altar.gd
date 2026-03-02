@@ -1,5 +1,5 @@
 class_name Altar
-extends Ativador
+extends Ativavel
 
 @export var cor_aceita: Cor.Tipo
 @export var textura_desativado: Texture2D

@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cmlxqo14iyrpa" path="res://Scripts/Manager/MenuPrincipal.gd" id="1_3k1ur"]
 [ext_resource type="Script" uid="uid://drkxlr6ofrp0e" path="res://Scripts/UI/EfeitoBotao.gd" id="2_bt1tr"]
+[ext_resource type="Texture2D" uid="uid://c3wyqhjo0rtrt" path="res://Sprites/Objetos/Botões/Botão menus.png" id="2_dhyt4"]
 [ext_resource type="StyleBox" uid="uid://dcf6a0thifptv" path="res://spr_button.tres" id="2_glsjb"]
+[ext_resource type="FontFile" uid="uid://t2jh8jqf7rqs" path="res://Fonts/Undak-KVA3y.otf" id="3_5rbvo"]
 [ext_resource type="Script" uid="uid://ct65m5udakhr7" path="res://Scripts/LuzMenu.gd" id="4_vymcu"]
 
 [sub_resource type="FontFile" id="FontFile_wvohi"]
@@ -73,22 +75,96 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel" unique_id=435497499]
-custom_minimum_size = Vector2(200, 200)
+custom_minimum_size = Vector2(100, 200)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 73.0
-offset_top = -214.0
-offset_right = 309.0
-offset_bottom = 286.0
+offset_top = -296.0
+offset_right = 251.0
+offset_bottom = 335.0
 grow_vertical = 2
 theme_override_constants/separation = 50
 alignment = 1
 
-[node name="Botao_Jogar" type="Button" parent="CenterContainer/Panel/VBoxContainer" unique_id=1483294612]
-custom_minimum_size = Vector2(100, 150)
+[node name="BotaoJogar" type="TextureButton" parent="CenterContainer/Panel/VBoxContainer" unique_id=1485433838]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
+texture_normal = ExtResource("2_dhyt4")
+texture_pressed = ExtResource("2_dhyt4")
+texture_hover = ExtResource("2_dhyt4")
+texture_disabled = ExtResource("2_dhyt4")
+texture_focused = ExtResource("2_dhyt4")
+stretch_mode = 0
+script = ExtResource("2_bt1tr")
+
+[node name="Label" type="Label" parent="CenterContainer/Panel/VBoxContainer/BotaoJogar" unique_id=1599395739]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 25.0
+offset_right = 145.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("3_5rbvo")
+theme_override_font_sizes/font_size = 30
+text = "JOGAR"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="BotaoCreditos" type="TextureButton" parent="CenterContainer/Panel/VBoxContainer" unique_id=346151840]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+texture_normal = ExtResource("2_dhyt4")
+texture_pressed = ExtResource("2_dhyt4")
+texture_hover = ExtResource("2_dhyt4")
+texture_disabled = ExtResource("2_dhyt4")
+texture_focused = ExtResource("2_dhyt4")
+stretch_mode = 0
+script = ExtResource("2_bt1tr")
+
+[node name="Label" type="Label" parent="CenterContainer/Panel/VBoxContainer/BotaoCreditos" unique_id=649837219]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 25.0
+offset_right = 145.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("3_5rbvo")
+theme_override_font_sizes/font_size = 30
+text = "CRÉDITOS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotaoSair" type="TextureButton" parent="CenterContainer/Panel/VBoxContainer" unique_id=225881997]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+texture_normal = ExtResource("2_dhyt4")
+texture_pressed = ExtResource("2_dhyt4")
+texture_hover = ExtResource("2_dhyt4")
+texture_disabled = ExtResource("2_dhyt4")
+texture_focused = ExtResource("2_dhyt4")
+stretch_mode = 0
+script = ExtResource("2_bt1tr")
+
+[node name="Label" type="Label" parent="CenterContainer/Panel/VBoxContainer/BotaoSair" unique_id=200719675]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 25.0
+offset_right = 145.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("3_5rbvo")
+theme_override_font_sizes/font_size = 30
+text = "SAIR"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Botao_Jogar" type="Button" parent="CenterContainer/Panel" unique_id=1483294612]
+visible = false
+custom_minimum_size = Vector2(100, 150)
+layout_mode = 0
+offset_left = 73.0
+offset_top = 64.0
+offset_right = 310.0
+offset_bottom = 214.0
 theme_override_colors/font_hover_color = Color(0.9655693, 0.9347653, 0.99999994, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.5251013, 0.5251013, 0.5251013, 1)
 theme_override_font_sizes/font_size = 40
@@ -96,11 +172,15 @@ theme_override_styles/normal = ExtResource("2_glsjb")
 action_mode = 0
 text = "JOGAR"
 autowrap_mode = 1
-script = ExtResource("2_bt1tr")
 
-[node name="Botao_Sair" type="Button" parent="CenterContainer/Panel/VBoxContainer" unique_id=759362190]
+[node name="Botao_Sair" type="Button" parent="CenterContainer/Panel" unique_id=759362190]
+visible = false
 custom_minimum_size = Vector2(100, 150)
-layout_mode = 2
+layout_mode = 0
+offset_left = 73.0
+offset_top = 464.0
+offset_right = 310.0
+offset_bottom = 614.0
 theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontFile_wvohi")
@@ -108,7 +188,6 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = ExtResource("2_glsjb")
 action_mode = 0
 text = "SAIR"
-script = ExtResource("2_bt1tr")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1336082064]
 stream = SubResource("AudioStreamMP3_ii51n")
@@ -121,5 +200,8 @@ texture = SubResource("GradientTexture2D_dhyt4")
 texture_scale = 2.0
 script = ExtResource("4_vymcu")
 
-[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/Botao_Jogar" to="." method="_on_botaoJogar_pressed"]
-[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/Botao_Sair" to="." method="_on_botaoSair_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/BotaoJogar" to="." method="_on_botaoJogar_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/BotaoCreditos" to="." method="_on_botaoCreditos_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/BotaoSair" to="." method="_on_botaoSair_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/Botao_Jogar" to="." method="_on_botaoJogar_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/Botao_Sair" to="." method="_on_botaoSair_pressed"]

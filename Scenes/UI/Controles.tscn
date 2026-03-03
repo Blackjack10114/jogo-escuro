@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://c46fthdy51lrk"]
 
+[ext_resource type="Script" uid="uid://drkxlr6ofrp0e" path="res://Scripts/UI/EfeitoBotao.gd" id="1_3ms8u"]
+
 [node name="Controles" type="Control" unique_id=1457268]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +9,52 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1038821852]
+layout_mode = 0
+offset_right = 1285.0
+offset_bottom = 715.0
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1756069683]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer" unique_id=1768326852]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel" unique_id=1275624830]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 540.0
+offset_top = -263.0
+offset_right = 740.0
+offset_bottom = 237.0
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Botao_Voltar" type="Button" parent="CenterContainer/Panel/VBoxContainer" unique_id=1188518907]
+custom_minimum_size = Vector2(50, 100)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.9655693, 0.9347653, 0.99999994, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.5251013, 0.5251013, 0.5251013, 1)
+theme_override_font_sizes/font_size = 45
+action_mode = 0
+text = "VOLTAR"
+flat = true
+autowrap_mode = 1
+script = ExtResource("1_3ms8u")
+
+[connection signal="mouse_entered" from="CenterContainer/Panel/VBoxContainer/Botao_Voltar" to="CenterContainer/Panel/VBoxContainer/Botao_Voltar" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CenterContainer/Panel/VBoxContainer/Botao_Voltar" to="CenterContainer/Panel/VBoxContainer/Botao_Voltar" method="_on_mouse_exited"]
+[connection signal="ready" from="CenterContainer/Panel/VBoxContainer/Botao_Voltar" to="CenterContainer/Panel/VBoxContainer/Botao_Voltar" method="_ready"]

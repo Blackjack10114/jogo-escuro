@@ -1,5 +1,37 @@
 [gd_scene format=3 uid="uid://dthbgeofqo8c4"]
 
+[ext_resource type="Script" uid="uid://drkxlr6ofrp0e" path="res://Scripts/UI/EfeitoBotao.gd" id="1_4arjw"]
+[ext_resource type="StyleBox" uid="uid://djwfdsxa43lai" path="res://Efeitos/brilhobotao.tres" id="2_ejpuu"]
+
+[sub_resource type="FontFile" id="FontFile_onita"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/60/0/ascent = 0.0
+cache/0/60/0/descent = 0.0
+cache/0/60/0/underline_position = 0.0
+cache/0/60/0/underline_thickness = 0.0
+cache/0/60/0/scale = 1.0
+cache/0/45/0/ascent = 0.0
+cache/0/45/0/descent = 0.0
+cache/0/45/0/underline_position = 0.0
+cache/0/45/0/underline_thickness = 0.0
+cache/0/45/0/scale = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dx4q5"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [node name="PauseUi" type="Control" unique_id=65658741]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +39,70 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=539443715]
+layout_mode = 0
+offset_right = 1285.0
+offset_bottom = 715.0
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1643755652]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer" unique_id=851614638]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel" unique_id=767738641]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 540.0
+offset_top = -214.0
+offset_right = 740.0
+offset_bottom = 286.0
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Botao_" type="Button" parent="CenterContainer/Panel/VBoxContainer" unique_id=1230012568]
+custom_minimum_size = Vector2(50, 100)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.9655693, 0.9347653, 0.99999994, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.5251013, 0.5251013, 0.5251013, 1)
+theme_override_font_sizes/font_size = 45
+action_mode = 0
+text = "VOLTAR"
+flat = true
+autowrap_mode = 1
+script = ExtResource("1_4arjw")
+
+[node name="Botao_Sair" type="Button" parent="CenterContainer/Panel/VBoxContainer" unique_id=1191084134]
+custom_minimum_size = Vector2(50, 100)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontFile_onita")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_dx4q5")
+theme_override_styles/hover = ExtResource("2_ejpuu")
+theme_override_styles/focus = ExtResource("2_ejpuu")
+action_mode = 0
+text = "SAIR"
+flat = true
+script = ExtResource("1_4arjw")
+
+[connection signal="mouse_entered" from="CenterContainer/Panel/VBoxContainer/Botao_" to="CenterContainer/Panel/VBoxContainer/Botao_" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CenterContainer/Panel/VBoxContainer/Botao_" to="CenterContainer/Panel/VBoxContainer/Botao_" method="_on_mouse_exited"]
+[connection signal="ready" from="CenterContainer/Panel/VBoxContainer/Botao_" to="CenterContainer/Panel/VBoxContainer/Botao_" method="_ready"]
+[connection signal="mouse_entered" from="CenterContainer/Panel/VBoxContainer/Botao_Sair" to="CenterContainer/Panel/VBoxContainer/Botao_Sair" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CenterContainer/Panel/VBoxContainer/Botao_Sair" to="CenterContainer/Panel/VBoxContainer/Botao_Sair" method="_on_mouse_exited"]
+[connection signal="ready" from="CenterContainer/Panel/VBoxContainer/Botao_Sair" to="CenterContainer/Panel/VBoxContainer/Botao_Sair" method="_ready"]

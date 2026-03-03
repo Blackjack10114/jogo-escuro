@@ -73,7 +73,7 @@ position = Vector2(1102, 324)
 position = Vector2(692, 562)
 
 [node name="BotaoLongTrigger" parent="." unique_id=673730092 instance=ExtResource("13_x0l3w")]
-position = Vector2(399, 513)
+position = Vector2(381, 447)
 
 [node name="BotaoSimples" parent="." unique_id=342565989 instance=ExtResource("14_ysftc")]
 position = Vector2(897, 627)

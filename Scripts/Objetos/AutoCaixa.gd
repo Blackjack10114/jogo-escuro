@@ -69,9 +69,11 @@ func _physics_process(delta: float) -> void:
 
 func _on_impacto(body: Node) -> void:
 	# Evita quebrar por auto-colisão (Impacto pegando o próprio corpo/colisão)
-	if body == colisao_solida_node:
-		return
-	_tentar_quebrar()
+	if body is AnimatableBody2D:
+		pass
+		if body == colisao_solida_node:
+			return
+			_tentar_quebrar()
 
 func _on_impacto_area(area: Area2D) -> void:
 	# Evita quebrar se detectar alguma Area2D que esteja dentro da própria caixa

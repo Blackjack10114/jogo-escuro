@@ -16,12 +16,23 @@
 [ext_resource type="PackedScene" uid="uid://dc22towx7i5m6" path="res://Objetos/Botoes/Botao_Simples.tscn" id="14_ysftc"]
 [ext_resource type="PackedScene" uid="uid://bgdm7ro8v7buh" path="res://Objetos/Caixa/Auto_Caixa.tscn" id="16_3ur8i"]
 
+[sub_resource type="Gradient" id="Gradient_ysftc"]
+offsets = PackedFloat32Array(0, 0.9548387)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3ur8i"]
+gradient = SubResource("Gradient_ysftc")
+fill = 1
+fill_from = Vector2(0.4957265, 0.4957265)
+fill_to = Vector2(0.85897434, 0.08974359)
+
 [node name="PuzzlePrototipo" type="Node2D" unique_id=211625197]
 
-[node name="PuzzleController" type="Node" parent="." unique_id=25800619 node_paths=PackedStringArray("porta", "ativadores")]
+[node name="PuzzleController" type="Node" parent="." unique_id=25800619 node_paths=PackedStringArray("porta", "ativadores", "luzes_area")]
 script = ExtResource("1_swtkx")
 porta = NodePath("../Porta")
 ativadores = [NodePath("../Altar"), NodePath("../Altar_Azul"), NodePath("../Altar_Verde"), NodePath("../Altar_Vermelho"), NodePath("../BotaoLongTrigger"), NodePath("../BotaoSimples")]
+luzes_area = [NodePath("../PointLight2D")]
 
 [node name="Altar" parent="." unique_id=849689154 instance=ExtResource("2_86sgx")]
 position = Vector2(603, 149)
@@ -80,6 +91,14 @@ position = Vector2(-78, 281)
 position = Vector2(117.317215, 369.02744)
 rotation = -0.34236613
 progress = 17.421143
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1384880607]
+position = Vector2(597, 308.99997)
+scale = Vector2(15.847367, -173.72975)
+energy = 0.73
+texture = SubResource("GradientTexture2D_3ur8i")
+texture_scale = 50.0
+height = 1024.0
 
 [editable path="Porta"]
 [editable path="AutoCaixa"]

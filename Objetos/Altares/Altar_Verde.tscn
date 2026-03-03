@@ -60,25 +60,23 @@ animations = [{
 size = Vector2(33.76164, 71.2626)
 
 [node name="Altar_Verde" type="Node2D" unique_id=44935604]
+scale = Vector2(0.4, 0.4)
 
 [node name="Altar_Verde" type="Area2D" parent="." unique_id=1260660105 node_paths=PackedStringArray("luz")]
-scale = Vector2(0.039999485, 0.039999485)
 script = ExtResource("1_6anp2")
 cor_aceita = 2
 luz = NodePath("PointLight2D")
 
 [node name="looks" type="AnimatedSprite2D" parent="Altar_Verde" unique_id=1904281960]
 unique_name_in_owner = true
-scale = Vector2(40, 40)
 sprite_frames = SubResource("SpriteFrames_arbqc")
 animation = &"active"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Altar_Verde" unique_id=71089921]
-scale = Vector2(67.38417, 36.484776)
+position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_fx006")
 
 [node name="PointLight2D" type="PointLight2D" parent="Altar_Verde" unique_id=977701204]
-scale = Vector2(60, 60)
 enabled = false
 color = Color(0.6784314, 1, 0, 1)
 energy = 1.5

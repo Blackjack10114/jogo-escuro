@@ -1,0 +1,6 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://dcf6a0thifptv"]
+
+[ext_resource type="Texture2D" uid="uid://c3wyqhjo0rtrt" path="res://Sprites/Objetos/Botões/Botão menus.png" id="1_3j3t1"]
+
+[resource]
+texture = ExtResource("1_3j3t1")

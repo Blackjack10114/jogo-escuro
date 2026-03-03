@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://dthbgeofqo8c4"]
 
 [ext_resource type="Script" uid="uid://drkxlr6ofrp0e" path="res://Scripts/UI/EfeitoBotao.gd" id="1_4arjw"]
+[ext_resource type="Texture2D" uid="uid://c3wyqhjo0rtrt" path="res://Sprites/Objetos/Botões/Botão menus.png" id="1_ejpuu"]
 [ext_resource type="StyleBox" uid="uid://djwfdsxa43lai" path="res://Efeitos/brilhobotao.tres" id="2_ejpuu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_onita"]
+texture = ExtResource("1_ejpuu")
 
 [sub_resource type="FontFile" id="FontFile_onita"]
 cache/0/variation_coordinates = {}
@@ -60,7 +64,7 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel" unique_id=767738641]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -74,13 +78,25 @@ theme_override_constants/separation = 50
 alignment = 1
 
 [node name="Botao_" type="Button" parent="CenterContainer/Panel/VBoxContainer" unique_id=1230012568]
-custom_minimum_size = Vector2(50, 100)
+custom_minimum_size = Vector2(100, 200)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.9655693, 0.9347653, 0.99999994, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.5251013, 0.5251013, 0.5251013, 1)
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_onita")
+action_mode = 0
+text = "VOLTAR"
+autowrap_mode = 1
+script = ExtResource("1_4arjw")
+
+[node name="Botao_2" type="Button" parent="CenterContainer/Panel/VBoxContainer" unique_id=1674028817]
+custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.9655693, 0.9347653, 0.99999994, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.5251013, 0.5251013, 0.5251013, 1)
 theme_override_font_sizes/font_size = 45
 action_mode = 0
-text = "VOLTAR"
+text = "CONTROLES"
 flat = true
 autowrap_mode = 1
 script = ExtResource("1_4arjw")
@@ -103,6 +119,9 @@ script = ExtResource("1_4arjw")
 [connection signal="mouse_entered" from="CenterContainer/Panel/VBoxContainer/Botao_" to="CenterContainer/Panel/VBoxContainer/Botao_" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CenterContainer/Panel/VBoxContainer/Botao_" to="CenterContainer/Panel/VBoxContainer/Botao_" method="_on_mouse_exited"]
 [connection signal="ready" from="CenterContainer/Panel/VBoxContainer/Botao_" to="CenterContainer/Panel/VBoxContainer/Botao_" method="_ready"]
+[connection signal="mouse_entered" from="CenterContainer/Panel/VBoxContainer/Botao_2" to="CenterContainer/Panel/VBoxContainer/Botao_2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CenterContainer/Panel/VBoxContainer/Botao_2" to="CenterContainer/Panel/VBoxContainer/Botao_2" method="_on_mouse_exited"]
+[connection signal="ready" from="CenterContainer/Panel/VBoxContainer/Botao_2" to="CenterContainer/Panel/VBoxContainer/Botao_2" method="_ready"]
 [connection signal="mouse_entered" from="CenterContainer/Panel/VBoxContainer/Botao_Sair" to="CenterContainer/Panel/VBoxContainer/Botao_Sair" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CenterContainer/Panel/VBoxContainer/Botao_Sair" to="CenterContainer/Panel/VBoxContainer/Botao_Sair" method="_on_mouse_exited"]
 [connection signal="ready" from="CenterContainer/Panel/VBoxContainer/Botao_Sair" to="CenterContainer/Panel/VBoxContainer/Botao_Sair" method="_ready"]

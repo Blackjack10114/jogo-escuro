@@ -1,69 +1,32 @@
 extends Button
 
-var outlineAtual := 0.0
-var glowAtual := 0.0
-var tweenGlow : Tween
+@onready var glow: TextureRect = get_parent().get_node("Glow")
 
-func _ready():
-	# núcleo da letra (nítido)
-	add_theme_constant_override("outline_size", 1)
-	add_theme_color_override("font_outline_color", Color(0.8, 0.95, 1.0, 1.0))
+var tween: Tween
 
-	# halo neon externo (sem deslocamento)
-	add_theme_constant_override("shadow_offset_x", 0)
-	add_theme_constant_override("shadow_offset_y", 0)
-	add_theme_constant_override("shadow_outline_size", 0)
-	add_theme_color_override("font_shadow_color", Color(0.6, 0.85, 1.0, 0.25))
+func _ready() -> void:
+	if glow:
+		glow.modulate.a = 0.0
+		glow.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
-	mouse_entered.connect(_on_hover_on)
-	mouse_exited.connect(_on_hover_off)
-	focus_entered.connect(_on_hover_on)
-	focus_exited.connect(_on_hover_off)
+	mouse_entered.connect(_on_on)
+	mouse_exited.connect(_on_off)
+	focus_entered.connect(_on_on)
+	focus_exited.connect(_on_off)
 
+func _on_on() -> void:
+	_anim_glow(1.0)
 
-func _on_hover_on():
-	if tweenGlow:
-		tweenGlow.kill()
+func _on_off() -> void:
+	_anim_glow(0.0)
 
-	# pulsação contínua do halo
-	tweenGlow = create_tween().set_loops()
-	tweenGlow.tween_method(AtualizarHalo, 20.0, 34.0, 1.0)
-	tweenGlow.tween_method(AtualizarHalo, 26.0, 16.0, 0.9)
+func _anim_glow(target_alpha: float) -> void:
+	if glow == null:
+		return
+	if tween:
+		tween.kill()
 
-	AnimarGlow(2, 20)
-
-
-func _on_hover_off():
-	if tweenGlow:
-		tweenGlow.kill()
-
-	AnimarGlow(0, 0)
-
-
-func AnimarGlow(outlineFinal, glowFinal):
-	var tween = create_tween()
+	tween = create_tween()
 	tween.set_trans(Tween.TRANS_SINE)
 	tween.set_ease(Tween.EASE_OUT)
-
-	tween.tween_method(AtualizarOutline, outlineAtual, outlineFinal, 0.2)
-	tween.parallel().tween_method(AtualizarHalo, glowAtual, glowFinal, 0.2)
-
-
-func AtualizarOutline(valor):
-	outlineAtual = valor
-	add_theme_constant_override("outline_size", valor)
-
-
-func AtualizarHalo(valor):
-	glowAtual = valor
-
-	# raio do brilho (expansão real do neon)
-	add_theme_constant_override("shadow_outline_size", valor)
-
-	# intensidade cresce com o raio → luz difusa real
-	var intensidade = clamp(valor / 26.0, 0.0, 1.0)
-
-	add_theme_color_override(
-		"font_shadow_color",
-		Color(0.6, 0.85, 1.0, 0.25 + intensidade * 0.45)
-	)
+	tween.tween_property(glow, "modulate:a", target_alpha, 0.15)

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csar72iukrgj6"
-path="res://.godot/imported/green_altar.png-0ec757a2df7ba7c46873f0d53ab9f733.ctex"
+path="res://.godot/imported/green_altar.png-2aa012b6d0d5492ba5914d4a629bf8e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Cenario/green_altar.png"
-dest_files=["res://.godot/imported/green_altar.png-0ec757a2df7ba7c46873f0d53ab9f733.ctex"]
+source_file="res://Sprites/Menu/green_altar.png"
+dest_files=["res://.godot/imported/green_altar.png-2aa012b6d0d5492ba5914d4a629bf8e8.ctex"]
 
 [params]
 

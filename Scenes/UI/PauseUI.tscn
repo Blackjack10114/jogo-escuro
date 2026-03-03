@@ -2,39 +2,8 @@
 
 [ext_resource type="Script" uid="uid://drkxlr6ofrp0e" path="res://Scripts/UI/EfeitoBotao.gd" id="1_4arjw"]
 [ext_resource type="Texture2D" uid="uid://c3wyqhjo0rtrt" path="res://Sprites/Objetos/Botões/Botão menus.png" id="1_ejpuu"]
-[ext_resource type="StyleBox" uid="uid://djwfdsxa43lai" path="res://Efeitos/brilhobotao.tres" id="2_ejpuu"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_onita"]
-texture = ExtResource("1_ejpuu")
-
-[sub_resource type="FontFile" id="FontFile_onita"]
-cache/0/variation_coordinates = {}
-cache/0/face_index = 0
-cache/0/embolden = 0.0
-cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
-cache/0/spacing_top = 0
-cache/0/spacing_bottom = 0
-cache/0/spacing_space = 0
-cache/0/spacing_glyph = 0
-cache/0/baseline_offset = 0.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/60/0/ascent = 0.0
-cache/0/60/0/descent = 0.0
-cache/0/60/0/underline_position = 0.0
-cache/0/60/0/underline_thickness = 0.0
-cache/0/60/0/scale = 1.0
-cache/0/45/0/ascent = 0.0
-cache/0/45/0/descent = 0.0
-cache/0/45/0/underline_position = 0.0
-cache/0/45/0/underline_thickness = 0.0
-cache/0/45/0/scale = 1.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dx4q5"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[ext_resource type="Script" uid="uid://htaegq4ln4ao" path="res://Scripts/Manager/PauseMenu.gd" id="1_onita"]
+[ext_resource type="FontFile" uid="uid://t2jh8jqf7rqs" path="res://Fonts/Undak-KVA3y.otf" id="4_dx4q5"]
 
 [node name="PauseUi" type="Control" unique_id=65658741]
 layout_mode = 3
@@ -43,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_onita")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=539443715]
 layout_mode = 0
@@ -50,7 +20,8 @@ offset_right = 1285.0
 offset_bottom = 715.0
 color = Color(0, 0, 0, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1643755652]
+[node name="PauseContainer" type="CenterContainer" parent="." unique_id=1643755652]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -58,70 +29,191 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="CenterContainer" unique_id=851614638]
+[node name="PausePanel" type="Panel" parent="PauseContainer" unique_id=851614638]
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel" unique_id=767738641]
-custom_minimum_size = Vector2(200, 200)
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseContainer/PausePanel" unique_id=1550818312]
+custom_minimum_size = Vector2(100, 200)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 540.0
-offset_top = -214.0
-offset_right = 740.0
-offset_bottom = 286.0
+offset_left = 557.0
+offset_top = -294.0
+offset_right = 735.0
+offset_bottom = 337.0
 grow_vertical = 2
 theme_override_constants/separation = 50
 alignment = 1
 
-[node name="Botao_" type="Button" parent="CenterContainer/Panel/VBoxContainer" unique_id=1230012568]
-custom_minimum_size = Vector2(100, 200)
+[node name="BotaoVoltar" type="TextureButton" parent="PauseContainer/PausePanel/VBoxContainer" unique_id=507230167]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.9655693, 0.9347653, 0.99999994, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.5251013, 0.5251013, 0.5251013, 1)
-theme_override_font_sizes/font_size = 45
-theme_override_styles/normal = SubResource("StyleBoxTexture_onita")
-action_mode = 0
+texture_normal = ExtResource("1_ejpuu")
+texture_pressed = ExtResource("1_ejpuu")
+texture_hover = ExtResource("1_ejpuu")
+texture_disabled = ExtResource("1_ejpuu")
+texture_focused = ExtResource("1_ejpuu")
+stretch_mode = 0
+script = ExtResource("1_4arjw")
+
+[node name="Label" type="Label" parent="PauseContainer/PausePanel/VBoxContainer/BotaoVoltar" unique_id=1263668205]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 25.0
+offset_right = 145.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("4_dx4q5")
+theme_override_font_sizes/font_size = 30
 text = "VOLTAR"
-autowrap_mode = 1
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="BotaoControles" type="TextureButton" parent="PauseContainer/PausePanel/VBoxContainer" unique_id=1956100552]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+texture_normal = ExtResource("1_ejpuu")
+texture_pressed = ExtResource("1_ejpuu")
+texture_hover = ExtResource("1_ejpuu")
+texture_disabled = ExtResource("1_ejpuu")
+texture_focused = ExtResource("1_ejpuu")
+stretch_mode = 0
 script = ExtResource("1_4arjw")
 
-[node name="Botao_2" type="Button" parent="CenterContainer/Panel/VBoxContainer" unique_id=1674028817]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.9655693, 0.9347653, 0.99999994, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.5251013, 0.5251013, 0.5251013, 1)
-theme_override_font_sizes/font_size = 45
-action_mode = 0
+[node name="Label" type="Label" parent="PauseContainer/PausePanel/VBoxContainer/BotaoControles" unique_id=421702007]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 29.0
+offset_right = 145.0
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("4_dx4q5")
+theme_override_font_sizes/font_size = 25
 text = "CONTROLES"
-flat = true
-autowrap_mode = 1
-script = ExtResource("1_4arjw")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Botao_Sair" type="Button" parent="CenterContainer/Panel/VBoxContainer" unique_id=1191084134]
-custom_minimum_size = Vector2(50, 100)
+[node name="BotaoSair" type="TextureButton" parent="PauseContainer/PausePanel/VBoxContainer" unique_id=1755438448]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = SubResource("FontFile_onita")
-theme_override_font_sizes/font_size = 45
-theme_override_styles/normal = SubResource("StyleBoxFlat_dx4q5")
-theme_override_styles/hover = ExtResource("2_ejpuu")
-theme_override_styles/focus = ExtResource("2_ejpuu")
-action_mode = 0
-text = "SAIR"
-flat = true
+texture_normal = ExtResource("1_ejpuu")
+texture_pressed = ExtResource("1_ejpuu")
+texture_hover = ExtResource("1_ejpuu")
+texture_disabled = ExtResource("1_ejpuu")
+texture_focused = ExtResource("1_ejpuu")
+stretch_mode = 0
 script = ExtResource("1_4arjw")
 
-[connection signal="mouse_entered" from="CenterContainer/Panel/VBoxContainer/Botao_" to="CenterContainer/Panel/VBoxContainer/Botao_" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="CenterContainer/Panel/VBoxContainer/Botao_" to="CenterContainer/Panel/VBoxContainer/Botao_" method="_on_mouse_exited"]
-[connection signal="ready" from="CenterContainer/Panel/VBoxContainer/Botao_" to="CenterContainer/Panel/VBoxContainer/Botao_" method="_ready"]
-[connection signal="mouse_entered" from="CenterContainer/Panel/VBoxContainer/Botao_2" to="CenterContainer/Panel/VBoxContainer/Botao_2" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="CenterContainer/Panel/VBoxContainer/Botao_2" to="CenterContainer/Panel/VBoxContainer/Botao_2" method="_on_mouse_exited"]
-[connection signal="ready" from="CenterContainer/Panel/VBoxContainer/Botao_2" to="CenterContainer/Panel/VBoxContainer/Botao_2" method="_ready"]
-[connection signal="mouse_entered" from="CenterContainer/Panel/VBoxContainer/Botao_Sair" to="CenterContainer/Panel/VBoxContainer/Botao_Sair" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="CenterContainer/Panel/VBoxContainer/Botao_Sair" to="CenterContainer/Panel/VBoxContainer/Botao_Sair" method="_on_mouse_exited"]
-[connection signal="ready" from="CenterContainer/Panel/VBoxContainer/Botao_Sair" to="CenterContainer/Panel/VBoxContainer/Botao_Sair" method="_ready"]
+[node name="Label" type="Label" parent="PauseContainer/PausePanel/VBoxContainer/BotaoSair" unique_id=1262434276]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 25.0
+offset_right = 145.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("4_dx4q5")
+theme_override_font_sizes/font_size = 30
+text = "SAIR"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Controles" type="Control" parent="." unique_id=962970115]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ControlesContainer" type="CenterContainer" parent="Controles" unique_id=791052459]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ControlesPanel" type="Panel" parent="Controles/ControlesContainer" unique_id=1447468395]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Controles/ControlesContainer/ControlesPanel" unique_id=2004970504]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 69.0
+offset_right = 1115.0
+offset_bottom = 525.0
+theme_override_constants/separation = 40
+
+[node name="Controles" type="Label" parent="Controles/ControlesContainer/ControlesPanel/VBoxContainer" unique_id=1103673598]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dx4q5")
+theme_override_font_sizes/font_size = 70
+text = "CONTROLES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mover" type="Label" parent="Controles/ControlesContainer/ControlesPanel/VBoxContainer" unique_id=546386200]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dx4q5")
+theme_override_font_sizes/font_size = 50
+text = "Mover: WASD/SETAS"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Interagir" type="Label" parent="Controles/ControlesContainer/ControlesPanel/VBoxContainer" unique_id=1022099005]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dx4q5")
+theme_override_font_sizes/font_size = 50
+text = "Interagir: E"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Interagir2" type="Label" parent="Controles/ControlesContainer/ControlesPanel/VBoxContainer" unique_id=598830756]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dx4q5")
+theme_override_font_sizes/font_size = 50
+text = "Dropar Item: G"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Pause" type="Label" parent="Controles/ControlesContainer/ControlesPanel/VBoxContainer" unique_id=140398196]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dx4q5")
+theme_override_font_sizes/font_size = 50
+text = "Pause: ESC"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="BotaoVoltar" type="TextureButton" parent="Controles/ControlesContainer/ControlesPanel" unique_id=2128626438]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 0
+offset_left = 557.0
+offset_top = 552.0
+offset_right = 735.0
+offset_bottom = 652.0
+texture_normal = ExtResource("1_ejpuu")
+texture_pressed = ExtResource("1_ejpuu")
+texture_hover = ExtResource("1_ejpuu")
+texture_disabled = ExtResource("1_ejpuu")
+texture_focused = ExtResource("1_ejpuu")
+stretch_mode = 0
+script = ExtResource("1_4arjw")
+
+[node name="Label" type="Label" parent="Controles/ControlesContainer/ControlesPanel/BotaoVoltar" unique_id=1400429345]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 37.0
+offset_right = 132.0
+offset_bottom = 68.0
+theme_override_fonts/font = ExtResource("4_dx4q5")
+theme_override_font_sizes/font_size = 30
+text = "VOLTAR"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[connection signal="pressed" from="PauseContainer/PausePanel/VBoxContainer/BotaoVoltar" to="." method="_on_botaoVoltar_pressed"]
+[connection signal="pressed" from="PauseContainer/PausePanel/VBoxContainer/BotaoControles" to="." method="_on_botaoControles_pressed"]
+[connection signal="pressed" from="PauseContainer/PausePanel/VBoxContainer/BotaoSair" to="." method="_on_botaoSair_pressed"]
+[connection signal="pressed" from="Controles/ControlesContainer/ControlesPanel/BotaoVoltar" to="." method="_on_botaoVoltarControles_pressed"]

@@ -1,6 +1,8 @@
 class_name Porta
 extends StaticBody2D
 
+
+@export var sfx_abrir: AudioStream
 @export var comeca_aberta := false
 
 @onready var colisao: CollisionShape2D = get_node_or_null("CollisionShape2D")
@@ -31,3 +33,6 @@ func set_aberta(v: bool) -> void:
 
 	if looks:
 		looks.play("aberta" if aberta else "fechada")
+		
+	if aberta:
+		AudioManager.play_sfx(sfx_abrir)

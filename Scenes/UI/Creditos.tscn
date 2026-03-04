@@ -5,16 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://c3wyqhjo0rtrt" path="res://Sprites/Objetos/Botões/Botão menus.png" id="2_ypino"]
 [ext_resource type="Script" uid="uid://drkxlr6ofrp0e" path="res://Scripts/UI/EfeitoBotao.gd" id="3_8tdnw"]
 [ext_resource type="Texture2D" uid="uid://trdpsyk61aqr" path="res://Sprites/Menu/fundo menu .png" id="5_5phne"]
-[ext_resource type="Texture2D" uid="uid://vs6s1p0ic7wp" path="res://Sprites/Menu/altar menu fundo.png" id="6_srmhr"]
-
-[sub_resource type="Gradient" id="Gradient_0kn0p"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ukcro"]
-gradient = SubResource("Gradient_0kn0p")
-fill = 1
-fill_from = Vector2(0.50869566, 0.51304346)
-fill_to = Vector2(0.84782606, 0.16521738)
 
 [node name="Creditos" type="Control" unique_id=141927599]
 layout_mode = 3
@@ -32,6 +22,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 
 [node name="CreditosPanel" type="Panel" parent="CreditosContainer" unique_id=685471160]
 modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
@@ -123,21 +115,28 @@ text = "VOLTAR"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="FundoMenu" type="Sprite2D" parent="." unique_id=87387626]
+[node name="CreditosFora" type="Label" parent="CreditosContainer/CreditosPanel" unique_id=997149693]
+layout_mode = 0
+offset_left = 59.999985
+offset_top = 500.0
+offset_right = 864.0
+offset_bottom = 884.0
+scale = Vector2(0.40000153, 0.40000153)
+theme_override_fonts/font = ExtResource("1_xuf7u")
+theme_override_font_sizes/font_size = 50
+text = "ÁUDIO
+\"8-bit Footsteps\" — EVRetro (freesound.org)
+
+FONTES
+Undak Font — Wahyu Eka Prasetya
+Freeware, non-commercial use"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="FundoMenu" type="Sprite2D" parent="CreditosContainer" unique_id=87387626]
 z_index = -2
-position = Vector2(648, 354)
+position = Vector2(647.5, 362.5)
+scale = Vector2(0.99609363, 0.9294871)
 texture = ExtResource("5_5phne")
-
-[node name="Altar" type="Sprite2D" parent="FundoMenu" unique_id=664459472]
-position = Vector2(283.00006, -219.99998)
-rotation = -0.7679449
-scale = Vector2(1.525, 1.525)
-texture = ExtResource("6_srmhr")
-
-[node name="PointLight2D2" type="PointLight2D" parent="FundoMenu/Altar" unique_id=788178728]
-rotation = 0.7679449
-energy = 1.75
-texture = SubResource("GradientTexture2D_ukcro")
-texture_scale = 3.0
 
 [connection signal="pressed" from="CreditosContainer/CreditosPanel/BotaoVoltar" to="." method="_on_botaoVoltar_pressed"]

@@ -40,6 +40,8 @@ func play_sfx(stream: AudioStream) -> void:
 	add_child(p)
 	p.play()
 	p.finished.connect(p.queue_free)
+	
+
 
 
 # ---------- VOLUME SETTINGS ----------

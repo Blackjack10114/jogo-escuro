@@ -14,6 +14,15 @@
 [ext_resource type="Texture2D" uid="uid://dvitwbr5mwmgw" path="res://Sprites/Menu/chama menu fundo.png" id="10_bfaf2"]
 [ext_resource type="PackedScene" uid="uid://ceffs2g4rvquq" path="res://Scenes/UI/OpcoesUI.tscn" id="12_j3fey"]
 
+[sub_resource type="Gradient" id="Gradient_bfaf2"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0kn0p"]
+gradient = SubResource("Gradient_bfaf2")
+height = 32
+fill = 2
+fill_from = Vector2(0.49130434, 0.5043478)
+
 [sub_resource type="FontFile" id="FontFile_wvohi"]
 cache/0/variation_coordinates = {}
 cache/0/face_index = 0
@@ -70,6 +79,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 script = ExtResource("1_3k1ur")
 panel_menu = NodePath("CenterContainer/PanelMenu")
 panel_opcoes = NodePath("OpcoesUi")
@@ -81,8 +91,14 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -512.0
+offset_top = -288.0
+offset_right = 512.0
+offset_bottom = 288.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 
 [node name="PanelMenu" type="Panel" parent="CenterContainer" unique_id=698229741]
 modulate = Color(0.17283267, 0.17283267, 0.17283261, 1)
@@ -127,6 +143,12 @@ text = "JOGAR"
 horizontal_alignment = 1
 vertical_alignment = 2
 
+[node name="PointLight2D" type="PointLight2D" parent="CenterContainer/PanelMenu/VBoxContainer/BotaoJogar" unique_id=1885993053]
+position = Vector2(92, 51)
+energy = 2.5
+texture = SubResource("GradientTexture2D_0kn0p")
+texture_scale = 2.4
+
 [node name="BotaoOpcoes" type="TextureButton" parent="CenterContainer/PanelMenu/VBoxContainer" unique_id=726676016]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
@@ -149,6 +171,13 @@ theme_override_font_sizes/font_size = 25
 text = "OPÇÕES"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PointLight2D" type="PointLight2D" parent="CenterContainer/PanelMenu/VBoxContainer/BotaoOpcoes" unique_id=985233230]
+position = Vector2(92, 46.00003)
+scale = Vector2(0.99999994, 0.99999994)
+energy = 2.5
+texture = SubResource("GradientTexture2D_0kn0p")
+texture_scale = 2.4
 
 [node name="BotaoCreditos" type="TextureButton" parent="CenterContainer/PanelMenu/VBoxContainer" unique_id=346151840]
 custom_minimum_size = Vector2(0, 100)
@@ -173,6 +202,13 @@ text = "CRÉDITOS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="PointLight2D" type="PointLight2D" parent="CenterContainer/PanelMenu/VBoxContainer/BotaoCreditos" unique_id=1067773339]
+position = Vector2(87.00001, 50.999992)
+scale = Vector2(0.99999976, 0.99999976)
+energy = 2.5
+texture = SubResource("GradientTexture2D_0kn0p")
+texture_scale = 2.4
+
 [node name="BotaoSair" type="TextureButton" parent="CenterContainer/PanelMenu/VBoxContainer" unique_id=225881997]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
@@ -195,6 +231,13 @@ theme_override_font_sizes/font_size = 30
 text = "SAIR"
 horizontal_alignment = 1
 vertical_alignment = 2
+
+[node name="PointLight2D" type="PointLight2D" parent="CenterContainer/PanelMenu/VBoxContainer/BotaoSair" unique_id=861661538]
+position = Vector2(87, 50.999992)
+scale = Vector2(0.99999994, 0.99999994)
+energy = 2.5
+texture = SubResource("GradientTexture2D_0kn0p")
+texture_scale = 2.4
 
 [node name="Botao_Jogar" type="Button" parent="CenterContainer/PanelMenu" unique_id=1483294612]
 visible = false
@@ -244,6 +287,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("8_e2q8o")
 
 [node name="Altar" type="Sprite2D" parent="CenterContainer/FundoMenu" unique_id=1864154310]
+visible = false
 position = Vector2(283.00006, -219.99998)
 rotation = -0.7679449
 scale = Vector2(1.525, 1.525)
@@ -261,22 +305,40 @@ energy = 1.75
 texture = SubResource("GradientTexture2D_cm26j")
 texture_scale = 3.0
 
-[node name="PointLight2D" type="PointLight2D" parent="CenterContainer" unique_id=1686418682]
+[node name="Luz_Mouse" type="PointLight2D" parent="CenterContainer" unique_id=1686418682]
 position = Vector2(712, 339)
 energy = 5.25
 texture = SubResource("GradientTexture2D_dhyt4")
 texture_scale = 3.4
 script = ExtResource("4_vymcu")
 
-[node name="CanvasModulate" type="CanvasModulate" parent="CenterContainer" unique_id=631026797]
-color = Color(0.13682577, 0.13682574, 0.13682571, 1)
-
 [node name="OpcoesUi" parent="." unique_id=65658741 instance=ExtResource("12_j3fey")]
 layout_mode = 1
 script = null
 
+[node name="OpcoesContainer" parent="OpcoesUi" index="0" unique_id=1643755652]
+scale = Vector2(0.2, 0.2)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="Label" parent="OpcoesUi/OpcoesContainer/OpcoesPanel/BotaoVoltar" parent_id_path=PackedInt32Array(65658741, 507230167) index="0" unique_id=1263668205]
+light_mask = 2
+
+[node name="Label" parent="OpcoesUi/OpcoesContainer/OpcoesPanel/BotaoControles" parent_id_path=PackedInt32Array(65658741, 1956100552) index="0" unique_id=421702007]
+light_mask = 2
+
 [node name="Controles" parent="." unique_id=93058582 instance=ExtResource("7_5rbvo")]
 layout_mode = 1
+
+[node name="ControlesContainer" parent="Controles" index="0" unique_id=516701530]
+scale = Vector2(0.2, 0.2)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="Label" parent="Controles/ControlesContainer/ControlesPanel/BotaoVoltar" parent_id_path=PackedInt32Array(93058582, 1414153498) index="0" unique_id=1277835739]
+light_mask = 2
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=631026797]
+scale = Vector2(0.19999999, 0.19999999)
+color = Color(0.099985994, 0.099985994, 0.099985994, 1)
 
 [connection signal="pressed" from="CenterContainer/PanelMenu/VBoxContainer/BotaoJogar" to="." method="_on_botaoJogar_pressed"]
 [connection signal="pressed" from="CenterContainer/PanelMenu/VBoxContainer/BotaoOpcoes" to="." method="_on_botaoOpcoes_pressed"]

@@ -2,6 +2,17 @@
 
 [ext_resource type="Script" uid="uid://dgtjavn5v1d2f" path="res://Scripts/UI/CenaFim.gd" id="1_ahsos"]
 [ext_resource type="FontFile" uid="uid://t2jh8jqf7rqs" path="res://Fonts/Undak-KVA3y.otf" id="2_iw442"]
+[ext_resource type="Texture2D" uid="uid://trdpsyk61aqr" path="res://Sprites/Menu/fundo menu .png" id="3_ahsos"]
+[ext_resource type="Texture2D" uid="uid://vs6s1p0ic7wp" path="res://Sprites/Menu/altar menu fundo.png" id="4_iw442"]
+
+[sub_resource type="Gradient" id="Gradient_0kn0p"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ne5v2"]
+gradient = SubResource("Gradient_0kn0p")
+fill = 1
+fill_from = Vector2(0.50869566, 0.51304346)
+fill_to = Vector2(0.84782606, 0.16521738)
 
 [node name="CenaFinal" type="Control" unique_id=642467399 node_paths=PackedStringArray("fade", "texto_continuar")]
 layout_mode = 3
@@ -63,3 +74,20 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="FundoMenu" type="Sprite2D" parent="." unique_id=890615118]
+z_index = -2
+position = Vector2(648, 354)
+texture = ExtResource("3_ahsos")
+
+[node name="Altar" type="Sprite2D" parent="FundoMenu" unique_id=530370235]
+position = Vector2(283.00006, -219.99998)
+rotation = -0.7679449
+scale = Vector2(1.525, 1.525)
+texture = ExtResource("4_iw442")
+
+[node name="PointLight2D2" type="PointLight2D" parent="FundoMenu/Altar" unique_id=1212886641]
+rotation = 0.7679449
+energy = 1.75
+texture = SubResource("GradientTexture2D_ne5v2")
+texture_scale = 3.0

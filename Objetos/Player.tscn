@@ -1,31 +1,46 @@
 [gd_scene format=3 uid="uid://bwrnn1c1hv5cm"]
 
 [ext_resource type="Script" uid="uid://qaat3l4u1de0" path="res://Scripts/Movim_Player.gd" id="1_38l55"]
-[ext_resource type="Texture2D" uid="uid://cebbiyjrf0rmd" path="res://Sprites/Player/spr_player_jam.png" id="2_sqf2x"]
+[ext_resource type="Texture2D" uid="uid://bs8gsdbvgfbnw" path="res://Sprites/Player/spr_player_jam_spritesheet.png" id="2_sqf2x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_asluq"]
 size = Vector2(72, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asluq"]
+atlas = ExtResource("2_sqf2x")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2cfw"]
+atlas = ExtResource("2_sqf2x")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsu8t"]
+atlas = ExtResource("2_sqf2x")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_asluq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_sqf2x")
+"texture": SubResource("AtlasTexture_asluq")
 }],
-"loop": true,
-"name": &"andando",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"empurrando",
+"loop": false,
+"name": &"Andando_Cima",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_sqf2x")
+"texture": SubResource("AtlasTexture_t2cfw")
 }],
-"loop": true,
+"loop": false,
+"name": &"andando_lado",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsu8t")
+}],
+"loop": false,
 "name": &"idle",
 "speed": 8.0
 }]
@@ -39,7 +54,8 @@ position = Vector2(-1, 15.5)
 shape = SubResource("RectangleShape2D_asluq")
 
 [node name="looks" type="AnimatedSprite2D" parent="." unique_id=1760153530]
-position = Vector2(0, 13)
+unique_name_in_owner = true
+position = Vector2(0, 14)
 scale = Vector2(4.5, 4.5)
 sprite_frames = SubResource("SpriteFrames_asluq")
-animation = &"idle"
+animation = &"andando_lado"

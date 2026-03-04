@@ -115,6 +115,24 @@ text = "VOLTAR"
 horizontal_alignment = 1
 vertical_alignment = 2
 
+[node name="CreditosFora" type="Label" parent="CreditosContainer/CreditosPanel" unique_id=997149693]
+layout_mode = 0
+offset_left = 59.999985
+offset_top = 500.0
+offset_right = 864.0
+offset_bottom = 884.0
+scale = Vector2(0.40000153, 0.40000153)
+theme_override_fonts/font = ExtResource("1_xuf7u")
+theme_override_font_sizes/font_size = 50
+text = "ÁUDIO
+\"8-bit Footsteps\" — EVRetro (freesound.org)
+
+FONTES
+Undak Font — Wahyu Eka Prasetya
+Freeware, non-commercial use"
+horizontal_alignment = 1
+vertical_alignment = 2
+
 [node name="FundoMenu" type="Sprite2D" parent="CreditosContainer" unique_id=87387626]
 z_index = -2
 position = Vector2(647.5, 362.5)

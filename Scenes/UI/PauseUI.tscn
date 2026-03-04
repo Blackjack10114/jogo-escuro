@@ -123,3 +123,6 @@ layout_mode = 1
 [connection signal="pressed" from="PauseContainer/PausePanel/VBoxContainer/BotaoVoltar" to="." method="_on_botaoVoltar_pressed"]
 [connection signal="pressed" from="PauseContainer/PausePanel/VBoxContainer/BotaoControles" to="." method="_on_botaoControles_pressed"]
 [connection signal="pressed" from="PauseContainer/PausePanel/VBoxContainer/BotaoSair" to="." method="_on_botaoSair_pressed"]
+[connection signal="pressed" from="Controles/ControlesContainer/ControlesPanel/BotaoVoltar" to="." method="_on_botaoVoltarControles_pressed"]
+
+[editable path="Controles"]

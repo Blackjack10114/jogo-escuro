@@ -67,12 +67,12 @@ func _verificar_puzzle(_novo_estado: bool) -> void:
 func _ativar_luzes():
 	for luz in luzes_area:
 		if is_instance_valid(luz):
-			luz.visible = true
+			luz.visible = false
 
 func _desativar_luzes():
 	for luz in luzes_area:
 		if is_instance_valid(luz):
-			luz.visible = false
+			luz.visible = true
 
 # ===== RESTO =====
 func _travar_interacoes():

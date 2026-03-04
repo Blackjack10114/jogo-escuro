@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://drxmvwic3en7v"
+path="res://.godot/imported/Menu_Jogo_escuro melhorado.mp3-6ad76bfd08b42b30535f9c4884cfb916.mp3str"
+
+[deps]
+
+source_file="res://Sons/Musicas antigas/Menu_Jogo_escuro melhorado.mp3"
+dest_files=["res://.godot/imported/Menu_Jogo_escuro melhorado.mp3-6ad76bfd08b42b30535f9c4884cfb916.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

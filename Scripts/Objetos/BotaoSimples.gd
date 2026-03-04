@@ -1,13 +1,14 @@
 class_name BotaoSimples
 extends Ativador
 
-@export var alvos: Array[Node] = []  # agora aceita Porta, qualquer Node
+@export var alvos: Array[Node] = [] 
 
-@onready var sprite: Sprite2D = get_node_or_null("Sprite2D")
+@onready var anim: AnimatedSprite2D = get_node_or_null("looks")
 
 func _ready():
 	body_entered.connect(_on_body_entered)
 	_set_estado(false)
+	_ao_desativar() 
 
 func _on_body_entered(_body):
 	if ativo:
@@ -16,9 +17,12 @@ func _on_body_entered(_body):
 	ativar()
 	for alvo in alvos:
 		if is_instance_valid(alvo):
-			alvo.call("ativar")  # se não existir, não quebra
-			# ou: if alvo.has_method("ativar"): alvo.ativar()
+			alvo.call("ativar")  
 			
 func _ao_ativar():
-	if sprite:
-		sprite.modulate.a = 0.7
+	if anim:
+		anim.play("ativado")
+
+func _ao_desativar():
+	if anim:
+		anim.play("desativado")

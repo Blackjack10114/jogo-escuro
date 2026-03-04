@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dlapqp3v6jy3a"]
 
 [ext_resource type="PackedScene" uid="uid://bwrnn1c1hv5cm" path="res://Objetos/Player.tscn" id="4_be7ju"]
+[ext_resource type="PackedScene" uid="uid://dthbgeofqo8c4" path="res://Scenes/UI/PauseUI.tscn" id="4_miqye"]
 [ext_resource type="Texture2D" uid="uid://34eb8j034ct8" path="res://icon.svg" id="5_0pdvv"]
 [ext_resource type="PackedScene" uid="uid://ds4ll71gf0lh7" path="res://Scenes/Puzzles/Puzzle_Prototipo.tscn" id="6_7j15l"]
 
@@ -21,3 +22,7 @@ position = Vector2(-109, 103)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=2052623995]
 position_smoothing_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=424215474]
+
+[node name="PauseUi" parent="CanvasLayer" unique_id=65658741 instance=ExtResource("4_miqye")]

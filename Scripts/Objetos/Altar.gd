@@ -30,7 +30,7 @@ func _process(_delta):
 	if bloqueado:
 		return
 		
-	if player_perto and Input.is_action_just_pressed("ui_accept"):
+	if player_perto and Input.is_action_just_pressed("interact"):
 		if ativo:
 			remover_tocha()
 		else:

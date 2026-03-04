@@ -27,11 +27,11 @@ func _on_body_exited(body):
 		player = null
 
 func _process(_delta):
-	if pode_pegar and Input.is_action_just_pressed("ui_accept"):
+	if pode_pegar and Input.is_action_just_pressed("interact"):
 		pegar_tocha()
 
 	# SOLTAR TOCHA
-	if carregada and Input.is_action_just_pressed("ui_cancel"):
+	if carregada and Input.is_action_just_pressed("drop"):
 		voltar_para_chao()
 
 func pegar_tocha():

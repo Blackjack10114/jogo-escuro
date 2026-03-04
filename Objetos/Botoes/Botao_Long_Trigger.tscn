@@ -1,17 +1,47 @@
 [gd_scene format=3 uid="uid://yf82ve22t1dd"]
 
 [ext_resource type="Script" uid="uid://cmwi4x2yi36pm" path="res://Scripts/Objetos/BotaoLongTrigger.gd" id="1_o83wo"]
-[ext_resource type="Texture2D" uid="uid://2c83m5k80uan" path="res://Sprites/Placeholders/button_round_depth_gradient.svg" id="2_ywbhv"]
+[ext_resource type="Texture2D" uid="uid://dww1cmqj8720l" path="res://Sprites/Objetos/Botões/LongPress/Botão Long press.png" id="2_o83wo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6b6ug"]
 
-[node name="BotaoLongTrigger" type="Area2D" unique_id=673730092]
-scale = Vector2(0.6042571, 0.6042571)
-script = ExtResource("1_o83wo")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywbhv"]
+atlas = ExtResource("2_o83wo")
+region = Rect2(64, 0, 64, 64)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=278411313]
-texture = ExtResource("2_ywbhv")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ov31y"]
+atlas = ExtResource("2_o83wo")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3k7n8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywbhv")
+}],
+"loop": true,
+"name": &"ativado",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ov31y")
+}],
+"loop": true,
+"name": &"desativado",
+"speed": 5.0
+}]
+
+[node name="BotaoLongTrigger" type="Area2D" unique_id=673730092]
+scale = Vector2(0.764, 0.764)
+script = ExtResource("1_o83wo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1889205878]
 scale = Vector2(4.1774597, 4.1774597)
 shape = SubResource("CircleShape2D_6b6ug")
+
+[node name="looks" type="AnimatedSprite2D" parent="." unique_id=1271791032]
+position = Vector2(1.6549249, -3.3098495)
+scale = Vector2(1.0947386, 1.0947386)
+sprite_frames = SubResource("SpriteFrames_3k7n8")
+animation = &"desativado"

@@ -6,6 +6,7 @@
 [ext_resource type="StyleBox" uid="uid://dcf6a0thifptv" path="res://spr_button.tres" id="2_glsjb"]
 [ext_resource type="FontFile" uid="uid://t2jh8jqf7rqs" path="res://Fonts/Undak-KVA3y.otf" id="3_5rbvo"]
 [ext_resource type="Script" uid="uid://ct65m5udakhr7" path="res://Scripts/LuzMenu.gd" id="4_vymcu"]
+[ext_resource type="PackedScene" uid="uid://c46fthdy51lrk" path="res://Scenes/UI/Controles.tscn" id="7_5rbvo"]
 
 [sub_resource type="FontFile" id="FontFile_wvohi"]
 cache/0/variation_coordinates = {}
@@ -59,6 +60,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3k1ur")
+metadata/_edit_vertical_guides_ = [-113.0]
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=913149164]
 layout_mode = 1
@@ -110,6 +112,29 @@ theme_override_font_sizes/font_size = 30
 text = "JOGAR"
 horizontal_alignment = 1
 vertical_alignment = 2
+
+[node name="BotaoControles" type="TextureButton" parent="CenterContainer/Panel/VBoxContainer" unique_id=726676016]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+texture_normal = ExtResource("2_dhyt4")
+texture_pressed = ExtResource("2_dhyt4")
+texture_hover = ExtResource("2_dhyt4")
+texture_disabled = ExtResource("2_dhyt4")
+texture_focused = ExtResource("2_dhyt4")
+stretch_mode = 0
+script = ExtResource("2_bt1tr")
+
+[node name="Label" type="Label" parent="CenterContainer/Panel/VBoxContainer/BotaoControles" unique_id=1944731583]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 28.0
+offset_right = 152.0
+offset_bottom = 75.0
+theme_override_fonts/font = ExtResource("3_5rbvo")
+theme_override_font_sizes/font_size = 25
+text = "CONTROLES"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="BotaoCreditos" type="TextureButton" parent="CenterContainer/Panel/VBoxContainer" unique_id=346151840]
 custom_minimum_size = Vector2(0, 100)
@@ -200,8 +225,19 @@ texture = SubResource("GradientTexture2D_dhyt4")
 texture_scale = 2.0
 script = ExtResource("4_vymcu")
 
+[node name="Controles" parent="." unique_id=93058582 instance=ExtResource("7_5rbvo")]
+layout_mode = 1
+
+[node name="ControlesPanel" parent="Controles/ControlesContainer" parent_id_path=PackedInt32Array(93058582, 516701530) index="0" unique_id=1406455125]
+modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
+self_modulate = Color(0.6255971, 0.6255971, 0.6255971, 1)
+
 [connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/BotaoJogar" to="." method="_on_botaoJogar_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/BotaoControles" to="." method="_on_botaoControles_pressed"]
 [connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/BotaoCreditos" to="." method="_on_botaoCreditos_pressed"]
 [connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/BotaoSair" to="." method="_on_botaoSair_pressed"]
 [connection signal="pressed" from="CenterContainer/Panel/Botao_Jogar" to="." method="_on_botaoJogar_pressed"]
 [connection signal="pressed" from="CenterContainer/Panel/Botao_Sair" to="." method="_on_botaoSair_pressed"]
+[connection signal="pressed" from="Controles/ControlesContainer/ControlesPanel/BotaoVoltar" to="." method="_on_botaoVoltarControles_pressed"]
+
+[editable path="Controles"]

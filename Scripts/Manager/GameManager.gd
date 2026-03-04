@@ -12,7 +12,6 @@ signal jogoRetomado
 signal puzzleResolvido(idPuzzle: String)
 var puzzlesResolvidos: Dictionary = {}
 
-# Ajuste os paths conforme seu projeto
 const SCENE_MENU := "res://Scenes/UI/MenuPrincipal.tscn"
 const SCENE_JOGO := "res://Scenes/SceneTeste/Hugo.tscn"
 

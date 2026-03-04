@@ -30,7 +30,7 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Player" type="CharacterBody2D" unique_id=2102932396]
+[node name="Player" type="CharacterBody2D" unique_id=2102932396 groups=["player"]]
 script = ExtResource("1_38l55")
 speed = 350.0
 

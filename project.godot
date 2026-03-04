@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Jogo_Escuro"
-run/main_scene="uid://gjj642bjsgnk"
+run/main_scene="uid://bnf7paxk0n6fq"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -26,9 +26,11 @@ AudioManager="*uid://uaiyl7a6t13e"
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
-window/stretch/mode="viewport"
+window/size/viewport_width=256
+window/size/viewport_height=144
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
 
 [global_group]
 
@@ -87,3 +89,5 @@ drop={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

@@ -1,4 +1,5 @@
 extends Area2D
+class_name TOCHA
 
 @export var cor: Cor.Tipo
 
@@ -6,7 +7,6 @@ var pode_pegar = false
 var player = null
 var carregada = false
 var posicao_original: Vector2
-var altar_atual = null
 
 var pai_original = null
 
@@ -44,8 +44,9 @@ func pegar_tocha():
 		
 		get_parent().remove_child(self)
 		p.add_child(self)
+		scale = Vector2(0.2,0.2)
 		
-		position = Vector2(20, 0)
+		position = Vector2(5, 0)
 		carregada = true
 		p.tocha_atual = self
 
@@ -56,8 +57,7 @@ func voltar_para_chao():
 
 		pai_original.add_child(self)
 
-		global_position = p.global_position + Vector2(20, 0)
-
+		global_position = p.global_position + Vector2(5, 0)
+		scale = Vector2(1,1)
 		carregada = false
 		p.tocha_atual = null
-		altar_atual = null

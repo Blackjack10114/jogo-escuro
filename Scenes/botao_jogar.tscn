@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b5v6r3p708bbg"]
+
+[ext_resource type="Script" path="res://Scripts/EfeitoBotao.gd" id="1_ylqp8"]
+
+[node name="Botao_Jogar" type="Button" unique_id=1234228847]
+custom_minimum_size = Vector2(50, 100)
+theme_override_colors/font_hover_color = Color(0.9655693, 0.9347653, 0.99999994, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.5251013, 0.5251013, 0.5251013, 1)
+theme_override_font_sizes/font_size = 60
+action_mode = 0
+text = "JOGAR"
+flat = true
+autowrap_mode = 1
+script = ExtResource("1_ylqp8")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="ready" from="." to="." method="_ready"]

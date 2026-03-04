@@ -4,31 +4,29 @@
 [ext_resource type="Texture2D" uid="uid://fojr1hg4upgd" path="res://misc/spriteframes/light.tres" id="3_5ihej"]
 [ext_resource type="SpriteFrames" uid="uid://dsdon0hjb3gfv" path="res://misc/spriteframes/flameon.tres" id="4_opxb7"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_thxmx"]
-size = Vector2(33.76164, 71.2626)
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ihej"]
+radius = 48.6621
 
 [node name="Altar" type="Node2D" unique_id=849689154]
+scale = Vector2(0.4, 0.4)
 
 [node name="Altar" type="Area2D" parent="." unique_id=1959147657 node_paths=PackedStringArray("luz")]
-scale = Vector2(0.04, 0.04)
 script = ExtResource("1_jni5i")
 cor_aceita = 3
 luz = NodePath("PointLight2D")
 
 [node name="looks" type="AnimatedSprite2D" parent="Altar" unique_id=1392317890]
 unique_name_in_owner = true
-scale = Vector2(40, 40)
 sprite_frames = ExtResource("4_opxb7")
 animation = &"inactive"
 frame_progress = 0.25022364
 speed_scale = 1.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Altar" unique_id=891616044]
-scale = Vector2(67.38417, 36.484776)
-shape = SubResource("RectangleShape2D_thxmx")
+position = Vector2(9.536743e-07, 12)
+shape = SubResource("CircleShape2D_5ihej")
 
 [node name="PointLight2D" type="PointLight2D" parent="Altar" unique_id=1517858638]
-scale = Vector2(60, 60)
 enabled = false
 energy = 1.5
 texture = ExtResource("3_5ihej")

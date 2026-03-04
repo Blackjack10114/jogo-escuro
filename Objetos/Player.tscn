@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://qaat3l4u1de0" path="res://Scripts/Movim_Player.gd" id="1_38l55"]
 [ext_resource type="Texture2D" uid="uid://cebbiyjrf0rmd" path="res://Sprites/Player/spr_player_jam.png" id="2_sqf2x"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_asluq"]
-size = Vector2(72, 69)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_asluq"]
 animations = [{
 "frames": [{
@@ -30,16 +27,20 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_asluq"]
+size = Vector2(6, 8)
+
 [node name="Player" type="CharacterBody2D" unique_id=2102932396 groups=["player"]]
 script = ExtResource("1_38l55")
 speed = 350.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1240138414]
-position = Vector2(-1, 15.5)
-shape = SubResource("RectangleShape2D_asluq")
-
 [node name="looks" type="AnimatedSprite2D" parent="." unique_id=1760153530]
-position = Vector2(0, 13)
-scale = Vector2(4.5, 4.5)
 sprite_frames = SubResource("SpriteFrames_asluq")
 animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1240138414]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_asluq")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2093740052]
+position_smoothing_enabled = true

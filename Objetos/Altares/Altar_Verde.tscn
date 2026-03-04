@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://7agvmjcou4ox"]
 
-[ext_resource type="Script" uid="uid://5gqqtx6xx1ra" path="res://Scripts/Objetos/altar_verde.gd" id="1_6anp2"]
+[ext_resource type="Script" path="res://Scripts/Objetos/altar_verde.gd" id="1_6anp2"]
 [ext_resource type="Texture2D" uid="uid://b7wwvyy7w7uv1" path="res://Sprites/Objetos/Altares/Verde/Totem Verde Ativado.png" id="4_4iw0v"]
 [ext_resource type="Texture2D" uid="uid://fojr1hg4upgd" path="res://misc/spriteframes/light.tres" id="4_p8vw7"]
 [ext_resource type="Texture2D" uid="uid://cic7f0lhd4lbe" path="res://Sprites/Objetos/Altares/Verde/Totem Verde s fogo.png" id="5_2frjo"]
@@ -56,8 +56,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fx006"]
-size = Vector2(33.76164, 71.2626)
+[sub_resource type="CircleShape2D" id="CircleShape2D_p8vw7"]
+radius = 48.66
 
 [node name="Altar_Verde" type="Node2D" unique_id=44935604]
 scale = Vector2(0.4, 0.4)
@@ -74,7 +74,7 @@ animation = &"active"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Altar_Verde" unique_id=71089921]
 position = Vector2(0, 12)
-shape = SubResource("RectangleShape2D_fx006")
+shape = SubResource("CircleShape2D_p8vw7")
 
 [node name="PointLight2D" type="PointLight2D" parent="Altar_Verde" unique_id=977701204]
 enabled = false

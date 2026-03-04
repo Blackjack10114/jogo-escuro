@@ -1,9 +1,18 @@
-[gd_scene format=3 uid="uid://m0p30furg5vu"]
+[gd_scene format=3 uid="uid://cn1hofjyrdcy"]
 
-[ext_resource type="Script" path="res://Scripts/Sombra.gd" id="1_08efi"]
+[ext_resource type="Script" uid="uid://b01dcjkiw88pa" path="res://Scripts/Sombra.gd" id="1_08efi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pfvyo"]
 size = Vector2(98, 80)
+
+[sub_resource type="Gradient" id="Gradient_dtag0"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_08efi"]
+gradient = SubResource("Gradient_dtag0")
+fill = 2
+fill_from = Vector2(0.5043478, 0.4869565)
+fill_to = Vector2(0.90869564, 0.104347825)
 
 [node name="AreaSombra" type="Area2D" unique_id=1726886834]
 scale = Vector2(3, 3)
@@ -13,6 +22,14 @@ script = ExtResource("1_08efi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=40381006]
 shape = SubResource("RectangleShape2D_pfvyo")
 debug_color = Color(0.9529412, 0.10980392, 0.5019608, 0.41960785)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=866304501]
+unique_name_in_owner = true
+position = Vector2(0.50000095, 3.8146973e-06)
+scale = Vector2(1.953125, 1.9687501)
+energy = 5.0
+blend_mode = 1
+texture = SubResource("GradientTexture2D_08efi")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

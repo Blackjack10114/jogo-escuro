@@ -6,9 +6,7 @@ extends Ativador
 
 
 var player_perto: CharacterBody2D = null
-var tocha_no_altar = null
-var bloqueado := false
-
+var tocha_no_altar: TOCHA = null
 
 func _ready():
 	%looks.play("inactive")
@@ -26,11 +24,10 @@ func _on_body_exited(body):
 		player_perto = null
 
 
-func _process(_delta):
-	if bloqueado:
-		return
+func _physics_process(delta: float) -> void:
 		
 	if player_perto and Input.is_action_just_pressed("interact"):
+		print(ativo)
 		if ativo:
 			remover_tocha()
 		else:
@@ -42,9 +39,6 @@ func aceita_cor(cor_tocha):
 
 
 func colocar_tocha():
-	if not player_perto:
-		return
-		
 	if player_perto.tocha_atual == null:
 		return
 		
@@ -56,37 +50,31 @@ func colocar_tocha():
 	player_perto.remove_child(tocha)
 	add_child(tocha)
 	tocha.position = Vector2.ZERO
+	tocha.visible = false
 	
 	tocha.carregada = false
 	player_perto.tocha_atual = null
 	
 	tocha_no_altar = tocha
-	tocha.altar_atual = self
 	luz.enabled = true
 	ativar()  
 
 
 func remover_tocha():
-	if not ativo:
-		return
-		
-	if not player_perto:
-		return
-		
 	if player_perto.tocha_atual != null:
 		return
 		
 	if not tocha_no_altar:
 		return
 	
+	tocha_no_altar.visible = true
 	remove_child(tocha_no_altar)
 	player_perto.add_child(tocha_no_altar)
-	tocha_no_altar.position = Vector2(20, 0)
+	tocha_no_altar.position = Vector2(5, 0)
 	
 	tocha_no_altar.carregada = true
 	player_perto.tocha_atual = tocha_no_altar
 	
-	tocha_no_altar.altar_atual = null
 	tocha_no_altar = null
 	
 	luz.enabled = false
@@ -94,8 +82,6 @@ func remover_tocha():
 
 func _ao_ativar():
 	%looks.play("active")
-
-
 
 func _ao_desativar():
 	%looks.play("inactive")

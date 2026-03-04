@@ -6,7 +6,7 @@ class_name PuzzleController
 @export var idPuzzle := "puzzle_"
 
 # ===== LUZES DA ÁREA =====
-@export var luzes_area: Array[PointLight2D] = []
+@export var luzes_area: Array[areasombra] = []
 
 var ativaveis: Array[Ativador] = []
 var resolvido := false
@@ -30,7 +30,6 @@ func _ready():
 	if GameManager.PuzzleJaResolvido(idPuzzle):
 		resolvido = true
 		_abrir_porta()
-		_travar_interacoes()
 		_ativar_luzes()
 	else:
 		_verificar_puzzle(false)
@@ -47,38 +46,36 @@ func _encontrar_ativavel(node: Node) -> Ativador:
 	return null
 
 func _verificar_puzzle(_novo_estado: bool) -> void:
-	if resolvido:
-		return
-
+	#if resolvido:
+		#print("cum stains")
+		#return
+	
 	for a in ativaveis:
 		if not a.ativo:
 			_fechar_porta()
+			_desativar_luzes()
 			return
-
 	print("PUZZLE RESOLVIDO")
 	resolvido = true
 
 	_abrir_porta()
 	_ativar_luzes()
 	GameManager.RegistrarPuzzleResolvido(idPuzzle)
-	_travar_interacoes()
+
 
 # ===== LUZES (SIMPLES) =====
 func _ativar_luzes():
 	for luz in luzes_area:
 		if is_instance_valid(luz):
-			luz.visible = false
+			luz.offty()
 
 func _desativar_luzes():
 	for luz in luzes_area:
 		if is_instance_valid(luz):
-			luz.visible = true
+			luz.onty()
+			
 
 # ===== RESTO =====
-func _travar_interacoes():
-	for a in ativaveis:
-		if a is Altar:
-			(a as Altar).bloqueado = true
 
 func _abrir_porta():
 	print("abrir_porta chamado. porta =", porta)

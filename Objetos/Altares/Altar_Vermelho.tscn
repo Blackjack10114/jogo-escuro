@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d1cyupflnp5b7"]
 
-[ext_resource type="Script" uid="uid://23jeicr8wbta" path="res://Scripts/Objetos/altar_vermelho.gd" id="1_iakti"]
+[ext_resource type="Script" path="res://Scripts/Objetos/altar_vermelho.gd" id="1_iakti"]
 [ext_resource type="Texture2D" uid="uid://bd54mdw8pipgp" path="res://Sprites/Objetos/Altares/Vermelho/Totem Vermelho Ativado.png" id="2_1u5nf"]
 [ext_resource type="Texture2D" uid="uid://be8a0l3xp71yj" path="res://Sprites/Objetos/Altares/Vermelho/Totem Vermelho s fogo.png" id="2_iakti"]
 [ext_resource type="Texture2D" uid="uid://fojr1hg4upgd" path="res://misc/spriteframes/light.tres" id="4_buc4d"]
@@ -56,8 +56,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fx006"]
-size = Vector2(33.76164, 71.2626)
+[sub_resource type="CircleShape2D" id="CircleShape2D_buc4d"]
+radius = 48.66
 
 [node name="Altar_Vermelho" type="Node2D" unique_id=44935604]
 scale = Vector2(0.4, 0.4)
@@ -76,7 +76,7 @@ speed_scale = 1.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Altar_Vermelho" unique_id=71089921]
 position = Vector2(-4.5474735e-13, 12.499999)
-shape = SubResource("RectangleShape2D_fx006")
+shape = SubResource("CircleShape2D_buc4d")
 
 [node name="PointLight2D" type="PointLight2D" parent="Altar_Vermelho" unique_id=21405124]
 enabled = false

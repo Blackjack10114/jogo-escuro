@@ -6,7 +6,12 @@
 [ext_resource type="StyleBox" uid="uid://dcf6a0thifptv" path="res://spr_button.tres" id="2_glsjb"]
 [ext_resource type="FontFile" uid="uid://t2jh8jqf7rqs" path="res://Fonts/Undak-KVA3y.otf" id="3_5rbvo"]
 [ext_resource type="Script" uid="uid://ct65m5udakhr7" path="res://Scripts/LuzMenu.gd" id="4_vymcu"]
+[ext_resource type="Texture2D" uid="uid://trdpsyk61aqr" path="res://Sprites/Menu/fundo menu .png" id="6_eg12o"]
 [ext_resource type="PackedScene" uid="uid://c46fthdy51lrk" path="res://Scenes/UI/Controles.tscn" id="7_5rbvo"]
+[ext_resource type="Texture2D" uid="uid://c5mirl8fve12d" path="res://Sprites/Menu/loss menu fundo.png" id="7_v434d"]
+[ext_resource type="Texture2D" uid="uid://3bldleyrgwjj" path="res://Sprites/Menu/fantasma menu fundo.png" id="8_e2q8o"]
+[ext_resource type="Texture2D" uid="uid://vs6s1p0ic7wp" path="res://Sprites/Menu/altar menu fundo.png" id="9_j3fey"]
+[ext_resource type="Texture2D" uid="uid://dvitwbr5mwmgw" path="res://Sprites/Menu/chama menu fundo.png" id="10_bfaf2"]
 
 [sub_resource type="FontFile" id="FontFile_wvohi"]
 cache/0/variation_coordinates = {}
@@ -38,6 +43,15 @@ cache/0/40/0/descent = 0.0
 cache/0/40/0/underline_position = 0.0
 cache/0/40/0/underline_thickness = 0.0
 cache/0/40/0/scale = 1.0
+
+[sub_resource type="Gradient" id="Gradient_0kn0p"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cm26j"]
+gradient = SubResource("Gradient_0kn0p")
+fill = 1
+fill_from = Vector2(0.50869566, 0.51304346)
+fill_to = Vector2(0.84782606, 0.16521738)
 
 [sub_resource type="Gradient" id="Gradient_glsjb"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -210,14 +224,50 @@ theme_override_styles/normal = ExtResource("2_glsjb")
 action_mode = 0
 text = "SAIR"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1336082064]
+[node name="FundoMenu" type="Sprite2D" parent="CenterContainer" unique_id=1450871359]
+z_index = -2
+position = Vector2(648, 354)
+texture = ExtResource("6_eg12o")
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1686418682]
+[node name="Loss" type="Sprite2D" parent="CenterContainer/FundoMenu" unique_id=1845118408]
+position = Vector2(605, 341)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_v434d")
+
+[node name="Fantasma" type="Sprite2D" parent="CenterContainer/FundoMenu" unique_id=1745605118]
+position = Vector2(355, -14)
+scale = Vector2(2, 2)
+texture = ExtResource("8_e2q8o")
+
+[node name="Altar" type="Sprite2D" parent="CenterContainer/FundoMenu" unique_id=1864154310]
+position = Vector2(283.00006, -219.99998)
+rotation = -0.7679449
+scale = Vector2(1.525, 1.525)
+texture = ExtResource("9_j3fey")
+
+[node name="Chama" type="Sprite2D" parent="CenterContainer/FundoMenu/Altar" unique_id=1294549865]
+position = Vector2(14, -16)
+rotation = 0.6981317
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("10_bfaf2")
+
+[node name="PointLight2D2" type="PointLight2D" parent="CenterContainer/FundoMenu/Altar" unique_id=191450215]
+rotation = 0.7679449
+energy = 1.75
+texture = SubResource("GradientTexture2D_cm26j")
+texture_scale = 3.0
+
+[node name="PointLight2D" type="PointLight2D" parent="CenterContainer" unique_id=1686418682]
 position = Vector2(712, 339)
-energy = 10.48
+energy = 5.25
 texture = SubResource("GradientTexture2D_dhyt4")
-texture_scale = 2.0
+texture_scale = 3.4
 script = ExtResource("4_vymcu")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CenterContainer" unique_id=631026797]
+color = Color(0.13682577, 0.13682574, 0.13682571, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1336082064]
 
 [node name="Controles" parent="." unique_id=93058582 instance=ExtResource("7_5rbvo")]
 visible = false

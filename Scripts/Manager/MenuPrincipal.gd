@@ -2,6 +2,10 @@ extends Control
 
 func _ready():
 	$Controles.visible = false
+	
+	if is_instance_valid(AudioManager):
+		AudioManager.play_music(AudioManager.musica_menu)
+		AudioManager.stop_ambience()
 
 
 func _on_botaoJogar_pressed():

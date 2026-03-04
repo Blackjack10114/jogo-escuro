@@ -34,6 +34,10 @@ func IrParaJogo(scene_path: String = SCENE_JOGO) -> void:
 	get_tree().paused = false
 	estadoAtual = EstadoJogo.Jogando
 
+	if is_instance_valid(AudioManager):
+		AudioManager.play_music(AudioManager.musica_jogo)
+		AudioManager.play_ambience(AudioManager.som_ambiente)
+
 	# Troca de cena de forma segura
 	call_deferred("_trocar_cena", scene_path)
 
@@ -118,11 +122,14 @@ func ResetarProgresso() -> void:
 func IrParaCena(scene_path: String) -> void:
 	print("[GameManager] IrParaCena:", scene_path)
 
-	# garante que não fica pausado e não trava UI
 	get_tree().paused = false
 	get_viewport().gui_release_focus()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 	estadoAtual = EstadoJogo.Menu
+
+	if is_instance_valid(AudioManager):
+		AudioManager.stop_ambience()
+		#AudioManager.stop_music()
 
 	call_deferred("_trocar_cena", scene_path)

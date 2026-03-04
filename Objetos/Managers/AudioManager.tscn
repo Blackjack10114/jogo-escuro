@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://uaiyl7a6t13e"]
+
+[ext_resource type="Script" uid="uid://cqkctgin4qre4" path="res://Scripts/Manager/AudioManager.gd" id="1_t4eok"]
+[ext_resource type="AudioStream" uid="uid://drxmvwic3en7v" path="res://Sons/Menu_Jogo_escuro melhorado.mp3" id="2_wrekv"]
+
+[node name="AudioManager" type="Node2D" unique_id=1449101171]
+script = ExtResource("1_t4eok")
+musica_menu = ExtResource("2_wrekv")
+musica_jogo = ExtResource("2_wrekv")

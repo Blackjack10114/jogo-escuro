@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cvbw67i2fg7j4"
+path="res://.godot/imported/Steps.mp3-0cc0bf0de9641b6c2818434ed3715ed0.mp3str"
+
+[deps]
+
+source_file="res://Sons/Musicas antigas/Steps.mp3"
+dest_files=["res://.godot/imported/Steps.mp3-0cc0bf0de9641b6c2818434ed3715ed0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

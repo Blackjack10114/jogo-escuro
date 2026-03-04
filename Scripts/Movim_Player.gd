@@ -9,6 +9,7 @@ var tocha_atual = null
 var ultima_direcao: Vector2 = Vector2.DOWN
 
 @onready var looks: AnimatedSprite2D = get_node_or_null("%looks")
+@onready var passos: AudioStreamPlayer2D = $Passos
 
 func empurrar(direcao: Vector2, forca: float) -> void:
 	forca_externa += direcao.normalized() * forca
@@ -21,6 +22,14 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 	_atualizar_animacao(direction)
+
+	if direction != Vector2.ZERO:
+		if not passos.playing:
+			passos.play()
+	else:
+		if passos.playing:
+			passos.stop()
+
 	if not esta_na_sombra:
 		forca_externa = Vector2.ZERO
 

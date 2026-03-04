@@ -30,8 +30,12 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 1024.0
+offset_bottom = 576.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(0.5, 0.5)
 
 [node name="CenaFimPanel" type="Panel" parent="CenaFimContainer" unique_id=1908863408]
 modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
@@ -77,7 +81,8 @@ color = Color(0, 0, 0, 1)
 
 [node name="FundoMenu" type="Sprite2D" parent="." unique_id=890615118]
 z_index = -2
-position = Vector2(648, 354)
+position = Vector2(130, 74.00001)
+scale = Vector2(0.22435899, 0.22435896)
 texture = ExtResource("3_ahsos")
 
 [node name="Altar" type="Sprite2D" parent="FundoMenu" unique_id=530370235]

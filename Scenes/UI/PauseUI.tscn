@@ -3,10 +3,11 @@
 [ext_resource type="Script" uid="uid://drkxlr6ofrp0e" path="res://Scripts/UI/EfeitoBotao.gd" id="1_4arjw"]
 [ext_resource type="Texture2D" uid="uid://c3wyqhjo0rtrt" path="res://Sprites/Objetos/Botões/Botão menus.png" id="1_ejpuu"]
 [ext_resource type="Script" uid="uid://htaegq4ln4ao" path="res://Scripts/Manager/PauseMenu.gd" id="1_onita"]
+[ext_resource type="Script" uid="uid://bg76xbqhlu5al" path="res://Scripts/UI/OpcoesAudioUI.gd" id="2_ccyet"]
 [ext_resource type="FontFile" uid="uid://t2jh8jqf7rqs" path="res://Fonts/Undak-KVA3y.otf" id="4_dx4q5"]
 [ext_resource type="PackedScene" uid="uid://c46fthdy51lrk" path="res://Scenes/UI/Controles.tscn" id="5_dx4q5"]
 
-[node name="PauseUi" type="Control" unique_id=65658741]
+[node name="PauseUi" type="Control" unique_id=65658741 node_paths=PackedStringArray("pause_panel", "controles_panel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,6 +15,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_onita")
+pause_panel = NodePath("PauseContainer/PausePanel")
+controles_panel = NodePath("Controles")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=539443715]
 layout_mode = 0
@@ -34,23 +37,72 @@ custom_minimum_size = Vector2(1280, 720)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PauseContainer/PausePanel" unique_id=1550818312]
-custom_minimum_size = Vector2(100, 200)
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 557.0
-offset_top = -294.0
-offset_right = 735.0
-offset_bottom = 337.0
-grow_vertical = 2
-theme_override_constants/separation = 50
-alignment = 1
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseContainer/PausePanel" unique_id=616967370 node_paths=PackedStringArray("s_master", "s_bgm", "s_sfx")]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 54.0
+offset_right = 833.0
+offset_bottom = 566.0
+theme_override_constants/separation = 40
+script = ExtResource("2_ccyet")
+s_master = NodePath("SliderMaster")
+s_bgm = NodePath("SliderBGM")
+s_sfx = NodePath("SlideSFX")
 
-[node name="BotaoVoltar" type="TextureButton" parent="PauseContainer/PausePanel/VBoxContainer" unique_id=507230167]
-custom_minimum_size = Vector2(0, 100)
+[node name="PAUSE" type="Label" parent="PauseContainer/PausePanel/VBoxContainer" unique_id=1818822668]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dx4q5")
+theme_override_font_sizes/font_size = 70
+text = "PAUSE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MASTER" type="Label" parent="PauseContainer/PausePanel/VBoxContainer" unique_id=865608392]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dx4q5")
+theme_override_font_sizes/font_size = 50
+text = "MASTER"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="SliderMaster" type="HSlider" parent="PauseContainer/PausePanel/VBoxContainer" unique_id=1906656719]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="BGM" type="Label" parent="PauseContainer/PausePanel/VBoxContainer" unique_id=1609862324]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dx4q5")
+theme_override_font_sizes/font_size = 50
+text = "BGM"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="SliderBGM" type="HSlider" parent="PauseContainer/PausePanel/VBoxContainer" unique_id=241639260]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="SFX" type="Label" parent="PauseContainer/PausePanel/VBoxContainer" unique_id=72735792]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_dx4q5")
+theme_override_font_sizes/font_size = 50
+text = "SFX"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="SlideSFX" type="HSlider" parent="PauseContainer/PausePanel/VBoxContainer" unique_id=1238837841]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="BotaoVoltar" type="TextureButton" parent="PauseContainer/PausePanel" unique_id=507230167]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 0
+offset_left = 287.0
+offset_top = 592.0
+offset_right = 465.0
+offset_bottom = 692.0
 texture_normal = ExtResource("1_ejpuu")
 texture_pressed = ExtResource("1_ejpuu")
 texture_hover = ExtResource("1_ejpuu")
@@ -59,7 +111,7 @@ texture_focused = ExtResource("1_ejpuu")
 stretch_mode = 0
 script = ExtResource("1_4arjw")
 
-[node name="Label" type="Label" parent="PauseContainer/PausePanel/VBoxContainer/BotaoVoltar" unique_id=1263668205]
+[node name="Label" type="Label" parent="PauseContainer/PausePanel/BotaoVoltar" unique_id=1263668205]
 layout_mode = 0
 offset_left = 31.0
 offset_top = 25.0
@@ -71,9 +123,13 @@ text = "VOLTAR"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="BotaoControles" type="TextureButton" parent="PauseContainer/PausePanel/VBoxContainer" unique_id=1956100552]
+[node name="BotaoReiniciar" type="TextureButton" parent="PauseContainer/PausePanel" unique_id=1590179535]
 custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
+layout_mode = 0
+offset_left = 473.0
+offset_top = 594.0
+offset_right = 651.0
+offset_bottom = 694.0
 texture_normal = ExtResource("1_ejpuu")
 texture_pressed = ExtResource("1_ejpuu")
 texture_hover = ExtResource("1_ejpuu")
@@ -82,7 +138,34 @@ texture_focused = ExtResource("1_ejpuu")
 stretch_mode = 0
 script = ExtResource("1_4arjw")
 
-[node name="Label" type="Label" parent="PauseContainer/PausePanel/VBoxContainer/BotaoControles" unique_id=421702007]
+[node name="Label" type="Label" parent="PauseContainer/PausePanel/BotaoReiniciar" unique_id=1555734063]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 25.0
+offset_right = 145.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("4_dx4q5")
+theme_override_font_sizes/font_size = 30
+text = "REINICIAR"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="BotaoControles" type="TextureButton" parent="PauseContainer/PausePanel" unique_id=1956100552]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 0
+offset_left = 663.0
+offset_top = 592.0
+offset_right = 841.0
+offset_bottom = 692.0
+texture_normal = ExtResource("1_ejpuu")
+texture_pressed = ExtResource("1_ejpuu")
+texture_hover = ExtResource("1_ejpuu")
+texture_disabled = ExtResource("1_ejpuu")
+texture_focused = ExtResource("1_ejpuu")
+stretch_mode = 0
+script = ExtResource("1_4arjw")
+
+[node name="Label" type="Label" parent="PauseContainer/PausePanel/BotaoControles" unique_id=421702007]
 layout_mode = 0
 offset_left = 31.0
 offset_top = 29.0
@@ -94,9 +177,13 @@ text = "CONTROLES"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BotaoSair" type="TextureButton" parent="PauseContainer/PausePanel/VBoxContainer" unique_id=1755438448]
+[node name="BotaoSair" type="TextureButton" parent="PauseContainer/PausePanel" unique_id=1730489599]
 custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
+layout_mode = 0
+offset_left = 844.0
+offset_top = 593.0
+offset_right = 1022.0
+offset_bottom = 693.0
 texture_normal = ExtResource("1_ejpuu")
 texture_pressed = ExtResource("1_ejpuu")
 texture_hover = ExtResource("1_ejpuu")
@@ -105,7 +192,7 @@ texture_focused = ExtResource("1_ejpuu")
 stretch_mode = 0
 script = ExtResource("1_4arjw")
 
-[node name="Label" type="Label" parent="PauseContainer/PausePanel/VBoxContainer/BotaoSair" unique_id=1262434276]
+[node name="Label" type="Label" parent="PauseContainer/PausePanel/BotaoSair" unique_id=971995616]
 layout_mode = 0
 offset_left = 31.0
 offset_top = 25.0
@@ -118,8 +205,13 @@ horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="Controles" parent="." unique_id=93058582 instance=ExtResource("5_dx4q5")]
+visible = false
 layout_mode = 1
 
-[connection signal="pressed" from="PauseContainer/PausePanel/VBoxContainer/BotaoVoltar" to="." method="_on_botaoVoltar_pressed"]
-[connection signal="pressed" from="PauseContainer/PausePanel/VBoxContainer/BotaoControles" to="." method="_on_botaoControles_pressed"]
-[connection signal="pressed" from="PauseContainer/PausePanel/VBoxContainer/BotaoSair" to="." method="_on_botaoSair_pressed"]
+[connection signal="pressed" from="PauseContainer/PausePanel/BotaoVoltar" to="." method="_on_botaoVoltar_pressed"]
+[connection signal="pressed" from="PauseContainer/PausePanel/BotaoReiniciar" to="." method="_on_botaoReiniciar_pressed"]
+[connection signal="pressed" from="PauseContainer/PausePanel/BotaoControles" to="." method="_on_botaoControles_pressed"]
+[connection signal="pressed" from="PauseContainer/PausePanel/BotaoSair" to="." method="_on_botaoSair_pressed"]
+[connection signal="pressed" from="Controles/ControlesContainer/ControlesPanel/BotaoVoltar" to="." method="_on_botaoVoltarControles_pressed"]
+
+[editable path="Controles"]

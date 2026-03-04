@@ -2,23 +2,18 @@ extends Node
 
 @export var musica_menu: AudioStream
 @export var musica_jogo: AudioStream
-@export var som_ambiente: AudioStream
 
 @onready var music: AudioStreamPlayer = AudioStreamPlayer.new()
-@onready var ambience: AudioStreamPlayer = AudioStreamPlayer.new()
+
+const SAVE_PATH := "user://audio.cfg"
 
 func _ready() -> void:
 	add_child(music)
-	add_child(ambience)
-
 	music.bus = "BGM"
-	ambience.bus = "Ambience"
-
 	music.process_mode = Node.PROCESS_MODE_ALWAYS
-	ambience.process_mode = Node.PROCESS_MODE_ALWAYS
 
-	music.autoplay = false
-	ambience.autoplay = false
+	_load_volumes()
+	_apply_volumes()
 
 
 # ---------- MUSIC ----------
@@ -34,20 +29,7 @@ func stop_music() -> void:
 	music.stop()
 
 
-# ---------- AMBIENCE ----------
-func play_ambience(stream: AudioStream) -> void:
-	if stream == null:
-		return
-	if ambience.stream == stream and ambience.playing:
-		return
-	ambience.stream = stream
-	ambience.play()
-
-func stop_ambience() -> void:
-	ambience.stop()
-
-
-# ---------- SFX (one-shot, não corta sons) ----------
+# ---------- SFX ----------
 func play_sfx(stream: AudioStream) -> void:
 	if stream == null:
 		return
@@ -58,3 +40,51 @@ func play_sfx(stream: AudioStream) -> void:
 	add_child(p)
 	p.play()
 	p.finished.connect(p.queue_free)
+
+
+# ---------- VOLUME SETTINGS ----------
+var master := 1.0
+var bgm := 1.0
+var sfx := 1.0
+
+func set_master(v: float) -> void:
+	master = v
+	_apply_volumes()
+	_save_volumes()
+
+func set_bgm(v: float) -> void:
+	bgm = v
+	_apply_volumes()
+	_save_volumes()
+
+func set_sfx(v: float) -> void:
+	sfx = v
+	_apply_volumes()
+	_save_volumes()
+
+func _apply_volumes() -> void:
+	_set_bus_linear("Master", master)
+	_set_bus_linear("BGM", bgm)
+	_set_bus_linear("SFX", sfx)
+
+func _set_bus_linear(bus_name: String, linear: float) -> void:
+	var idx := AudioServer.get_bus_index(bus_name)
+	if idx == -1:
+		return
+	AudioServer.set_bus_volume_db(idx, linear_to_db(max(linear, 0.0001)))
+	AudioServer.set_bus_mute(idx, linear <= 0.0001)
+
+func _save_volumes() -> void:
+	var cfg := ConfigFile.new()
+	cfg.set_value("audio", "master", master)
+	cfg.set_value("audio", "bgm", bgm)
+	cfg.set_value("audio", "sfx", sfx)
+	cfg.save(SAVE_PATH)
+
+func _load_volumes() -> void:
+	var cfg := ConfigFile.new()
+	if cfg.load(SAVE_PATH) != OK:
+		return
+	master = float(cfg.get_value("audio", "master", 1.0))
+	bgm = float(cfg.get_value("audio", "bgm", 1.0))
+	sfx = float(cfg.get_value("audio", "sfx", 1.0))

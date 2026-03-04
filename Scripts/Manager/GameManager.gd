@@ -112,3 +112,18 @@ func RegistrarPuzzleResolvido(idPuzzle: String) -> void:
 
 func PuzzleJaResolvido(idPuzzle: String) -> bool:
 	return puzzlesResolvidos.has(idPuzzle)
+	
+func ResetarProgresso() -> void:
+	puzzlesResolvidos.clear()
+	
+func IrParaCena(scene_path: String) -> void:
+	print("[GameManager] IrParaCena:", scene_path)
+
+	# garante que não fica pausado e não trava UI
+	get_tree().paused = false
+	get_viewport().gui_release_focus()
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+	estadoAtual = EstadoJogo.Menu
+
+	call_deferred("_trocar_cena", scene_path)

@@ -1,0 +1,288 @@
+[gd_scene format=3 uid="uid://gjj642bjsgnk"]
+
+[ext_resource type="Script" uid="uid://cmlxqo14iyrpa" path="res://Scripts/Manager/MenuPrincipal.gd" id="1_3k1ur"]
+[ext_resource type="Script" uid="uid://drkxlr6ofrp0e" path="res://Scripts/UI/EfeitoBotao.gd" id="2_bt1tr"]
+[ext_resource type="Texture2D" uid="uid://c3wyqhjo0rtrt" path="res://Sprites/Objetos/Botões/Botão menus.png" id="2_dhyt4"]
+[ext_resource type="StyleBox" uid="uid://dcf6a0thifptv" path="res://spr_button.tres" id="2_glsjb"]
+[ext_resource type="FontFile" uid="uid://t2jh8jqf7rqs" path="res://Fonts/Undak-KVA3y.otf" id="3_5rbvo"]
+[ext_resource type="Script" uid="uid://ct65m5udakhr7" path="res://Scripts/LuzMenu.gd" id="4_vymcu"]
+[ext_resource type="Texture2D" uid="uid://trdpsyk61aqr" path="res://Sprites/Menu/fundo menu .png" id="6_eg12o"]
+[ext_resource type="PackedScene" uid="uid://c46fthdy51lrk" path="res://Scenes/UI/Controles.tscn" id="7_5rbvo"]
+[ext_resource type="Texture2D" uid="uid://c5mirl8fve12d" path="res://Sprites/Menu/loss menu fundo.png" id="7_v434d"]
+[ext_resource type="Texture2D" uid="uid://3bldleyrgwjj" path="res://Sprites/Menu/fantasma menu fundo.png" id="8_e2q8o"]
+[ext_resource type="Texture2D" uid="uid://vs6s1p0ic7wp" path="res://Sprites/Menu/altar menu fundo.png" id="9_j3fey"]
+[ext_resource type="Texture2D" uid="uid://dvitwbr5mwmgw" path="res://Sprites/Menu/chama menu fundo.png" id="10_bfaf2"]
+
+[sub_resource type="FontFile" id="FontFile_wvohi"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/60/0/ascent = 0.0
+cache/0/60/0/descent = 0.0
+cache/0/60/0/underline_position = 0.0
+cache/0/60/0/underline_thickness = 0.0
+cache/0/60/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+
+[sub_resource type="Gradient" id="Gradient_0kn0p"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cm26j"]
+gradient = SubResource("Gradient_0kn0p")
+fill = 1
+fill_from = Vector2(0.50869566, 0.51304346)
+fill_to = Vector2(0.84782606, 0.16521738)
+
+[sub_resource type="Gradient" id="Gradient_glsjb"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dhyt4"]
+gradient = SubResource("Gradient_glsjb")
+fill = 1
+fill_from = Vector2(0.5043478, 0.5043478)
+fill_to = Vector2(0.8695652, 0.16086957)
+
+[node name="MenuPrincipal" type="Control" unique_id=1272096771]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3k1ur")
+metadata/_edit_vertical_guides_ = [-113.0]
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=913149164]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer" unique_id=698229741]
+modulate = Color(0.17283267, 0.17283267, 0.17283261, 1)
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel" unique_id=435497499]
+custom_minimum_size = Vector2(100, 200)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 73.0
+offset_top = -296.0
+offset_right = 251.0
+offset_bottom = 335.0
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="BotaoJogar" type="TextureButton" parent="CenterContainer/Panel/VBoxContainer" unique_id=1485433838]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+texture_normal = ExtResource("2_dhyt4")
+texture_pressed = ExtResource("2_dhyt4")
+texture_hover = ExtResource("2_dhyt4")
+texture_disabled = ExtResource("2_dhyt4")
+texture_focused = ExtResource("2_dhyt4")
+stretch_mode = 0
+script = ExtResource("2_bt1tr")
+
+[node name="Label" type="Label" parent="CenterContainer/Panel/VBoxContainer/BotaoJogar" unique_id=1599395739]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 25.0
+offset_right = 145.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("3_5rbvo")
+theme_override_font_sizes/font_size = 30
+text = "JOGAR"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="BotaoControles" type="TextureButton" parent="CenterContainer/Panel/VBoxContainer" unique_id=726676016]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+texture_normal = ExtResource("2_dhyt4")
+texture_pressed = ExtResource("2_dhyt4")
+texture_hover = ExtResource("2_dhyt4")
+texture_disabled = ExtResource("2_dhyt4")
+texture_focused = ExtResource("2_dhyt4")
+stretch_mode = 0
+script = ExtResource("2_bt1tr")
+
+[node name="Label" type="Label" parent="CenterContainer/Panel/VBoxContainer/BotaoControles" unique_id=1944731583]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 28.0
+offset_right = 152.0
+offset_bottom = 75.0
+theme_override_fonts/font = ExtResource("3_5rbvo")
+theme_override_font_sizes/font_size = 25
+text = "CONTROLES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotaoCreditos" type="TextureButton" parent="CenterContainer/Panel/VBoxContainer" unique_id=346151840]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+texture_normal = ExtResource("2_dhyt4")
+texture_pressed = ExtResource("2_dhyt4")
+texture_hover = ExtResource("2_dhyt4")
+texture_disabled = ExtResource("2_dhyt4")
+texture_focused = ExtResource("2_dhyt4")
+stretch_mode = 0
+script = ExtResource("2_bt1tr")
+
+[node name="Label" type="Label" parent="CenterContainer/Panel/VBoxContainer/BotaoCreditos" unique_id=649837219]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 25.0
+offset_right = 145.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("3_5rbvo")
+theme_override_font_sizes/font_size = 30
+text = "CRÉDITOS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotaoSair" type="TextureButton" parent="CenterContainer/Panel/VBoxContainer" unique_id=225881997]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+texture_normal = ExtResource("2_dhyt4")
+texture_pressed = ExtResource("2_dhyt4")
+texture_hover = ExtResource("2_dhyt4")
+texture_disabled = ExtResource("2_dhyt4")
+texture_focused = ExtResource("2_dhyt4")
+stretch_mode = 0
+script = ExtResource("2_bt1tr")
+
+[node name="Label" type="Label" parent="CenterContainer/Panel/VBoxContainer/BotaoSair" unique_id=200719675]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 25.0
+offset_right = 145.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("3_5rbvo")
+theme_override_font_sizes/font_size = 30
+text = "SAIR"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Botao_Jogar" type="Button" parent="CenterContainer/Panel" unique_id=1483294612]
+visible = false
+custom_minimum_size = Vector2(100, 150)
+layout_mode = 0
+offset_left = 73.0
+offset_top = 64.0
+offset_right = 310.0
+offset_bottom = 214.0
+theme_override_colors/font_hover_color = Color(0.9655693, 0.9347653, 0.99999994, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.5251013, 0.5251013, 0.5251013, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("2_glsjb")
+action_mode = 0
+text = "JOGAR"
+autowrap_mode = 1
+
+[node name="Botao_Sair" type="Button" parent="CenterContainer/Panel" unique_id=759362190]
+visible = false
+custom_minimum_size = Vector2(100, 150)
+layout_mode = 0
+offset_left = 73.0
+offset_top = 464.0
+offset_right = 310.0
+offset_bottom = 614.0
+theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontFile_wvohi")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("2_glsjb")
+action_mode = 0
+text = "SAIR"
+
+[node name="FundoMenu" type="Sprite2D" parent="CenterContainer" unique_id=1450871359]
+z_index = -2
+position = Vector2(648, 354)
+texture = ExtResource("6_eg12o")
+
+[node name="Loss" type="Sprite2D" parent="CenterContainer/FundoMenu" unique_id=1845118408]
+position = Vector2(605, 341)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_v434d")
+
+[node name="Fantasma" type="Sprite2D" parent="CenterContainer/FundoMenu" unique_id=1745605118]
+position = Vector2(355, -14)
+scale = Vector2(2, 2)
+texture = ExtResource("8_e2q8o")
+
+[node name="Altar" type="Sprite2D" parent="CenterContainer/FundoMenu" unique_id=1864154310]
+position = Vector2(283.00006, -219.99998)
+rotation = -0.7679449
+scale = Vector2(1.525, 1.525)
+texture = ExtResource("9_j3fey")
+
+[node name="Chama" type="Sprite2D" parent="CenterContainer/FundoMenu/Altar" unique_id=1294549865]
+position = Vector2(14, -16)
+rotation = 0.6981317
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("10_bfaf2")
+
+[node name="PointLight2D2" type="PointLight2D" parent="CenterContainer/FundoMenu/Altar" unique_id=191450215]
+rotation = 0.7679449
+energy = 1.75
+texture = SubResource("GradientTexture2D_cm26j")
+texture_scale = 3.0
+
+[node name="PointLight2D" type="PointLight2D" parent="CenterContainer" unique_id=1686418682]
+position = Vector2(712, 339)
+energy = 5.25
+texture = SubResource("GradientTexture2D_dhyt4")
+texture_scale = 3.4
+script = ExtResource("4_vymcu")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CenterContainer" unique_id=631026797]
+color = Color(0.13682577, 0.13682574, 0.13682571, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1336082064]
+
+[node name="Controles" parent="." unique_id=93058582 instance=ExtResource("7_5rbvo")]
+visible = false
+layout_mode = 1
+
+[node name="ControlesPanel" parent="Controles/ControlesContainer" parent_id_path=PackedInt32Array(93058582, 516701530) index="0" unique_id=1406455125]
+modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
+self_modulate = Color(0.6255971, 0.6255971, 0.6255971, 1)
+
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/BotaoJogar" to="." method="_on_botaoJogar_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/BotaoControles" to="." method="_on_botaoControles_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/BotaoCreditos" to="." method="_on_botaoCreditos_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/BotaoSair" to="." method="_on_botaoSair_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/Botao_Jogar" to="." method="_on_botaoJogar_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/Botao_Sair" to="." method="_on_botaoSair_pressed"]
+[connection signal="pressed" from="Controles/ControlesContainer/ControlesPanel/BotaoVoltar" to="." method="_on_botaoVoltarControles_pressed"]
+
+[editable path="Controles"]

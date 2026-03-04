@@ -1,13 +1,28 @@
 extends Control
 
-func _on_botaoJogar_pressed():
-#	$Fade.FadeOut()
-	#await get_tree().create_timer(0.4).timeout
+func _ready():
+	$Controles.visible = false
 	
-	GameManager.IniciarJogo()
-	#get_tree().change_scene_to_file("res://Scenes/Main.tscn")
-	#get_tree().change_scene_to_file("res://Scenes/SceneTeste/Gabriel.tscn")
-	get_tree().change_scene_to_file("res://Scenes/SceneTeste/Hugo.tscn")
+	if is_instance_valid(AudioManager):
+		AudioManager.play_music(AudioManager.musica_menu)
+		AudioManager.stop_ambience()
+
+
+func _on_botaoJogar_pressed():
+	GameManager.IrParaJogo("res://Scenes/SceneTeste/Hugo.tscn")
+
+
+func _on_botaoControles_pressed():
+	$Controles.visible = true
+
+
+func _on_botaoCreditos_pressed():
+	get_tree().change_scene_to_file("res://Scenes/UI/Creditos.tscn")
+
 
 func _on_botaoSair_pressed():
 	get_tree().quit()
+
+
+func _on_botaoVoltarControles_pressed():
+	$Controles.visible = false

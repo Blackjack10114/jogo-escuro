@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://cyblb0i3hjdw0"]
+
+[ext_resource type="FontFile" uid="uid://t2jh8jqf7rqs" path="res://Fonts/Undak-KVA3y.otf" id="1_xuf7u"]
+[ext_resource type="Script" uid="uid://ccoqntuae1cow" path="res://Scripts/UI/CreditoUI.gd" id="1_ypino"]
+[ext_resource type="Texture2D" uid="uid://c3wyqhjo0rtrt" path="res://Sprites/Objetos/Botões/Botão menus.png" id="2_ypino"]
+[ext_resource type="Script" uid="uid://drkxlr6ofrp0e" path="res://Scripts/UI/EfeitoBotao.gd" id="3_8tdnw"]
+
+[node name="Creditos" type="Control" unique_id=141927599]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ypino")
+
+[node name="CreditosContainer" type="CenterContainer" parent="." unique_id=1607787640]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CreditosPanel" type="Panel" parent="CreditosContainer" unique_id=685471160]
+modulate = Color(0.29219002, 0.29219005, 0.29219002, 1)
+self_modulate = Color(0.6255971, 0.6255971, 0.6255971, 1)
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditosContainer/CreditosPanel" unique_id=1388124459]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 26.0
+offset_right = 1130.0
+offset_bottom = 582.0
+theme_override_constants/separation = 40
+
+[node name="Creditos" type="Label" parent="CreditosContainer/CreditosPanel/VBoxContainer" unique_id=2041921310]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_xuf7u")
+theme_override_font_sizes/font_size = 70
+text = "CRÉDITOS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Thales" type="Label" parent="CreditosContainer/CreditosPanel/VBoxContainer" unique_id=758999537]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_xuf7u")
+theme_override_font_sizes/font_size = 50
+text = "Thales Botosso: Game Designer"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Gabriel" type="Label" parent="CreditosContainer/CreditosPanel/VBoxContainer" unique_id=1325008368]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_xuf7u")
+theme_override_font_sizes/font_size = 50
+text = "Gabriel Silva: Programador | Sound Designer"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Hugo" type="Label" parent="CreditosContainer/CreditosPanel/VBoxContainer" unique_id=633450768]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_xuf7u")
+theme_override_font_sizes/font_size = 50
+text = "Hugo: Programador"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Bruno" type="Label" parent="CreditosContainer/CreditosPanel/VBoxContainer" unique_id=1272117105]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_xuf7u")
+theme_override_font_sizes/font_size = 50
+text = "Bruno Virgilio: Artista"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Filipe" type="Label" parent="CreditosContainer/CreditosPanel/VBoxContainer" unique_id=2011890773]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_xuf7u")
+theme_override_font_sizes/font_size = 50
+text = "Filipe Azevedo: Artista"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="BotaoVoltar" type="TextureButton" parent="CreditosContainer/CreditosPanel" unique_id=1088505932]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 0
+offset_left = 557.0
+offset_top = 605.0
+offset_right = 735.0
+offset_bottom = 705.0
+texture_normal = ExtResource("2_ypino")
+texture_pressed = ExtResource("2_ypino")
+texture_hover = ExtResource("2_ypino")
+texture_disabled = ExtResource("2_ypino")
+texture_focused = ExtResource("2_ypino")
+stretch_mode = 0
+script = ExtResource("3_8tdnw")
+
+[node name="Label" type="Label" parent="CreditosContainer/CreditosPanel/BotaoVoltar" unique_id=2016331228]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 37.0
+offset_right = 132.0
+offset_bottom = 68.0
+theme_override_fonts/font = ExtResource("1_xuf7u")
+theme_override_font_sizes/font_size = 30
+text = "VOLTAR"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[connection signal="pressed" from="CreditosContainer/CreditosPanel/BotaoVoltar" to="." method="_on_botaoVoltar_pressed"]

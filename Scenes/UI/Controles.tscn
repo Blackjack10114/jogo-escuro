@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://c46fthdy51lrk"]
+
+[ext_resource type="Script" uid="uid://drkxlr6ofrp0e" path="res://Scripts/UI/EfeitoBotao.gd" id="1_3ms8u"]
+[ext_resource type="FontFile" uid="uid://t2jh8jqf7rqs" path="res://Fonts/Undak-KVA3y.otf" id="1_lgdcp"]
+[ext_resource type="Texture2D" uid="uid://c3wyqhjo0rtrt" path="res://Sprites/Objetos/Botões/Botão menus.png" id="2_hbqj3"]
+
+[node name="Controles" type="Control" unique_id=93058582]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ControlesContainer" type="CenterContainer" parent="." unique_id=516701530]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ControlesPanel" type="Panel" parent="ControlesContainer" unique_id=1406455125]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ControlesContainer/ControlesPanel" unique_id=2050847401]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 69.0
+offset_right = 1115.0
+offset_bottom = 525.0
+theme_override_constants/separation = 40
+
+[node name="Controles" type="Label" parent="ControlesContainer/ControlesPanel/VBoxContainer" unique_id=1696543453]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_lgdcp")
+theme_override_font_sizes/font_size = 70
+text = "CONTROLES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mover" type="Label" parent="ControlesContainer/ControlesPanel/VBoxContainer" unique_id=1976151766]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_lgdcp")
+theme_override_font_sizes/font_size = 50
+text = "Mover: WASD/SETAS"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Interagir" type="Label" parent="ControlesContainer/ControlesPanel/VBoxContainer" unique_id=1954842062]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_lgdcp")
+theme_override_font_sizes/font_size = 50
+text = "Interagir: E"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Interagir2" type="Label" parent="ControlesContainer/ControlesPanel/VBoxContainer" unique_id=658083650]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_lgdcp")
+theme_override_font_sizes/font_size = 50
+text = "Dropar Item: G"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Pause" type="Label" parent="ControlesContainer/ControlesPanel/VBoxContainer" unique_id=1884430805]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_lgdcp")
+theme_override_font_sizes/font_size = 50
+text = "Pause: ESC"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="BotaoVoltar" type="TextureButton" parent="ControlesContainer/ControlesPanel" unique_id=1414153498]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 0
+offset_left = 557.0
+offset_top = 552.0
+offset_right = 735.0
+offset_bottom = 652.0
+texture_normal = ExtResource("2_hbqj3")
+texture_pressed = ExtResource("2_hbqj3")
+texture_hover = ExtResource("2_hbqj3")
+texture_disabled = ExtResource("2_hbqj3")
+texture_focused = ExtResource("2_hbqj3")
+stretch_mode = 0
+script = ExtResource("1_3ms8u")
+
+[node name="Label" type="Label" parent="ControlesContainer/ControlesPanel/BotaoVoltar" unique_id=1277835739]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 37.0
+offset_right = 132.0
+offset_bottom = 68.0
+theme_override_fonts/font = ExtResource("1_lgdcp")
+theme_override_font_sizes/font_size = 30
+text = "VOLTAR"
+horizontal_alignment = 1
+vertical_alignment = 2

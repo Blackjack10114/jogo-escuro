@@ -5,11 +5,17 @@ class_name PuzzleController
 @export var ativadores: Array[Node] = []
 @export var idPuzzle := "puzzle_"
 
+# ===== LUZES DA ÁREA =====
+@export var luzes_area: Array[PointLight2D] = []
+
 var ativaveis: Array[Ativador] = []
 var resolvido := false
 
 func _ready():
 	print("PuzzleController iniciou")
+
+	# Garante que começa apagado
+	_desativar_luzes()
 
 	for root in ativadores:
 		var a := _encontrar_ativavel(root)
@@ -25,6 +31,7 @@ func _ready():
 		resolvido = true
 		_abrir_porta()
 		_travar_interacoes()
+		_ativar_luzes()
 	else:
 		_verificar_puzzle(false)
 
@@ -52,9 +59,22 @@ func _verificar_puzzle(_novo_estado: bool) -> void:
 	resolvido = true
 
 	_abrir_porta()
+	_ativar_luzes()
 	GameManager.RegistrarPuzzleResolvido(idPuzzle)
 	_travar_interacoes()
 
+# ===== LUZES (SIMPLES) =====
+func _ativar_luzes():
+	for luz in luzes_area:
+		if is_instance_valid(luz):
+			luz.visible = false
+
+func _desativar_luzes():
+	for luz in luzes_area:
+		if is_instance_valid(luz):
+			luz.visible = true
+
+# ===== RESTO =====
 func _travar_interacoes():
 	for a in ativaveis:
 		if a is Altar:

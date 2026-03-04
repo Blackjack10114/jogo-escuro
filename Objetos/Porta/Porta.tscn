@@ -1,24 +1,70 @@
 [gd_scene format=3 uid="uid://be22tfc7s5y2g"]
 
 [ext_resource type="Script" uid="uid://do2484wy3h0po" path="res://Scripts/Objetos/Porta.gd" id="1_7p4ve"]
-[ext_resource type="Texture2D" uid="uid://bk3h4ko3505hb" path="res://Sprites/Placeholders/platformPack_tile052.png" id="2_e0ypx"]
-[ext_resource type="Texture2D" uid="uid://cesnuuloyxspn" path="res://Sprites/Placeholders/platformPack_tile048.png" id="3_f40o3"]
+[ext_resource type="AudioStream" uid="uid://daxq6prpdgsmo" path="res://Sons/Porta_abrindo_.mp3" id="2_j7ny1"]
+[ext_resource type="Texture2D" uid="uid://crvbtuct3wnbm" path="res://Sprites/Porta/porta.png" id="3_mjutp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rhfvw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v7j7"]
+atlas = ExtResource("3_mjutp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhfvw"]
+atlas = ExtResource("3_mjutp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2b6xa"]
+atlas = ExtResource("3_mjutp")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8v5s"]
+atlas = ExtResource("3_mjutp")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ay2n"]
+atlas = ExtResource("3_mjutp")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0p4kh"]
+atlas = ExtResource("3_mjutp")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2rn6"]
+atlas = ExtResource("3_mjutp")
+region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j7ny1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_f40o3")
+"texture": SubResource("AtlasTexture_3v7j7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhfvw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2b6xa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8v5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ay2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0p4kh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2rn6")
 }],
 "loop": true,
 "name": &"aberta",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_e0ypx")
+"texture": SubResource("AtlasTexture_3v7j7")
 }],
 "loop": true,
 "name": &"fechada",
@@ -27,6 +73,7 @@ animations = [{
 
 [node name="Porta" type="StaticBody2D" unique_id=1098581790]
 script = ExtResource("1_7p4ve")
+sfx_abrir = ExtResource("2_j7ny1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1365084053]
 scale = Vector2(8.06724, 8.06724)
@@ -35,4 +82,6 @@ shape = SubResource("RectangleShape2D_rhfvw")
 [node name="looks" type="AnimatedSprite2D" parent="." unique_id=558028219]
 scale = Vector2(2.1015625, 2.1015625)
 sprite_frames = SubResource("SpriteFrames_j7ny1")
-animation = &"fechada"
+animation = &"aberta"
+frame = 6
+frame_progress = 0.13263887

@@ -69,3 +69,4 @@ position_smoothing_enabled = true
 stream = SubResource("AudioStreamMP3_sqf2x")
 volume_db = 8.449
 pitch_scale = 1.2
+bus = &"SFX"

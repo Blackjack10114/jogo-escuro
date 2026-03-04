@@ -6,7 +6,7 @@ class_name areasombra
 var player: CharacterBody2D = null
 
 func _on_body_entered(body):
-	if body is CharacterBody2D:
+	if body is CharacterBody2D and body.name == "Player":
 		player = body
 		player.esta_na_sombra = true
 		print("Player entrou na sombra")

@@ -1,28 +1,28 @@
 [gd_scene format=3 uid="uid://7agvmjcou4ox"]
 
-[ext_resource type="Script" path="res://Scripts/Objetos/altar_verde.gd" id="1_6anp2"]
-[ext_resource type="Texture2D" uid="uid://b7wwvyy7w7uv1" path="res://Sprites/Objetos/Altares/Verde/Totem Verde Ativado.png" id="4_4iw0v"]
-[ext_resource type="Texture2D" uid="uid://fojr1hg4upgd" path="res://misc/spriteframes/light.tres" id="4_p8vw7"]
-[ext_resource type="Texture2D" uid="uid://cic7f0lhd4lbe" path="res://Sprites/Objetos/Altares/Verde/Totem Verde s fogo.png" id="5_2frjo"]
+[ext_resource type="Script" path="res://Scripts/Objetos/altar_verde.gd" id="1_hcerk"]
+[ext_resource type="Texture2D" uid="uid://b7wwvyy7w7uv1" path="res://Sprites/Objetos/Altares/Verde/Totem Verde Ativado.png" id="2_q4oi1"]
+[ext_resource type="Texture2D" uid="uid://cic7f0lhd4lbe" path="res://Sprites/Objetos/Altares/Verde/Totem Verde s fogo.png" id="3_fhu0o"]
+[ext_resource type="Texture2D" uid="uid://fojr1hg4upgd" path="res://misc/spriteframes/light.tres" id="4_mp85e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u35jf"]
-atlas = ExtResource("4_4iw0v")
+atlas = ExtResource("2_q4oi1")
 region = Rect2(0, 0, 64, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aca0q"]
-atlas = ExtResource("4_4iw0v")
+atlas = ExtResource("2_q4oi1")
 region = Rect2(64, 0, 64, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qmpk0"]
-atlas = ExtResource("4_4iw0v")
+atlas = ExtResource("2_q4oi1")
 region = Rect2(128, 0, 64, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_221ng"]
-atlas = ExtResource("4_4iw0v")
+atlas = ExtResource("2_q4oi1")
 region = Rect2(192, 0, 64, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2dbhy"]
-atlas = ExtResource("4_4iw0v")
+atlas = ExtResource("2_q4oi1")
 region = Rect2(256, 0, 64, 96)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_arbqc"]
@@ -49,7 +49,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_2frjo")
+"texture": ExtResource("3_fhu0o")
 }],
 "loop": true,
 "name": &"inactive",
@@ -59,26 +59,24 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_p8vw7"]
 radius = 48.66
 
-[node name="Altar_Verde" type="Node2D" unique_id=44935604]
+[node name="Altar_Verde" type="Area2D" unique_id=151790610 node_paths=PackedStringArray("luz")]
 scale = Vector2(0.4, 0.4)
-
-[node name="Altar_Verde" type="Area2D" parent="." unique_id=1260660105 node_paths=PackedStringArray("luz")]
-script = ExtResource("1_6anp2")
+script = ExtResource("1_hcerk")
 cor_aceita = 2
 luz = NodePath("PointLight2D")
 
-[node name="looks" type="AnimatedSprite2D" parent="Altar_Verde" unique_id=1904281960]
+[node name="looks" type="AnimatedSprite2D" parent="." unique_id=391951360]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_arbqc")
 animation = &"active"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Altar_Verde" unique_id=71089921]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1584794180]
 position = Vector2(0, 12)
 shape = SubResource("CircleShape2D_p8vw7")
 
-[node name="PointLight2D" type="PointLight2D" parent="Altar_Verde" unique_id=977701204]
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=41593708]
 enabled = false
 color = Color(0.6784314, 1, 0, 1)
 energy = 1.5
-texture = ExtResource("4_p8vw7")
+texture = ExtResource("4_mp85e")
 texture_scale = 3.34

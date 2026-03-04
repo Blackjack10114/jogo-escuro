@@ -1,33 +1,31 @@
 [gd_scene format=3 uid="uid://df74w1jkbclv2"]
 
-[ext_resource type="Script" uid="uid://ds2247ft633cg" path="res://Scripts/Objetos/Altar.gd" id="1_jni5i"]
-[ext_resource type="Texture2D" uid="uid://fojr1hg4upgd" path="res://misc/spriteframes/light.tres" id="3_5ihej"]
-[ext_resource type="SpriteFrames" uid="uid://dsdon0hjb3gfv" path="res://misc/spriteframes/flameon.tres" id="4_opxb7"]
+[ext_resource type="Script" uid="uid://ds2247ft633cg" path="res://Scripts/Objetos/Altar.gd" id="1_cd4i7"]
+[ext_resource type="SpriteFrames" uid="uid://dsdon0hjb3gfv" path="res://misc/spriteframes/flameon.tres" id="2_5k08p"]
+[ext_resource type="Texture2D" uid="uid://fojr1hg4upgd" path="res://misc/spriteframes/light.tres" id="3_1fc5o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5ihej"]
 radius = 48.6621
 
-[node name="Altar" type="Node2D" unique_id=849689154]
+[node name="Altar" type="Area2D" unique_id=1261652138 node_paths=PackedStringArray("luz")]
 scale = Vector2(0.4, 0.4)
-
-[node name="Altar" type="Area2D" parent="." unique_id=1959147657 node_paths=PackedStringArray("luz")]
-script = ExtResource("1_jni5i")
+script = ExtResource("1_cd4i7")
 cor_aceita = 3
 luz = NodePath("PointLight2D")
 
-[node name="looks" type="AnimatedSprite2D" parent="Altar" unique_id=1392317890]
+[node name="looks" type="AnimatedSprite2D" parent="." unique_id=2099543222]
 unique_name_in_owner = true
-sprite_frames = ExtResource("4_opxb7")
+sprite_frames = ExtResource("2_5k08p")
 animation = &"inactive"
 frame_progress = 0.25022364
 speed_scale = 1.2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Altar" unique_id=891616044]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1983682246]
 position = Vector2(9.536743e-07, 12)
 shape = SubResource("CircleShape2D_5ihej")
 
-[node name="PointLight2D" type="PointLight2D" parent="Altar" unique_id=1517858638]
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=7062133]
 enabled = false
 energy = 1.5
-texture = ExtResource("3_5ihej")
+texture = ExtResource("3_1fc5o")
 texture_scale = 3.34

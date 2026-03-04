@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bv6gp1enusb2c"]
+
+[ext_resource type="Script" uid="uid://c0lv0o5t10nvm" path="res://Scripts/Manager/PuzzleController.gd" id="1_yauhu"]
+
+[node name="puzzlecontroler" type="Node2D" unique_id=1047713658]
+y_sort_enabled = true
+script = ExtResource("1_yauhu")

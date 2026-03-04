@@ -2,7 +2,7 @@ extends Node
 class_name PuzzleController
 
 @export var porta: Porta
-@export var ativadores: Array[Node] = []
+@export var ativadores: Array[Ativador] = []
 @export var idPuzzle := "puzzle_"
 
 # ===== LUZES DA ÁREA =====

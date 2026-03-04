@@ -31,6 +31,7 @@ animations = [{
 size = Vector2(6, 8)
 
 [node name="Player" type="CharacterBody2D" unique_id=2102932396 groups=["player"]]
+y_sort_enabled = true
 script = ExtResource("1_38l55")
 speed = 350.0
 

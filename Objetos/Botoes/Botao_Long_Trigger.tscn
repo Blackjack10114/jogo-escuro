@@ -33,7 +33,8 @@ animations = [{
 }]
 
 [node name="BotaoLongTrigger" type="Area2D" unique_id=673730092]
-scale = Vector2(0.764, 0.764)
+y_sort_enabled = true
+scale = Vector2(0.2, 0.2)
 script = ExtResource("1_o83wo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1889205878]

@@ -70,6 +70,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 script = ExtResource("1_3k1ur")
 panel_menu = NodePath("CenterContainer/PanelMenu")
 panel_opcoes = NodePath("OpcoesUi")
@@ -81,8 +82,14 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -512.0
+offset_top = -288.0
+offset_right = 512.0
+offset_bottom = 288.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 
 [node name="PanelMenu" type="Panel" parent="CenterContainer" unique_id=698229741]
 modulate = Color(0.17283267, 0.17283267, 0.17283261, 1)
@@ -269,14 +276,22 @@ texture_scale = 3.4
 script = ExtResource("4_vymcu")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CenterContainer" unique_id=631026797]
-color = Color(0.13682577, 0.13682574, 0.13682571, 1)
+color = Color(0.17641911, 0.17641908, 0.17641908, 1)
 
 [node name="OpcoesUi" parent="." unique_id=65658741 instance=ExtResource("12_j3fey")]
 layout_mode = 1
 script = null
 
+[node name="OpcoesContainer" parent="OpcoesUi" index="0" unique_id=1643755652]
+scale = Vector2(0.2, 0.2)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
 [node name="Controles" parent="." unique_id=93058582 instance=ExtResource("7_5rbvo")]
 layout_mode = 1
+
+[node name="ControlesContainer" parent="Controles" index="0" unique_id=516701530]
+scale = Vector2(0.2, 0.2)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 
 [connection signal="pressed" from="CenterContainer/PanelMenu/VBoxContainer/BotaoJogar" to="." method="_on_botaoJogar_pressed"]
 [connection signal="pressed" from="CenterContainer/PanelMenu/VBoxContainer/BotaoOpcoes" to="." method="_on_botaoOpcoes_pressed"]

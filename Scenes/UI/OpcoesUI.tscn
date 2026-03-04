@@ -58,6 +58,8 @@ vertical_alignment = 2
 
 [node name="SliderMaster" type="HSlider" parent="OpcoesContainer/OpcoesPanel/OpcoesContainer" unique_id=1906656719]
 layout_mode = 2
+max_value = 1.0
+step = 0.01
 
 [node name="BGM" type="Label" parent="OpcoesContainer/OpcoesPanel/OpcoesContainer" unique_id=1609862324]
 layout_mode = 2
@@ -69,6 +71,8 @@ vertical_alignment = 2
 
 [node name="SliderBGM" type="HSlider" parent="OpcoesContainer/OpcoesPanel/OpcoesContainer" unique_id=241639260]
 layout_mode = 2
+max_value = 1.0
+step = 0.01
 
 [node name="SFX" type="Label" parent="OpcoesContainer/OpcoesPanel/OpcoesContainer" unique_id=72735792]
 layout_mode = 2
@@ -80,6 +84,8 @@ vertical_alignment = 2
 
 [node name="SlideSFX" type="HSlider" parent="OpcoesContainer/OpcoesPanel/OpcoesContainer" unique_id=1238837841]
 layout_mode = 2
+max_value = 1.0
+step = 0.01
 
 [node name="BotaoVoltar" type="TextureButton" parent="OpcoesContainer/OpcoesPanel" unique_id=507230167]
 custom_minimum_size = Vector2(0, 100)

@@ -305,15 +305,12 @@ energy = 1.75
 texture = SubResource("GradientTexture2D_cm26j")
 texture_scale = 3.0
 
-[node name="PointLight2D" type="PointLight2D" parent="CenterContainer" unique_id=1686418682]
+[node name="Luz_Mouse" type="PointLight2D" parent="CenterContainer" unique_id=1686418682]
 position = Vector2(712, 339)
 energy = 5.25
 texture = SubResource("GradientTexture2D_dhyt4")
 texture_scale = 3.4
 script = ExtResource("4_vymcu")
-
-[node name="CanvasModulate" type="CanvasModulate" parent="CenterContainer" unique_id=631026797]
-color = Color(0.099985994, 0.099985994, 0.099985994, 1)
 
 [node name="OpcoesUi" parent="." unique_id=65658741 instance=ExtResource("12_j3fey")]
 layout_mode = 1
@@ -323,12 +320,25 @@ script = null
 scale = Vector2(0.2, 0.2)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 
+[node name="Label" parent="OpcoesUi/OpcoesContainer/OpcoesPanel/BotaoVoltar" parent_id_path=PackedInt32Array(65658741, 507230167) index="0" unique_id=1263668205]
+light_mask = 2
+
+[node name="Label" parent="OpcoesUi/OpcoesContainer/OpcoesPanel/BotaoControles" parent_id_path=PackedInt32Array(65658741, 1956100552) index="0" unique_id=421702007]
+light_mask = 2
+
 [node name="Controles" parent="." unique_id=93058582 instance=ExtResource("7_5rbvo")]
 layout_mode = 1
 
 [node name="ControlesContainer" parent="Controles" index="0" unique_id=516701530]
 scale = Vector2(0.2, 0.2)
 pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="Label" parent="Controles/ControlesContainer/ControlesPanel/BotaoVoltar" parent_id_path=PackedInt32Array(93058582, 1414153498) index="0" unique_id=1277835739]
+light_mask = 2
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=631026797]
+scale = Vector2(0.19999999, 0.19999999)
+color = Color(0.099985994, 0.099985994, 0.099985994, 1)
 
 [connection signal="pressed" from="CenterContainer/PanelMenu/VBoxContainer/BotaoJogar" to="." method="_on_botaoJogar_pressed"]
 [connection signal="pressed" from="CenterContainer/PanelMenu/VBoxContainer/BotaoOpcoes" to="." method="_on_botaoOpcoes_pressed"]

@@ -87,6 +87,16 @@ func _load_volumes() -> void:
 	var cfg := ConfigFile.new()
 	if cfg.load(SAVE_PATH) != OK:
 		return
-	master = float(cfg.get_value("audio", "master", 1.0))
-	bgm = float(cfg.get_value("audio", "bgm", 1.0))
-	sfx = float(cfg.get_value("audio", "sfx", 1.0))
+	master = float(cfg.get_value("audio", "master", 0.5))
+	bgm = float(cfg.get_value("audio", "bgm", 0.5))
+	sfx = float(cfg.get_value("audio", "sfx", 0.5))
+	
+func resetar_config_audio():
+	var dir := DirAccess.open("user://")
+	if dir.file_exists("audio.cfg"):
+		dir.remove("audio.cfg")
+
+	master = 0.5
+	bgm = 0.5
+	sfx = 0.5
+	_apply_volumes()

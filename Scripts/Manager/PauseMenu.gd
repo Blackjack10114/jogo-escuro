@@ -38,7 +38,8 @@ func _on_botaoReiniciar_pressed() -> void:
 	visible = false
 	get_viewport().gui_release_focus()
 	get_tree().paused = false
-	GameManager.IrParaJogo(cena_jogo) # reinicia a cena do jogo
+	GameManager.ResetarProgresso()
+	GameManager.IrParaJogo(cena_jogo)
 
 func _on_botaoControles_pressed() -> void:
 	abrir_controles()

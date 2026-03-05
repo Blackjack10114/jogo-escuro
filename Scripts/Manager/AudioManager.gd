@@ -11,6 +11,7 @@ func _ready() -> void:
 	add_child(music)
 	music.bus = "BGM"
 	music.process_mode = Node.PROCESS_MODE_ALWAYS
+	resetar_config_audio()
 
 	_load_volumes()
 	_apply_volumes()

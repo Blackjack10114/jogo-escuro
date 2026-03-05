@@ -52,7 +52,7 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_xuf7u")
 theme_override_font_sizes/font_size = 50
-text = "Thales Botosso: Game Designer"
+text = "Thales Botosso: Game Designer | Programador"
 horizontal_alignment = 1
 vertical_alignment = 2
 
@@ -68,7 +68,7 @@ vertical_alignment = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_xuf7u")
 theme_override_font_sizes/font_size = 50
-text = "Hugo: Programador"
+text = "Hugo Marcos: Programador"
 horizontal_alignment = 1
 vertical_alignment = 2
 

@@ -6,6 +6,7 @@
 [ext_resource type="StyleBox" uid="uid://dcf6a0thifptv" path="res://spr_button.tres" id="2_glsjb"]
 [ext_resource type="FontFile" uid="uid://t2jh8jqf7rqs" path="res://Fonts/Undak-KVA3y.otf" id="3_5rbvo"]
 [ext_resource type="Script" uid="uid://ct65m5udakhr7" path="res://Scripts/LuzMenu.gd" id="4_vymcu"]
+[ext_resource type="Script" uid="uid://cacbe77sp48vw" path="res://Scripts/UI/AnimBotao.gd" id="6_0kn0p"]
 [ext_resource type="Texture2D" uid="uid://trdpsyk61aqr" path="res://Sprites/Menu/fundo menu .png" id="6_eg12o"]
 [ext_resource type="PackedScene" uid="uid://c46fthdy51lrk" path="res://Scenes/UI/Controles.tscn" id="7_5rbvo"]
 [ext_resource type="Texture2D" uid="uid://c5mirl8fve12d" path="res://Sprites/Menu/loss menu fundo.png" id="7_v434d"]
@@ -72,7 +73,7 @@ fill = 1
 fill_from = Vector2(0.5043478, 0.5043478)
 fill_to = Vector2(0.8695652, 0.16086957)
 
-[node name="MenuPrincipal" type="Control" unique_id=1272096771 node_paths=PackedStringArray("panel_menu", "panel_opcoes", "panel_controles")]
+[node name="MenuPrincipal" type="Control" unique_id=1272096771 node_paths=PackedStringArray("panel_menu", "panel_opcoes", "panel_controles", "fade")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -84,6 +85,8 @@ script = ExtResource("1_3k1ur")
 panel_menu = NodePath("CenterContainer/PanelMenu")
 panel_opcoes = NodePath("OpcoesUi")
 panel_controles = NodePath("Controles")
+fade = NodePath("CenterContainer/PanelMenu/Fade")
+tempo_Fade = 15
 metadata/_edit_vertical_guides_ = [-113.0]
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=913149164]
@@ -271,21 +274,50 @@ theme_override_styles/normal = ExtResource("2_glsjb")
 action_mode = 0
 text = "SAIR"
 
-[node name="Creditos" type="Label" parent="CenterContainer/PanelMenu" unique_id=1019316993]
+[node name="Fade" type="ColorRect" parent="CenterContainer/PanelMenu" unique_id=1638506736]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/PanelMenu" unique_id=2032014019]
+visible = false
 layout_mode = 0
 offset_left = 345.0
-offset_top = 60.0
-offset_right = 1014.0
-offset_bottom = 161.0
+offset_top = 75.0
+offset_right = 1109.9999
+offset_bottom = 124.99999
+theme_override_fonts/normal_font = ExtResource("3_5rbvo")
+theme_override_font_sizes/normal_font_size = 70
+text = "LIGHTS IN THE FRONT YARD"
+
+[node name="Label" type="Label" parent="CenterContainer/PanelMenu" unique_id=712834956]
+layout_mode = 0
+offset_left = 344.99997
+offset_top = 74.99999
+offset_right = 1039.9999
+offset_bottom = 150.0
 theme_override_fonts/font = ExtResource("3_5rbvo")
 theme_override_font_sizes/font_size = 70
 text = "LIGHTS IN THE FRONT YARD"
-horizontal_alignment = 1
-vertical_alignment = 1
+script = ExtResource("6_0kn0p")
+
+[node name="PointLight2D" type="PointLight2D" parent="CenterContainer/PanelMenu/Label" unique_id=1517503887]
+visible = false
+position = Vector2(341.3, 39.99997)
+scale = Vector2(4.7356753, 2.1796868)
+energy = 2.5
+texture = SubResource("GradientTexture2D_0kn0p")
+texture_scale = 2.4
 
 [node name="FundoMenu" type="Sprite2D" parent="CenterContainer" unique_id=1450871359]
 z_index = -2
-position = Vector2(648, 354)
+position = Vector2(635, 354.99997)
 texture = ExtResource("6_eg12o")
 
 [node name="Loss" type="Sprite2D" parent="CenterContainer/FundoMenu" unique_id=1845118408]

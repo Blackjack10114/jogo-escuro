@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7qxb7hs8x68c"
-path="res://.godot/imported/Porta diagonal.png-8b1cadd969b68261c3d4c56b2a220ca0.ctex"
+uid="uid://m0ydj5bw8u1u"
+path="res://.godot/imported/porta de lado.png-3b29bcfc6929f747eb1129d5c4a27494.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Porta/Porta diagonal.png"
-dest_files=["res://.godot/imported/Porta diagonal.png-8b1cadd969b68261c3d4c56b2a220ca0.ctex"]
+source_file="res://Sprites/Porta/porta de lado.png"
+dest_files=["res://.godot/imported/porta de lado.png-3b29bcfc6929f747eb1129d5c4a27494.ctex"]
 
 [params]
 

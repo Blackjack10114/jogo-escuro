@@ -4,17 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://ds45pv2njl7h3" path="res://Sprites/Cenario/Spr_Coisas_Chao.png" id="2_r0mdn"]
 [ext_resource type="PackedScene" uid="uid://be22tfc7s5y2g" path="res://Objetos/Porta/Porta.tscn" id="3_6y7pd"]
 [ext_resource type="Texture2D" uid="uid://cuwjkr4enn38s" path="res://Sprites/Cenario/Spr_Olhos_Jam.png" id="3_tpqse"]
-[ext_resource type="PackedScene" uid="uid://0dr448m64kv3" path="res://Objetos/Altares/altar_azul.tscn" id="4_73nn6"]
+[ext_resource type="PackedScene" uid="uid://0dr448m64kv3" path="res://Objetos/Altares/Altar_Azul.tscn" id="4_73nn6"]
 [ext_resource type="PackedScene" uid="uid://bv6gp1enusb2c" path="res://Scenes/puzzlecontroler.tscn" id="4_erobn"]
-[ext_resource type="PackedScene" uid="uid://7agvmjcou4ox" path="res://Objetos/Altares/altar_verde.tscn" id="5_r0mdn"]
+[ext_resource type="PackedScene" uid="uid://7agvmjcou4ox" path="res://Objetos/Altares/Altar_Verde.tscn" id="5_r0mdn"]
 [ext_resource type="PackedScene" uid="uid://b6y5u8ix42tq6" path="res://Objetos/Tochas/Tocha_Azul.tscn" id="5_sftma"]
-[ext_resource type="PackedScene" uid="uid://d1cyupflnp5b7" path="res://Objetos/Altares/altar_vermelho.tscn" id="6_0xqxu"]
+[ext_resource type="PackedScene" uid="uid://d1cyupflnp5b7" path="res://Objetos/Altares/Altar_Vermelho.tscn" id="6_0xqxu"]
 [ext_resource type="PackedScene" uid="uid://cn1hofjyrdcy" path="res://Objetos/Area_Sombra.tscn" id="7_18r40"]
 [ext_resource type="PackedScene" uid="uid://bwrnn1c1hv5cm" path="res://Objetos/Player.tscn" id="8_6y7pd"]
-[ext_resource type="PackedScene" uid="uid://df74w1jkbclv2" path="res://Objetos/Altares/altar.tscn" id="10_0xqxu"]
+[ext_resource type="PackedScene" uid="uid://df74w1jkbclv2" path="res://Objetos/Altares/Altar.tscn" id="10_0xqxu"]
 [ext_resource type="PackedScene" uid="uid://dabjl2g7fc2da" path="res://Objetos/Tochas/Tocha.tscn" id="11_0xqxu"]
 [ext_resource type="PackedScene" uid="uid://dbln6n6ppojol" path="res://Objetos/Caixa/Caixa_Simples.tscn" id="13_i47ox"]
 [ext_resource type="PackedScene" uid="uid://yf82ve22t1dd" path="res://Objetos/Botoes/Botao_Long_Trigger.tscn" id="14_sftma"]
+[ext_resource type="PackedScene" uid="uid://dthbgeofqo8c4" path="res://Scenes/UI/PauseUI.tscn" id="16_erobn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i47ox"]
 texture = ExtResource("1_bb2iq")
@@ -260,3 +261,41 @@ speed = 75.0
 
 [node name="Caixa_Simples" parent="." unique_id=575956319 instance=ExtResource("13_i47ox")]
 position = Vector2(1944, 240)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1938563461]
+
+[node name="PauseUi" parent="CanvasLayer" unique_id=65658741 instance=ExtResource("16_erobn")]
+
+[node name="ColorRect" parent="CanvasLayer/PauseUi" index="0" unique_id=539443715]
+offset_left = -122.0
+offset_top = -75.0
+offset_right = 1163.0
+offset_bottom = 640.0
+scale = Vector2(0.39999908, 0.39999908)
+pivot_offset = Vector2(0.5, 0.5)
+
+[node name="PauseContainer" parent="CanvasLayer/PauseUi" index="1" unique_id=1643755652]
+offset_left = -25.999998
+offset_top = -13.999999
+offset_right = 1254.0
+offset_bottom = 706.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(0.5, 0.5)
+
+[node name="Controles" parent="CanvasLayer/PauseUi" index="2" unique_id=93058582]
+offset_left = -9.0
+offset_top = -7.0000005
+offset_right = -9.0
+offset_bottom = -7.0
+scale = Vector2(1.08, 1.08)
+
+[node name="ControlesContainer" parent="CanvasLayer/PauseUi/Controles" index="0" unique_id=516701530]
+offset_left = -26.999998
+offset_top = -8.999999
+offset_right = 1253.0
+offset_bottom = 711.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(0.5, 0.5)
+
+[editable path="CanvasLayer/PauseUi"]
+[editable path="CanvasLayer/PauseUi/Controles"]

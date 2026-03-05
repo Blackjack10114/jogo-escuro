@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://7agvmjcou4ox"]
+[gd_scene format=3 uid="uid://doag24m6xme4p"]
 
 [ext_resource type="Script" path="res://Scripts/Objetos/altar_verde.gd" id="1_hcerk"]
 [ext_resource type="Texture2D" uid="uid://b7wwvyy7w7uv1" path="res://Sprites/Objetos/Altares/Verde/Totem Verde Ativado.png" id="2_q4oi1"]

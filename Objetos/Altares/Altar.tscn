@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://df74w1jkbclv2"]
+[gd_scene format=3 uid="uid://bn2v8d115tsub"]
 
 [ext_resource type="Script" uid="uid://ds2247ft633cg" path="res://Scripts/Objetos/Altar.gd" id="1_cd4i7"]
 [ext_resource type="SpriteFrames" uid="uid://dsdon0hjb3gfv" path="res://misc/spriteframes/flameon.tres" id="2_5k08p"]

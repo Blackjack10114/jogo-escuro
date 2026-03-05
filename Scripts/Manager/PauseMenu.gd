@@ -3,7 +3,7 @@ extends Control
 @export var pause_panel: Control
 @export var controles_panel: Control
 
-@export var cena_jogo: String = "res://Scenes/SceneTeste/Hugo.tscn"
+@export var cena_jogo: String = "res://Scenes/main_game.tscn"
 
 func _ready() -> void:
 	visible = false

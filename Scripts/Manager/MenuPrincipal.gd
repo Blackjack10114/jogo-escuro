@@ -27,7 +27,7 @@ func _mostrar_controles():
 
 # ---- botões do MENU principal ----
 func _on_botaoJogar_pressed():
-	GameManager.IrParaJogo("res://Scenes/SceneTeste/Hugo.tscn")
+	GameManager.IrParaJogo("res://Scenes/main_game.tscn")
 
 func _on_botaoOpcoes_pressed():
 	_mostrar_opcoes()

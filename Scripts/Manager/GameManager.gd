@@ -11,7 +11,7 @@ signal puzzleResolvido(idPuzzle: String)
 var puzzlesResolvidos: Dictionary = {}
 
 const SCENE_MENU := "res://Scenes/UI/MenuPrincipal.tscn"
-const SCENE_JOGO := "res://Scenes/SceneTeste/Hugo.tscn"
+const SCENE_JOGO := "res://Scenes/main_game.tscn"
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS

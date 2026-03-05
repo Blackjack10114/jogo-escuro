@@ -3,16 +3,16 @@ extends Control
 @export var panel_menu: Control
 @export var panel_opcoes: Control
 @export var panel_controles: Control
-@export var fade: ColorRect
+#@export var fade: ColorRect
 
-@export var tempo_Fade := 5
+#@export var tempo_Fade := 5
 
 func _ready():
 	_mostrar_menu()
 
-	if fade:
-		fade.visible = true
-		fade.modulate.a = 0.0
+	#if fade:
+		#fade.visible = true
+		#fade.modulate.a = 0.0
 
 	if is_instance_valid(AudioManager):
 		AudioManager.play_music(AudioManager.musica_menu)
@@ -34,11 +34,11 @@ func _mostrar_controles():
 
 #---- botões do MENU principal ----
 func _on_botaoJogar_pressed():
-	if fade:
-		var tw := create_tween()
-		tw.tween_property(fade, "modulate:a", 1.0, 0.5)
-		await tw.finished
-	GameManager.IrParaJogo("res://Scenes/main_game.tscn")
+	#if fade:
+		#var tw := create_tween()
+		#tw.tween_property(fade, "modulate:a", 1.0, 0.5)
+		#await tw.finished
+	GameManager.IrParaJogo()
 
 func _on_botaoOpcoes_pressed():
 	_mostrar_opcoes()

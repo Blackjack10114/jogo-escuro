@@ -366,10 +366,10 @@ scale = Vector2(0.2, 0.2)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 
 [node name="Label" parent="OpcoesUi/OpcoesContainer/OpcoesPanel/BotaoVoltar" parent_id_path=PackedInt32Array(65658741, 507230167) index="0" unique_id=1263668205]
-light_mask = 18
+light_mask = 2
 
 [node name="Label" parent="OpcoesUi/OpcoesContainer/OpcoesPanel/BotaoControles" parent_id_path=PackedInt32Array(65658741, 1956100552) index="0" unique_id=421702007]
-light_mask = 18
+light_mask = 2
 
 [node name="Controles" parent="." unique_id=93058582 instance=ExtResource("7_5rbvo")]
 visible = false

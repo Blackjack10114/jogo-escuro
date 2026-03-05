@@ -72,7 +72,7 @@ fill = 1
 fill_from = Vector2(0.5043478, 0.5043478)
 fill_to = Vector2(0.8695652, 0.16086957)
 
-[node name="MenuPrincipal" type="Control" unique_id=1272096771 node_paths=PackedStringArray("panel_menu", "panel_opcoes", "panel_controles")]
+[node name="MenuPrincipal" type="Control" unique_id=1272096771 node_paths=PackedStringArray("panel_menu", "panel_opcoes", "panel_controles", "fade")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -84,6 +84,7 @@ script = ExtResource("1_3k1ur")
 panel_menu = NodePath("CenterContainer/PanelMenu")
 panel_opcoes = NodePath("OpcoesUi")
 panel_controles = NodePath("Controles")
+fade = NodePath("CenterContainer/PanelMenu/Fade")
 metadata/_edit_vertical_guides_ = [-113.0]
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=913149164]
@@ -270,6 +271,17 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = ExtResource("2_glsjb")
 action_mode = 0
 text = "SAIR"
+
+[node name="Fade" type="ColorRect" parent="CenterContainer/PanelMenu" unique_id=477862181]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
 
 [node name="FundoMenu" type="Sprite2D" parent="CenterContainer" unique_id=1450871359]
 z_index = -2

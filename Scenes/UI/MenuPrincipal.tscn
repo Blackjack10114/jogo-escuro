@@ -271,6 +271,18 @@ theme_override_styles/normal = ExtResource("2_glsjb")
 action_mode = 0
 text = "SAIR"
 
+[node name="Creditos" type="Label" parent="CenterContainer/PanelMenu" unique_id=1019316993]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 60.0
+offset_right = 1014.0
+offset_bottom = 161.0
+theme_override_fonts/font = ExtResource("3_5rbvo")
+theme_override_font_sizes/font_size = 70
+text = "LIGHTS IN THE FRONT YARD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="FundoMenu" type="Sprite2D" parent="CenterContainer" unique_id=1450871359]
 z_index = -2
 position = Vector2(648, 354)
@@ -313,6 +325,7 @@ texture_scale = 3.4
 script = ExtResource("4_vymcu")
 
 [node name="OpcoesUi" parent="." unique_id=65658741 instance=ExtResource("12_j3fey")]
+visible = false
 layout_mode = 1
 script = null
 
@@ -327,6 +340,7 @@ light_mask = 2
 light_mask = 2
 
 [node name="Controles" parent="." unique_id=93058582 instance=ExtResource("7_5rbvo")]
+visible = false
 layout_mode = 1
 
 [node name="ControlesContainer" parent="Controles" index="0" unique_id=516701530]
@@ -337,6 +351,7 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 light_mask = 2
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=631026797]
+visible = false
 scale = Vector2(0.19999999, 0.19999999)
 color = Color(0.099985994, 0.099985994, 0.099985994, 1)
 
